@@ -1,0 +1,364 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.incLog {
+	
+	height:15px;
+	width:25px;
+	text-align:center;
+	font-weight:bold;
+}
+
+
+#tituloLogInc {
+	
+	margin-right:20px;
+	margin-left:15px;
+	font-weight:bold;
+	font-size: 12px;
+	font-family: 'segoe ui', arial, sans-serif;	
+}
+
+#contentCategorizador {
+	
+	font-size: 12px;
+	font-family: 'segoe ui', arial, sans-serif;
+	font-weight:bold;	
+	
+	
+}
+
+.escondoElemento {
+	
+	display:none;	
+	
+	
+}
+
+#txtNroIncidente,#txtAbrLoc {
+	
+	width:40px;
+	height:19px;	
+	
+}
+
+
+#txtTelefono,#txtCliente,#txtAviso,#txtNroAfiliado {
+	
+	width:100px;
+	height:19px;		
+	
+}
+
+#txtPartido {
+	
+	width:243px;
+	height:19px;	
+	
+}
+
+#txtLoc {
+	
+	width:276px;
+	height:19px;	
+	
+}
+
+#txtCalle {
+	
+	width:500px;
+	height:19px;	
+}
+
+
+#txtEdad {
+	
+	width:50px;
+	height:19px;	
+}
+
+#txtAltura,#txtPiso,#txtDepartamento {
+	
+	width:61px;
+	height:19px;
+	
+}
+
+#txtEntreCalle1,#txtEntreCalle2 {
+	
+	width:290px;
+	height:19px;	
+}
+
+#txtReferencias {
+	
+	width:340px;
+	height:19px;	
+}
+
+#txtPaciente {
+
+	width:500px;
+	height:19px;	
+	
+}
+
+#txtSintomas {
+
+	width:635px;
+	height:19px;	
+	
+}
+
+#txtPlan {
+	
+	width:160px;
+	height:19px;
+			
+}
+
+#txtCoPago {
+
+	width:148px;
+	height:19px;	
+	
+}
+
+#txtPacienteDerivado {
+	
+	width:548px;
+	height:19px;	
+	
+}
+
+#lblValidoSintoma,#lblValidoAfiliado {
+	
+	margin-left:30px;
+	margin-top:15px;
+	
+}
+
+#lblValidoTelefono {
+	
+	margin-left:60px;
+	margin-top:15px;	
+	
+}
+
+#botonesValidoTelefono,#botonesValidoAfiliado,#botonesValidoSintoma {
+	
+	margin-top: 25px;
+	margin-left: 80px;	
+	
+}
+
+.horCierre {
+	
+	margin-right:-21px;	
+	
+}
+
+.tituloPanel {
+	
+	color:#000;	
+}
+
+#jqxMenuRecepcion li, #jqxMenuTraslados li {
+	
+	margin-right:16px;	
+}
+
+#txtAlturaDerivacion,#txtPisoDerivacion,#txtDeptoDerivacion,#txtLocDerivacion,#txtLugarDerivacion,#txtDiagnosticoDerivacion {
+	
+	margin-left:-3px;	
+	
+}
+
+#txtDiagnostico,#txtCierre {
+	
+	width:185px;
+	height:19px;
+	
+}
+
+.clsPanel label {
+	
+	font-weight : bold;
+	margin-left : 3px;	
+	
+}
+
+.clsPanel {
+	
+	border: #000 1px solid;	
+	
+}
+
+#panelPreDespIncidente,#panelPreDespSugerencia,#panelCierreIncidente,#panelObservacionesIncidente {
+	
+
+	border-bottom: none;
+	
+}
+
+
+
+#txtAltura, #txtLoc, #txtPiso, #txtDepartamento {
+	
+	margin-left: -8px;
+	
+}
+
+#dropDownIVA,#jqxDateIncidente {
+	
+	margin-right:3px;	
+	
+}
+
+#jqxPanelRecepcion label {
+	
+	font-weight: bold;
+	margin-left: 3px;	
+	
+}
+
+#txtClienteTraslado,#txtNroAfiliadoTraslado,#txtTelefonoTraslado,#txtPlanTraslado,#txtCoPagoTraslado {
+	
+	width:110px;
+	height:19px;	
+	
+}
+
+#txtPacienteTraslado {
+	
+	width:290px;
+	height:19px;	
+	
+}
+
+#txtSintomasTraslado {
+	
+	width:315px;
+	height:19px;
+	
+}
+
+#txtNroIncidentePanelTraslado,#txtNroTraslado {
+	
+	width:70px;
+	height:19px;	
+	
+}
+
+#txtEdadTraslado {
+	
+	width:50px;
+	height:19px;
+	
+}
+
+#txtObservTraslado {
+	
+	width:935px;
+	height:19px;	
+	
+}
+
+#txtNroIncidentePanelTraslado,#txtNroTraslado,#txtEdadTraslado {
+	
+	text-align:center;
+	
+}
+
+#txtDomTrasladoOrigen,#txtLocTrasladoOrigen,#txtDomTrasladoDestino, #txtLocTrasladoDestino {
+	
+	width:220px;
+	height:19px;
+		
+	
+}
+
+#txtAbrLocTrasladoOrigen,#txtAbrLocTrasladoDestino {
+	
+	width:70px;
+	height:19px;	
+	
+}
+
+
+#txtAlturaTrasladoOrigen,#txtPisoTrasladoOrigen,#txtDepartamentoTrasladoOrigen,#txtAlturaTrasladoDestino,#txtPisoTrasladoDestino,#txtDepartamentoTrasladoDestino {
+	
+	width:70px;
+	height:19px;
+	margin-left:-4px;
+	
+}
+
+#txtNosocomioTrasladoOrigen,#txtNosocomioTrasladoDestino {
+	
+	width:182px;
+	height:19px;	
+}
+
+#txtLocTrasladoOrigen,#txtLocTrasladoDestino {
+	
+	margin-left:-3px;	
+	
+}
+
+#txtPartidoTrasladoOrigen {
+	
+	width:150px;
+	height:19px;
+	
+}
+
+#txtEntreCalle1TrasladoOrigen, #txtEntreCalle2TrasladoOrigen,#txtReferenciasTrasladoOrigen,#txtEntreCalle1TrasladoDestino, #txtEntreCalle2TrasladoDestino,#txtReferenciasTrasladoDestino {
+	
+	width:200px;
+	height:19px;
+	
+}
+
+.btnPopup {
+	
+border: 2px solid #1FAEFF;	
+	
+}
+
+#txtPartidoTrasladoDestino {
+	
+
+	width:153px;
+	height:19px;	
+	
+}
+
+.btnTraslado {
+	
+line-height:10px;
+color:#FFF;
+font-weight:bold;
+background-color:#000;
+cursor:pointer;	
+width:200px;
+height:20px;
+border-color:#000;
+padding-right:10px;
+border-right-color:#FFF
+	
+}
+
+#menuContextualGrillaMov,#menuContextualGrillaInc{
+	
+border: 2px solid #1FAEFF;	
+	
+}
+
+#jqxPanelLogs {
+	
+margin-left:auto;
+margin-right:auto;
+		
+}

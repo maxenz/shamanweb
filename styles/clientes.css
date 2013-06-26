@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+font-weight:bold;
+font-size: 12px;
+font-family: 'segoe ui', arial, sans-serif;	
+	
+}
+
+.ctCliente {
+	
+width:950px;
+height:540px;
+		
+}
+
+
+.ctPanel {
+	
+background:#e5e5e5;
+border:1px solid;
+	
+}
+
+.titlePanel {
+	
+padding:5px;
+color:black;	
+font-style:italic;
+font-weight:bold;
+font-size: 12px;
+font-family: 'segoe ui', arial, sans-serif
+}
+
+
+#txtCodTit {
+
+width:150px;
+height:19px;	
+	
+}
+
+#txtRzSocTit {
+
+width:350px;
+height:19px;
+	
+}
+
+#txtAbrLocTit {
+	
+width:50px;
+height:19px;
+
+}
+
+#txtLocalidadTit {
+	
+width:240px;
+height:19px;
+margin-left:-3px;
+	
+}
+
+#txtCalleTit {
+
+width:350px;	
+height:19px;
+
+}
+
+#txtAltTit,#txtPisoTit,#txtDeptoTit {
+
+width:80px;	
+height:19px;
+
+}
+
+#txtCodPostalTit {
+	
+width:143px;
+height:19px;	
+	
+}
+
+#txtEntreCalle1Tit,#txtEntreCalle2Tit,#txtRefTit {
+	
+width:250px;
+height:19px;
+	
+}
+
+#txtNroAfInt {
+	
+width:120px;
+height:19px;	
+	
+}
+
+#txtApeInt,#txtNomInt {
+	
+width:314px;	
+height:19px;
+	
+}
+
+#txtAbrLocInt {
+
+width:50px;
+height:19px;	
+	
+}
+
+#txtLocInt {
+width:250px;
+height:19px;
+margin-left:-3px;	
+	
+}
+
+#txtCalleInt {
+width:373px	;
+height:19px;
+
+}
+
+#txtCodPostInt {
+	
+width:120px;	
+height:19px;
+
+}
+
+#txtECalle1Int,#txtECalle2Int,#txtRefInt {
+
+width:259px;
+height:19px;	
+	
+}
+
+#txtAltInt,#txtPisoInt,#txtDeptoInt {
+width:70px;	
+height:19px	
+}
+
+
+
+#btnAceptarContacto,#btnCancelarContacto {
+	
+cursor:pointer;
+		
+}
+
+#txtNroDocInt {
+width:123px;
+height:19px;	
+	
+}
+
+#txtTelefono1Int,#txtTelefono2Int {
+	
+width:150px;
+height:19px;	
+	
+}
+
+
+
+#txtAObsInt {
+width:920px;
+height:110px;	
+	
+}
+
+
+#btnGrpClientes {
+	
+padding:10px;	
+	
+}
+
+#txtNomSectorContacto {
+
+width:458px;
+height:19px;	
+	
+}
+
+#txtEmailContacto,#txtTelContacto {
+
+width:225px;
+height:19px;	
+	
+}
+
+#btnGrpContacto {
+	
+text-align:center;
+padding:8px;	
+	
+}
+
+
+
+
+
+

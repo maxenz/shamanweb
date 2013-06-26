@@ -1,0 +1,245 @@
+body {
+
+padding-top:80px;
+	
+}
+
+img {
+	
+border: none;
+
+}
+
+#headerPrincipal {
+
+padding:10px;
+
+}
+
+.clsPanel {
+
+border: 1px solid black;
+
+}
+
+#tituloIndex {
+
+padding-top:80px;
+height:160px;
+
+}
+
+
+.centrado {
+
+text-align:center;
+
+}
+
+.btnComun {
+
+width:120px;
+height:35px;
+color:white;
+background:#0088cc;
+border-color:#0088cc;
+
+}
+
+.btnCancelar {
+
+width:120px;
+height:35px;
+
+}
+
+.btnCancelar:focus{
+
+border-color:yellow;
+
+}
+
+#jqxTabsOperativa {
+
+margin-left:auto;
+margin-right:auto;
+margin-top:-8px;
+display: none;
+
+}
+
+
+.btnComun:hover {
+
+background:white;
+color:black;
+border-color:#0088cc;
+
+}
+
+.btnComun:focus{
+
+border-color:yellow;
+
+}
+
+.btnCateg:focus{
+
+border-color:yellow;
+
+}
+
+.btnCateg {
+
+background:white;
+border:2px solid black;
+
+}
+
+.gradoCateg {
+
+display:none;
+height:27px;
+width:30px;
+line-height:27px;
+text-align:center;
+
+}
+
+
+#content {
+	
+width: 950px;
+background-color:#FFF;
+height: 560px;
+
+}
+
+#tituloOpcion {
+
+color:#0088cc;
+
+} 
+
+
+
+label {
+	
+display:block;
+margin-left:3px;
+color:black;
+font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+font-weight: bold;
+font-size: 12px;
+		
+}
+
+#contentCategorizador {
+
+font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+font-weight: bold;
+font-size: 12px;
+
+}
+
+input {
+	
+font-size: 12px;
+font-family: 'segoe ui', arial, sans-serif;	
+	
+}
+
+.btnFocus {
+	
+border:2px solid;
+	
+}
+
+.popup {
+	
+font-weight:bold;
+font-size: 12px;
+font-family: 'segoe ui', arial, sans-serif;
+color:black;
+display:none;	
+	
+}
+
+
+
+.lblPan {
+	
+text-align:left;
+		
+}
+
+
+.ctPanel {
+	
+
+border:1px solid;
+	
+}
+
+.titlePanel {
+	
+padding:5px;
+	
+}
+
+#dvLoading
+{
+   background:#FFF url(../images/loadingAjax.gif) no-repeat center center;
+   height: 100px;
+   width: 150px;
+   position: fixed;
+   z-index: 1000;
+   left: 50%;
+   top: 50%;
+   margin: -25px 0 0 -25px;
+}
+
+.titulosIndex p {
+
+	text-align:center;
+	margin-bottom: 20px;
+
+}
+
+.titulosIndex h2 {
+	
+	text-align:center;
+	margin-bottom: 10px;
+	font-size: 25px;
+	line-height: 1;
+	letter-spacing: -1px;
+	color: inherit;
+}
+
+.textbox {
+
+	margin-top:-5px;	
+
+}
+
+
+.tdDropDown {
+
+	margin-top:-8px;
+
+}
+
+#tbListas {
+	
+margin-right:auto;
+margin-left:auto;
+	
+}
+
+#lstGrados,#lstGradosSel {
+	
+font: 'segoe ui', arial, sans-serif;
+font-size: 11px;
+color:black;
+	
+}
