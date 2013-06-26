@@ -3,7 +3,7 @@
  include_once("_header.php");
 
 ?>
-    
+
        <div id="ctGrillaBases" class="ctToggle"> 
 		<div id="grdBases" style="margin-left:auto;margin-right:auto"></div>
 	</div>
@@ -108,6 +108,7 @@
                     	</div>
 		</div>
 	</div>
+</div>
                		
    	<div id="dialogoEliminar" class="modal message hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 		<div class="modal-header">

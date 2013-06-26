@@ -74,7 +74,7 @@ include_once("consultaMenu.php");
                    <p>Ha finalizado la sesi&oacute;n.</p>
                 </div>
                 <div class="modal-footer">
-                   <button class="btn btn-large" data-dismiss="modal" onclick="showLogin()">Cerrar</button>
+			<button type="button" id="btnGrabarIntegrante" data-dismiss="modal" onClick="showLogin();"  class="btn btnComun" >Cerrar</button>
                 </div>
        </div>
    

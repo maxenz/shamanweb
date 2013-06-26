@@ -4,15 +4,12 @@
 
 ?>
 
-
 <div id='popupSanatorios' style="display:none">
 	<div>Seleccione el sanatorio...</div>
 	<div> 
     <div id="grdSanatorios" style="margin-left:5px"></div> 
     </div>
 </div>
-
-
 
 <div id='popupClientes' style="display:none">
 	<div>Seleccione el cliente...</div>
@@ -28,9 +25,6 @@
     <div id="grdLocalidades" style="margin-left:5px"></div> 
     </div>
 </div>
-
-
-     
      
 	<div id='popupBuscoAfiliado' style="display:none">
 		<div>Seleccione el afiliado...</div>
