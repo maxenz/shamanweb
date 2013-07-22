@@ -53,7 +53,7 @@
 	}
 	
 	function validoLocalidad(abrLoc) {
-			
+		
 		$.ajax({
 				type: "GET",
 				dataType: "json",
@@ -67,7 +67,7 @@
 		}
 	
 	function openPopupLocalidades() {
-			
+		setGrillaBusquedaLocalidades(); 
 		openPopup('popupBuscoLocalidades');
 		$('#grdLocalidades').jqxGrid('selectrow',0);
 		$('#grdLocalidades').jqxGrid('focus');
@@ -149,14 +149,12 @@
 	}
 	
 	function consultoValidacion(datos) {
-		
-		
-		
-		
+
 
 		if (datos == 0 ) {
-						
+		
 			openPopupLocalidades();
+
 							
 		} else {
 			

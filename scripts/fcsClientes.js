@@ -290,7 +290,6 @@
 		$('#btnOKEliminoContacto').jqxButton({width:120, height:30, theme:'metro'});
 		$('#btnNOEliminoContacto').jqxButton({width:120, height:30, theme:'metro'});
 		$('#btnGrabarIntegrante').jqxButton({width:120, height:30, theme:'metro'});
-		$('#btnCancelarIntegrante').jqxButton({width:120, height:30, theme:'metro'});
 		$('#btnGrabarModifCobertura').jqxButton({width:120, height:30, theme:'metro'});
 		
 

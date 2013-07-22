@@ -187,8 +187,8 @@ padding:5px;
 	
 }
 
-#dvLoading
-{
+#dvLoading {
+
    background:#FFF url(../images/loadingAjax.gif) no-repeat center center;
    height: 100px;
    width: 150px;
@@ -231,15 +231,25 @@ padding:5px;
 
 #tbListas {
 	
-margin-right:auto;
-margin-left:auto;
+	margin-right:auto;
+	margin-left:auto;
 	
 }
 
-#lstGrados,#lstGradosSel {
+#lstGrados, #lstGradosSel {
 	
-font: 'segoe ui', arial, sans-serif;
-font-size: 11px;
-color:black;
+	font: 'segoe ui', arial, sans-serif;
+	font-size: 11px;
+	color:black;
 	
+}
+
+.contentPopup {
+
+	background-color:#eeeeee;
+}
+
+.separadorPopup {
+
+    border-bottom:1px solid #0088cc;
 }

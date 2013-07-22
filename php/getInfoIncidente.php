@@ -111,12 +111,12 @@
 	
 	function getNroIncidenteNuevo() {
 	
-		$hoy = date("Y-m-d");
-	
+		$hoy = date("Y-d-m");
+		$strHoy = "" . $hoy;
 		$db = new cDB();
 		$db->Connect();
 		
-		$SQL = "SELECT TOP 1 NroIncidente FROM Incidentes WHERE FecIncidente = '$hoy' AND NroIncidente <> '' ORDER BY NroIncidente DESC";
+		$SQL = "SELECT TOP 1 NroIncidente FROM Incidentes WHERE FecIncidente = cast('$hoy' as datetime) AND NroIncidente <> '' ORDER BY NroIncidente DESC";
 		
 		$db->Query($SQL);
 		

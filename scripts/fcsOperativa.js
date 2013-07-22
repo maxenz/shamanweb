@@ -1,113 +1,110 @@
 //DECLARACION DE VARIABLES GLOBALES
 
-	var user;
-	var cellsRendererMovil,cellsRendererSituacion; 
-	var flgAfiliado = 0;
-	var flgAccionF10 = 0;
-	var flgTel = 0;
-	var flgLoc = 0;
-	var flgSanatorio = 0;
-	var flgSintomas = 0;
-	var flgIncTras = 0;
-	var vecReclamos = [];
-	var datosPaciente = [];	
-	var columnas = [];
-	var columnasHistorialTraslado = [];
-	var columnasProgramacionTraslado = [];
-	var sourceGrados = [];
-	var sourceProgramacionTraslado = [];
-	var sourceHistorialTraslado = [];
-	var  cellsRendererGrado, cellsRendererZona,dataAdapter,dataAdapterSug,dataAdapterDiag,cellsRendererIncMov;
-	var acumCategorizador = 0;
-	var flgPediatrico = 0;
-	var idSintoma = 0;
-	var flgMaxEmergencia = 0;
+var user;
+var cellsRendererMovil,cellsRendererSituacion; 
+var flgAfiliado = 0;
+var flgAccionF10 = 0;
+var flgTel = 0;
+var flgLoc = 0;
+var flgSanatorio = 0;
+var flgSintomas = 0;
+var flgIncTras = 0;
+var vecReclamos = [];
+var datosPaciente = [];	
+var columnas = [];
+var columnasHistorialTraslado = [];
+var columnasProgramacionTraslado = [];
+var sourceGrados = [];
+var sourceProgramacionTraslado = [];
+var sourceHistorialTraslado = [];
+var  cellsRendererGrado, cellsRendererZona,dataAdapter,dataAdapterSug,dataAdapterDiag,cellsRendererIncMov;
+var acumCategorizador = 0;
+var flgPediatrico = 0;
+var idSintoma = 0;
+var flgMaxEmergencia = 0;
 
 
 
 //DECLARACION DE FUNCIONES
 
-	function setUser(usuario) {
+function setUser(usuario) {
 		
-		user = usuario;	
+	user = usuario;	
 		
-	}
+}
 
-	function initBotones() {
+function initBotones() {
 	
-		$('#btnAceptarCierre').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnCancelarCierre').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnAceptarObservacionesRec').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnCancelarObservacionesRec').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnAceptarAviso').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnCancelarAviso').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnAceptarPreDesp').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnCancelarPreDesp').jqxButton({width:100, height:30, theme:'metro'});
-		$('#btnAceptarPacienteTelefono').jqxButton({ width:100, height:35, theme:'metro' });
-		$('#btnCancelarPacienteTelefono').jqxButton({ width:100, height:35, theme:'metro' });
-		$('#btnBuscarAfiliadoEnPadron').jqxButton({ width:100, height:35, theme:'metro' });
-		$('#btnConfirmarAfiliadoInexistente').jqxButton({ width:100, height:35, theme:'metro' });
-		$('#btnConfirmarSintomaInexistente').jqxButton({ width:100, height:35, theme:'metro' });
-		$('#btnBuscarSintoma').jqxButton({ width:100, height:35, theme:'metro' });	
+	$('#btnAceptarCierre').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnCancelarCierre').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnAceptarObservacionesRec').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnCancelarObservacionesRec').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnAceptarAviso').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnCancelarAviso').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnAceptarPreDesp').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnCancelarPreDesp').jqxButton({width:100, height:30, theme:'metro'});
+	$('#btnAceptarPacienteTelefono').jqxButton({ width:100, height:35, theme:'metro' });
+	$('#btnCancelarPacienteTelefono').jqxButton({ width:100, height:35, theme:'metro' });
+	$('#btnBuscarAfiliadoEnPadron').jqxButton({ width:100, height:35, theme:'metro' });
+	$('#btnConfirmarAfiliadoInexistente').jqxButton({ width:100, height:35, theme:'metro' });
+	$('#btnConfirmarSintomaInexistente').jqxButton({ width:100, height:35, theme:'metro' });
+	$('#btnBuscarSintoma').jqxButton({ width:100, height:35, theme:'metro' });	
 		
-	}
+}
 
-	function initDateTimeInput() {
+function initDateTimeInput() {
 	
-		$('#dtFechaCierre').jqxDateTimeInput({width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true });
-		$('#dtFechaHorSalCierre').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't', showCalendarButton:false });
-		$('#dtFechaHorLleCierre').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
-		$('#dtFechaHorDeriv').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
-		$('#dtFechaHorIte').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
-		$('#dtFechaHorFinDeriv').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
-		$('#dtFechaIncObservaciones').jqxDateTimeInput({width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true});
-		$("#dtFechaAviso").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true });
-		$("#dtPreDespIncidente").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly: true, disabled: true });
-		$("#dtFechaTraslado").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left'});
-		$("#dtFechaHoraDomTrasladoOrigen").jqxDateTimeInput({ width: 160, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
-		$("#dtFechaHoraDomTrasladoDestino").jqxDateTimeInput({ width: 157, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
-		$("#dtFechaHoraRetornoTrasladoDestino").jqxDateTimeInput({ width: 157, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
-		$("#jqxDateIncidente").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left' });
-		$('#dtDesdeHC').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
-		$('#dtHastaHC').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
-		$('#dtDesdeBusqServ').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
-		$('#dtHastaBusqServ').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
+	$('#dtFechaCierre').jqxDateTimeInput({width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true });
+	$('#dtFechaHorSalCierre').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't', showCalendarButton:false });
+	$('#dtFechaHorLleCierre').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
+	$('#dtFechaHorDeriv').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
+	$('#dtFechaHorIte').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
+	$('#dtFechaHorFinDeriv').jqxDateTimeInput({width: 80, height: 27, theme: 'metro', textAlign: 'left', formatString: 't',showCalendarButton:false });
+	$('#dtFechaIncObservaciones').jqxDateTimeInput({width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true});
+	$("#dtFechaAviso").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly:true, disabled:true });
+	$("#dtPreDespIncidente").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left', readonly: true, disabled: true });
+	$("#dtFechaTraslado").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left'});
+	$("#dtFechaHoraDomTrasladoOrigen").jqxDateTimeInput({ width: 160, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
+	$("#dtFechaHoraDomTrasladoDestino").jqxDateTimeInput({ width: 157, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
+	$("#dtFechaHoraRetornoTrasladoDestino").jqxDateTimeInput({ width: 157, height: 27, theme: 'metro', textAlign: 'left', formatString:'dd-MM-yyyy HH:mm'});
+	$("#jqxDateIncidente").jqxDateTimeInput({ width: 130, height: 27, theme: 'metro', textAlign: 'left' });
+	$('#dtDesdeHC').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
+	$('#dtHastaHC').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
+	$('#dtDesdeBusqServ').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
+	$('#dtHastaBusqServ').jqxDateTimeInput({width: 150, height: 27, theme: 'metro', textAlign: 'left',  formatString:'yyyy-MM-dd'});
+	
+}
+	
+function initPaneles() {
 		
-	}
+
+	$('#panelPreDespMovilEmpresa').jqxPanel({width:690,height:80,theme:'metro'});
+	$('#panelPreDespIncidente').jqxPanel({width:690,height:80,theme:'metro'});
+	$('#panelPreDespSugerencia').jqxPanel({width:690,height:135,theme:'metro'});
+	$('#panelCierreIncidente').jqxPanel({width:690, height:80, theme:'metro' });
+	$('#panelDatosDeCierre').jqxPanel({width:690, height:260, theme:'metro' });
+	$('#panelObservacionesIncidente').jqxPanel({width:690,height:80,theme:'metro'});
+	$('#panelObservaciones').jqxPanel({width:690,height:130,theme:'metro'});
+	$('#panelAvisos').jqxPanel({width:690,height:80,theme:'metro'});
+	$('#panelTrasladosGeneral').jqxPanel({width:955,height:165,theme:'metro'});
+	$('#panelTrasladosOrigen').jqxPanel({width:955,height:110,theme:'metro'});
+	$('#panelTrasladosDestino').jqxPanel({width:955,height:110,theme:'metro'});
+	$('#panelIncidentesPrincipal').jqxPanel({width:950, height:440, theme:'metro'});	
+}
 	
-	function initPaneles() {
-		
-		$("#jqxPanelRecepcion").jqxPanel({ width: '950px', height: '387px', theme: 'metro', autoUpdate:true });
-		$('#panelPreDespMovilEmpresa').jqxPanel({width:690,height:80,theme:'metro'});
-		$('#panelPreDespIncidente').jqxPanel({width:690,height:80,theme:'metro'});
-		$('#panelPreDespSugerencia').jqxPanel({width:690,height:135,theme:'metro'});
-		$('#panelCierreIncidente').jqxPanel({width:690, height:80, theme:'metro' });
-		$('#panelDatosDeCierre').jqxPanel({width:690, height:260, theme:'metro' });
-		$('#panelObservacionesIncidente').jqxPanel({width:690,height:80,theme:'metro'});
-		$('#panelObservaciones').jqxPanel({width:690,height:130,theme:'metro'});
-		$('#panelAvisos').jqxPanel({width:690,height:80,theme:'metro'});
-		$('#panelTrasladosGeneral').jqxPanel({width:955,height:165,theme:'metro'});
-		$('#panelTrasladosOrigen').jqxPanel({width:955,height:110,theme:'metro'});
-		$('#panelTrasladosDestino').jqxPanel({width:955,height:110,theme:'metro'});
-		$('#panelIncidentesPrincipal').jqxPanel({width:950, height:430, theme:'metro'});	
-	}
+function pruebaJSON() {
 	
-	function pruebaJSON() {
-	
-		$.ajax({
-			type: 'GET',
-			dataType : 'json',
-			url : 'pruebita.php',
-			success: function(datos){
+	$.ajax({
+		type: 'GET',
+		dataType : 'json',
+		url : 'pruebita.php',
+		success: function(datos){
 			
-				alert(datos.iva);
-				alert(datos.grados);
-				
-			
-			}
-		});
-
-
+			alert(datos.iva);
+			alert(datos.grados);
+					
+		}
+	});
 }
 	
 	function initDropDown(srcIVA,srcGrados) {
@@ -251,13 +248,13 @@
 		$('#popupDiagnosticos').jqxWindow({ position: { x: x, y: y} });
 			
 		//POPUP RECLAMOS - OBSERVACIONES
-		$("#popupObservaciones").jqxWindow({ height:290, width: 700, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
+		$("#popupObservaciones").jqxWindow({ height:250, width: 700, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
 		x = ($(window).width() - $("#popupObservaciones").jqxWindow('width')) / 2 + $(window).scrollLeft();
 	       y = ($(window).height() - $("#popupObservaciones").jqxWindow('height')) / 2 + $(window).scrollTop();
 		$('#popupObservaciones').jqxWindow({ position: { x: x, y: y} });
 		
 		//POPUP TIPS - AVISOS
-		$("#popupAvisos").jqxWindow({ height:170, width: 700, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
+		$("#popupAvisos").jqxWindow({ height:140, width: 700, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
 		x = ($(window).width() - $("#popupAvisos").jqxWindow('width')) / 2 + $(window).scrollLeft();
 	       y = ($(window).height() - $("#popupAvisos").jqxWindow('height')) / 2 + $(window).scrollTop();
 		$('#popupAvisos').jqxWindow({ position: { x: x, y: y} });
@@ -695,6 +692,7 @@
 				setColumnasMoviles();
 				setTooltips();
 				bindEventosOperativa();
+				bindGrillaLocalidades();
 				
 				var moviles =
 					{
@@ -1590,7 +1588,7 @@
 							limpiarIncidente();
 							focusGrdIncidentes();
 						} else { 
-							alert('Error: ' + datos); 
+							console.log(datos) 
 						}
 					  }
 				    });	
@@ -1837,54 +1835,54 @@
 	}
 	
 			
-	//function validoLocalidad(loc) {
-//		
-//		$.ajax({
-//				type: "GET",
-//				dataType: "json",
-//				url: "getInfoLocalidad.php?loc="+loc,
-//				success: function(datos){	
-//											
-//					if (datos != 0) {
-//							
-//						switch(flgLoc) {
-//	
-//							case 0:
-//									$('#txtLoc').val(datos[0].Localidad);
-//									$('#txtPartido').val(datos[0].Partido);
-//									$('#txtCalle').focus();
-//							break;
-//							
-//							case 1:
-//									$('#txtLocDerivacion').val(datos[0].Localidad);
-//									$('#txtNombreLugarDerivacion').focus();	
-//							break;
-//							
-//							case 2:
-//									$('#txtLocTrasladoOrigen').val(datos[0].Localidad);
-//									$('#txtPartidoTrasladoOrigen').val(datos[0].Partido);
-//									$('#txtDomTrasladoOrigen').focus();
-//							break;
-//							
-//							case 3:
-//									$('#txtLocTrasladoDestino').val(datos[0].Localidad);
-//									$('#txtDomTrasladoDestino').focus();
-//							break;	
-//								
-//						}
-//								
-//									
-//					} else {
-//							
-//							$('#grdLocalidades').jqxGrid('selectrow',0);
-//							$('#popupBuscoLocalidades').jqxWindow('focus');
-//							$('#grdLocalidades').jqxGrid('focus');
-//							$('#popupBuscoLocalidades').jqxWindow('open');					
-//							
-//						}		
-//					}
-//				});		
-//			}
+	// function validoLocalidad(loc) {
+		
+	// 	$.ajax({
+	// 			type: "GET",
+	// 			dataType: "json",
+	// 			url: "getInfoLocalidad.php?loc="+loc,
+	// 			success: function(datos){	
+											
+	// 				if (datos != 0) {
+							
+	// 					switch(flgLoc) {
+	
+	// 						case 0:
+	// 								$('#txtLoc').val(datos[0].Localidad);
+	// 								$('#txtPartido').val(datos[0].Partido);
+	// 								$('#txtCalle').focus();
+	// 						break;
+							
+	// 						case 1:
+	// 								$('#txtLocDerivacion').val(datos[0].Localidad);
+	// 								$('#txtNombreLugarDerivacion').focus();	
+	// 						break;
+							
+	// 						case 2:
+	// 								$('#txtLocTrasladoOrigen').val(datos[0].Localidad);
+	// 								$('#txtPartidoTrasladoOrigen').val(datos[0].Partido);
+	// 								$('#txtDomTrasladoOrigen').focus();
+	// 						break;
+							
+	// 						case 3:
+	// 								$('#txtLocTrasladoDestino').val(datos[0].Localidad);
+	// 								$('#txtDomTrasladoDestino').focus();
+	// 						break;	
+								
+	// 					}
+								
+									
+	// 				} else {
+							
+	// 						$('#grdLocalidades').jqxGrid('selectrow',0);
+	// 						$('#popupBuscoLocalidades').jqxWindow('focus');
+	// 						$('#grdLocalidades').jqxGrid('focus');
+	// 						$('#popupBuscoLocalidades').jqxWindow('open');					
+							
+	// 					}		
+	// 				}
+	// 			});		
+	// 		}
 //			
 //	function setLocalidadElegida() {
 //	

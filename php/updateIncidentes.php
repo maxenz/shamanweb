@@ -6,15 +6,16 @@
 	$db = new cDB();
 	$db->Connect();
 	
-	$fecha = filter_input(INPUT_GET,'fecha',FILTER_SANITIZE_STRING);
+	$fecha = formatDateSQL(filter_input(INPUT_GET,'fecha',FILTER_SANITIZE_STRING));
 	$inc = filter_input(INPUT_GET,'inc',FILTER_SANITIZE_STRING);
 	$opt = $_GET["opt"];
 	
 	$idUser = getUserId();
 	
 	$SQL = "SELECT ID FROM Incidentes WHERE NroIncidente = '$inc' AND FecIncidente = '$fecha'";
+
 	$idInc = getID($SQL,$db);
-	echo $SQL;
+
 	
 	switch ($opt) {
 		
@@ -41,8 +42,7 @@
 	function updateIncidente($pCampo,$dato,$idInc,$db) {
 		
 		$SQL = "UPDATE Incidentes SET " .$pCampo. " = '$dato' WHERE ID = $idInc ";
-		$db->Query($SQL);
-		echo $SQL;		
+		$db->Query($SQL);	
 		$db->Disconnect();		
 	}
 	

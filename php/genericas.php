@@ -25,13 +25,13 @@
 			
 		$db->Query($SQL);
 		
+		
 		if ($fila = $db->Next()) {
-			
+
 				$pId = odbc_result($fila,'ID');
 				return $pId;
 				
 			} else {
-			
 				return 0;	
 			}		
 		}
@@ -129,15 +129,16 @@
 		
 		$pFecha = '$vFecha[0]-$vFecha[1]-$vFecha[2]';
 		
+		return $pFecha;		
+	}
+
+	function formatDateSQL($fecha) {
+
+		$vFecha = explode("-",$fecha);
+		
+		$pFecha = $vFecha[0] . '-' . $vFecha[2] .'-' .$vFecha[1];
+		
 		return $pFecha;	
-		
-		
-		
-		
 	}
 	
-	
-
-	
-
 ?>

@@ -7,14 +7,14 @@
 <div id='popupSanatorios' style="display:none">
 	<div>Seleccione el sanatorio...</div>
 	<div> 
-    <div id="grdSanatorios" style="margin-left:5px"></div> 
+        <div id="grdSanatorios" style="margin-left:5px"></div> 
     </div>
 </div>
 
 <div id='popupClientes' style="display:none">
 	<div>Seleccione el cliente...</div>
 	<div> 
-    <div id="grdClientes" style="margin-left:5px"></div> 
+        <div id="grdClientes" style="margin-left:5px"></div> 
     </div>
 </div>
 
@@ -22,150 +22,136 @@
 <div id='popupBuscoLocalidades' style="display:none">
 	<div>Seleccione la localidad...</div>
 	<div> 
-    <div id="grdLocalidades" style="margin-left:5px"></div> 
+        <div id="grdLocalidades" style="margin-left:5px"></div> 
     </div>
 </div>
      
-	<div id='popupBuscoAfiliado' style="display:none">
-		<div>Seleccione el afiliado...</div>
-		<div> 
-    		<div id="grdAfiliados" style="margin-left:5px"></div> 
-    	</div>
-	</div>
+<div id='popupBuscoAfiliado' style="display:none">
+	<div>Seleccione el afiliado...</div>
+	<div> 
+    	<div id="grdAfiliados" style="margin-left:5px"></div> 
+    </div>
+</div>
     
-    <div id="popupBusqServ" style="display:none">
-    	<div>B&uacute;squeda de Servicios...</div>
-        <div>
-        	<div id='menuBusqServ' style="margin-left:2px; margin-top:2px; margin-bottom:3px">
-                <ul>
-                    <li>
-				<b class="icon-spin" id="itmActBusqServ" onClick="actBusqServ();"></b>
-                        
-                    </li>
-                    <li>
-				<b class="icon-write" id="itmModifBusqServ"></b>
-                         
-                    </li> 
-                    <li>
-                         <div id="dtDesdeBusqServ"></div>
-                    </li>
-                    <li>
-                         <div id="dtHastaBusqServ"></div>
-                    </li>         
-                </ul>   
-            </div>
-            <div id="grdBusqServ"></div>
-            	
+<div id="popupBusqServ" style="display:none">
+    <div>B&uacute;squeda de Servicios...</div>
+    <div>
+        <div id='menuBusqServ' style="margin-left:2px; margin-top:2px; margin-bottom:3px">
+             <ul>
+                <li>
+				    <b class="icon-spin" id="itmActBusqServ" onClick="actBusqServ();"></b>     
+                </li>
+                <li>
+				    <b class="icon-write" id="itmModifBusqServ"></b>          
+                </li> 
+                <li>
+                    <div id="dtDesdeBusqServ"></div>
+                </li>
+                <li>
+                    <div id="dtHastaBusqServ"></div>
+                </li>         
+            </ul>   
         </div>
-    </div>   
+        <div id="grdBusqServ"></div>     	
+    </div>
+</div>   
      
-
-	<div id='popupBuscoSintoma' style="display:none">
-		<div>Seleccione el s&iacute;ntoma...</div>
-		<div> 
+<div id='popupBuscoSintoma' style="display:none">
+	<div>Seleccione el s&iacute;ntoma...</div>
+	<div> 
     	<div id="grdSintomas" style="margin-left:5px"></div> 
-    	</div>
-	</div>    
-     
-     
-    <div id='popupCategorizador' style="display:none">
-		<div>Categorizador de Incidente</div>
-		<div id="contentCategorizador"></div>
-	</div>   
+    </div>
+</div>    
+        
+<div id='popupCategorizador' style="display:none">
+	<div>Categorizador de Incidente</div>
+	<div id="contentCategorizador"></div>
+</div>   
     
-     <div id='popupDiagnosticos' style="display:none">
-		<div>Seleccione el diagn&oacute;stico</div>
-		<div id="grdDiagnosticos"></div>
-	</div>    
+<div id='popupDiagnosticos' style="display:none">
+	<div>Seleccione el diagn&oacute;stico</div>
+	<div id="grdDiagnosticos"></div>
+</div>    
        
 <!--FINALIZA POPUPS PARA FORMULARIO DE RECEPCION-->
 
 
-<!---POPUPS PARA MENU CONTEXTUALES DE GRILLA DE RECEPCION--->
+<!--POPUPS PARA MENU CONTEXTUALES DE GRILLA DE RECEPCION-->
 
 <div id='popupPreasignoDespacho' style="display:none">
-		<div>Despacho de Servicios</div>
-		<div> 
-    	<div id="panelPreDespIncidente" class="clsPanel">
-        	<div style="margin-bottom:1px"><span class="label label-inverse">Incidente &raquo;</span></div>
-            <div id="contentPanelPreDespIncidente" >
-			<input type="hidden" id="hidIdViaje" />
-			<input type="hidden" id="hidFlgSalida" />
-            	<table style="margin-left:3px">
-                	<tr>
-                    	<td>
-				<div class="tdDropDown">
+    <div>Despacho de Servicios</div>
+    <div class="contentPopup"> 
+       <input type="hidden" id="hidIdViaje" />
+       <input type="hidden" id="hidFlgSalida" />
+	   <table style="margin-left:3px">
+            <tr>
+                <td>
+                    <div class="tdDropDown">
                         <label>Fecha</label>
                         <div id="dtPreDespIncidente" style="margin-top:-5px"></div>
-                        </td>
-				</div>
-                    	<td>
-                        <label>Nro</label>
-                        <input type="text" id="txtNroIncPreDespIncidente" style="width:50px" class="textbox centrado" />
-                        </td>
-                    	<td>
-                        <label>Gdo</label>
-                        <input type="text" id="txtGdoIncPreDespIncidente" style="width:50px" class="textbox centrado" />
-                        </td>
-                    	<td>
-                        <label>Domicilio</label>
-                        <input type="text" id="txtDomIncPreDespIncidente" style="width:180px" class="textbox" />
-                        <input type="text" id="txtDomAbrIncPreDespIncidente" style="width:50px" class="textbox centrado" />
-                        </td>
-                    	<td>
-				<div class="tdDropDown">
+                    </div>
+                </td>    		              
+                <td>
+                    <label>Nro</label>
+                    <input type="text" id="txtNroIncPreDespIncidente" style="width:50px" class="textbox centrado" />
+                </td>
+                <td>
+                    <label>Gdo</label>
+                    <input type="text" id="txtGdoIncPreDespIncidente" style="width:50px" class="textbox centrado" />
+                </td>
+                <td>
+                    <label>Domicilio</label>
+                    <input type="text" id="txtDomIncPreDespIncidente" style="width:180px" class="textbox" />
+                    <input type="text" id="txtDomAbrIncPreDespIncidente" style="width:50px" class="textbox centrado" />
+                </td>
+                <td>
+                    <div class="tdDropDown">
                         <label>Despachar</label>
                         <div id="dpDownDespacharPreDespIncidente" style="margin-top:-5px"></div>
-				</div>
-                        </td>
-                    	
-                    </tr>
-                </table>
-            </div> 
+                    </div>
+                </td>
+        	
+            </tr>
+        </table>
+
+
+        
+        <div style="margin-top:3px">
+                 <hr class="separadorPopup" style="margin-top:1px" />
+
+            	<div id="grdSugerenciaMovilesEmpresas" style="margin-left:4px"></div>               
         </div>
         
-            	<div id="panelPreDespSugerencia" class="clsPanel" style="margin-top:1px;margin-bottom:1px">
-        	<div style="margin-bottom:2px"><span class="label label-inverse">Sugerencias para su operaci&oacute;n &raquo;</span></div>
-            <div id="contentPanelPreDespSugerencia">
-            	
-                <div id="grdSugerenciaMovilesEmpresas" style="margin-left:4px"></div>
-                
-            </div> 
-        </div>
-        
-        
-        <div id="panelPreDespMovilEmpresa" class="clsPanel">
-        	<span class="label label-inverse">M&oacute;vil &raquo;</span>
-            <div id="contentPanelPreDespMovilEmpresa">
-            
-           			 <input type="hidden" id="hidRowIncidente" />
-                     <input type="hidden" id="hidIdAfiliado" />
-                     <input type="hidden" id="hidAbrLoc" />
+        <div>
+            <hr class="separadorPopup" />
+           		<input type="hidden" id="hidRowIncidente" />
+                <input type="hidden" id="hidIdAfiliado" />
+                <input type="hidden" id="hidAbrLoc" />
             	<table>
                 	<tr>
                     	<td>
-                        <label id="movEmpresa">M&oacute;vil</label>
-                        <input type="text" id="txtMovEmpresa" style="width:80px" class="textbox centrado" />
+                            <label id="movEmpresa">M&oacute;vil</label>
+                            <input type="text" id="txtMovEmpresa" style="width:80px" class="textbox centrado" />
                         </td>
                     	<td>
-                        <label id="estNombre">Estado</label>
-                        <input type="text" id="txtEstNombre" style="width:150px" class="textbox" />
+                            <label id="estNombre">Estado</label>
+                            <input type="text" id="txtEstNombre" style="width:150px" class="textbox" />
                         </td>
                     	<td>
-                        <label id="tipoMovCob">Tipo de M&oacute;vil</label>
-                        <input type="text" id="txtTipoMovCob" style="width:150px" class="textbox" />
+                            <label id="tipoMovCob">Tipo de M&oacute;vil</label>
+                            <input type="text" id="txtTipoMovCob" style="width:150px" class="textbox" />
                         </td>
                         <td id="accionPreDesp" style="display:none">
-                        <div class="tdDropDown" id="accion" >
-                        	<label style="margin-top:8px">Accion</label>
-                            <div id="dpDownAccion" style="margin-top:-5px" ></div>
-                        </div>
+                            <div class="tdDropDown" id="accion" >
+                                <label style="margin-top:8px">Accion</label>
+                                <div id="dpDownAccion" style="margin-top:-5px" ></div>
+                            </div>
                         </td>
      	
                     </tr>
                 </table>
-            </div> 
         </div>
+
 		<div class="centrado" style="margin-top:10px">
 			<div class="btn-group">
 				<button type="button" id="btnAceptarPreDesp" class="btn btnComun">Aceptar</button>
@@ -176,63 +162,61 @@
 	</div>  
 </div>	
 
-    <div id='popupEstablecerCierre' style="display:none">
-		<div>EMPRESA - </div>
-		<div> 
-    	 <div id="panelCierreIncidente" class="clsPanel" style="margin-bottom:2px">
+<div id='popupEstablecerCierre' style="display:none">
+	<div>EMPRESA - </div>
+	<div> 
+    	<div id="panelCierreIncidente" class="clsPanel" style="margin-bottom:2px">
         	<span class="label label-inverse">Incidente &raquo;</span>
             <div id="contentPanelCierreIncidente"> 
-            <table>
+                <table>
                 	<tr>
                     	<td>
-				<div class="tdDropDown">
-                        <label>Fecha</label>
-                        <div id="dtFechaCierre" style="margin-top:-5px"></div>
-				</div>
+				            <div class="tdDropDown">
+                            <label>Fecha</label>
+                            <div id="dtFechaCierre" style="margin-top:-5px"></div>
+				            </div>
                         </td>
                     	<td>
-                        <label>Nro.</label>
-                        <input type="text" id="txtNroIncCierre" style="width:50px" class="textbox centrado" />
+                            <label>Nro.</label>
+                            <input type="text" id="txtNroIncCierre" style="width:50px" class="textbox centrado" />
                         </td>
                     	<td>
-                        <label>Gdo.</label>
-                        <input type="text" id="txtGdoCierre" style="width:50px" class="textbox centrado" />
+                            <label>Gdo.</label>
+                            <input type="text" id="txtGdoCierre" style="width:50px" class="textbox centrado" />
                         </td> 
                         <td>
-                        <label>Domicilio</label>
-                        <input type="text" id="txtDomCierre" style="width:340px" class="textbox" />
-                        <input type="text" id="txtDomAbrCierre" style="width:50px" class="textbox centrado" />
+                            <label>Domicilio</label>
+                            <input type="text" id="txtDomCierre" style="width:340px" class="textbox" />
+                            <input type="text" id="txtDomAbrCierre" style="width:50px" class="textbox centrado" />
                         </td>               
                     </tr>
                 </table>
-            	
-            
-            	</div>
+            	            
             </div>
+        </div>
             
-            
-            <div id="panelDatosDeCierre" class="clsPanel" style="margin-bottom:2px">
+        <div id="panelDatosDeCierre" class="clsPanel" style="margin-bottom:2px">
         	<span class="label label-inverse">Datos de Cierre &raquo;</span>
             <div id="contentPanelDatosDeCierre"> 
-            <table>
+                <table>
                 	<tr>
                     	<td>
-				<div class="tdDropDown" style="width:60px">
-                        	<label>Hor. Sal.</label>
-                        	<div id="dtFechaHorSalCierre" class="horCierre" style="margin-top:-5px"></div>
-					</div>
+				            <div class="tdDropDown" style="width:60px">
+                        	   <label>Hor. Sal.</label>
+                        	   <div id="dtFechaHorSalCierre" class="horCierre" style="margin-top:-5px"></div>
+					        </div>
                         </td>
                     	<td>
-				<div class="tdDropDown" style="width:60px">
-                        	<label>Hor. Lle.</label>
-                        	<div id="dtFechaHorLleCierre" class="horCierre" style="margin-top:-5px"></div>
-					</div>
+				            <div class="tdDropDown" style="width:60px">
+                        	   <label>Hor. Lle.</label>
+                        	   <div id="dtFechaHorLleCierre" class="horCierre" style="margin-top:-5px"></div>
+					        </div>
                         </td>
                     	<td>
-				<div class="tdDropDown">
-                        	<label>Deriv.</label>
-                        	<div id="dpDownDeriv" style="margin-top:-5px"></div>
-					</div>
+				            <div class="tdDropDown">
+                        	   <label>Deriv.</label>
+                        	   <div id="dpDownDeriv" style="margin-top:-5px"></div>
+					        </div>
                         </td> 
                         <td>
                         	<label>Lugar Derivaci&oacute;n</label>
@@ -240,59 +224,57 @@
                         	<input type="text" id="txtLugarDerivacion" style="width:297px" class="textbox" />
                         </td>  
                         <td>
-				<div class="tdDropDown" style="width:60px">
-                        	<label>Hor. Der.</label>
-                       	 	<div id="dtFechaHorDeriv" class="horCierre" style="margin-top:-5px"></div>
-					</div>
+				            <div class="tdDropDown" style="width:60px">
+                        	   <label>Hor. Der.</label>
+                       	 	   <div id="dtFechaHorDeriv" class="horCierre" style="margin-top:-5px"></div>
+					        </div>
                         </td>
                     	<td>
-				<div class="tdDropDown" style="width:60px">
-                        	<label>Hor. Ite.</label>
-                        	<div id="dtFechaHorIte" class="horCierre" style="margin-top:-5px"></div>
-				</div>
+				            <div class="tdDropDown" style="width:60px">
+                        	   <label>Hor. Ite.</label>
+                        	   <div id="dtFechaHorIte" class="horCierre" style="margin-top:-5px"></div>
+				            </div>
                         </td>             
                   	</tr>
-          </table>
-          <table>
-                 <tr>
+                </table>
+                <table>
+                    <tr>
                     	<td>
                     		<label>Domicilio Derivaci&oacute;n</label>
                         	<input type="text" id="txtDomicilioDerivacion" style="width:200px;text-align:center" />     	
-                   	</td>
+                   	    </td>
                     	<td>
-			<td>
-				<label>Altura</label>
-				<input type="text" id="txtAlturaDerivacion" style="width:50px;text-align:center" />
-			</td>
-				
-			<td>
-				<label>Piso</label>
-				<input type="text" id="txtPisoDerivacion" style="width:50px;text-align:center" />
-			</td>
-				
-			<td>
-				<label>Depto</label>
-				<input type="text" id="txtDeptoDerivacion" style="width:50px;text-align:center" />
-			</td>
-			<td>
+                        <td>
+				            <label>Altura</label>
+				            <input type="text" id="txtAlturaDerivacion" style="width:50px;text-align:center" />
+                        </td>				
+                        <td>
+				            <label>Piso</label>
+				            <input type="text" id="txtPisoDerivacion" style="width:50px;text-align:center" />
+                        </td>				
+                        <td>
+				            <label>Depto</label>
+				            <input type="text" id="txtDeptoDerivacion" style="width:50px;text-align:center" />
+                        </td>
+                        <td>
                     		<label>Localidad Derivaci&oacute;n</label>
                        	 	<input type="text" id="txtAbrLocDerivacion" style="width:50px;text-align:center" />
                         	<input type="text" id="txtLocDerivacion" style="width:201px" />
                     	</td>
-                  </tr>
-            </table>
+                    </tr>
+                </table>
             
-             <table>
-                  <tr>
+                <table>
+                    <tr>
                     	<td>
                     		<label>Nombre del Lugar</label>
                        		<input type="text" id="txtNombreLugarDerivacion" style="width:150px" class="textbox" />
                     	</td>
                     	<td>
-				<div class="tdDropDown" style="width:60px">
-                    		<label>Hor. Fin.</label>
-                        	<div id="dtFechaHorFinDeriv" class="horCierre" style="margin-top:-5px"></div>
-				</div>
+				            <div class="tdDropDown" style="width:60px">
+                    		  <label>Hor. Fin.</label>
+                        	   <div id="dtFechaHorFinDeriv" class="horCierre" style="margin-top:-5px"></div>
+				            </div>
                     	</td>
                     	<td>
                     		<label>Diagn&oacute;stico</label>
@@ -301,158 +283,152 @@
                         
                     	</td> 
                     	<td>
-				<div class="tdDropDown">
-                    		<label>V.R.</label>
-                     		<div id="chkViajeRealizado" style="margin-top:-5px"></div>
-				</div>
+				            <div class="tdDropDown">
+                                <label>V.R.</label>
+                                <div id="chkViajeRealizado" style="margin-top:-5px"></div>
+				            </div>
                    	 	</td>           
-                 </tr>
-           </table>
-           <table>
-                 <tr>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
                     	<td>
-                   		<label>Observaciones</label>
-                    		<input type="text" id="txtObservacionesDerivacion" style="width:673px" class="textbox itmInput" />
-			</td>
-                </tr>
-          </table>
-                    
-          
-            	</div>   
-            </div>
- 			<div class="centrado" style="margin-top:10px">
+	                       <label>Observaciones</label>
+            	           <input type="text" id="txtObservacionesDerivacion" style="width:673px" class="textbox itmInput" />
+                        </td>
+                    </tr>
+                </table>                  
+            </div>   
+        </div>
+ 		<div class="centrado" style="margin-top:10px">
 			<div class="btn-group">
 				<button type="button" id="btnAceptarCierre" class="btn btnComun">Aceptar</button>
 				<button type="button" id="btnCancelarCierre" class="btn btnComun">Cancelar</button>
 			</div>
-		</div>
-        
-    	</div>
-         
-	</div> 
+		</div>    
+    </div>     
+</div> 
     
-    <div id="popupLogObservaciones" style="display:none">
-    	<div>Log de Observaciones</div>
-        <div>
-        	<div id="panelLogObservaciones" class="ctPanel">
-            	<span class="label label-inverse">Registro &raquo;</span>
-                	<table>
-                    	<tr>
-                        	<td>
-					<div class="tdDropDown">
-                            	<label class="lblPan">Fecha / Hora / Usuario</label>
-                            	<div id="dpDownLogObserv" style="margin-top:-5px"></div>
-						</div>
-                            </td>
-                            <td>
-                            	<label>Usuario</label>
-                                <input type="text" readonly id="txtUsrLogObserv" style="width:220px" class="textbox" />	
-                            </td>
-                            <td>
-					<div class="tdDropDown">
-                            	<label>Rec.</label>
-                                <div id="chkReclamoLogObserv" style="margin-top:-5px"></div>	
-						</div>
-                            </td>
-                        </tr>
-                    </table>
-                    <label style="margin-left:15px">Observaciones</label>
-					<div style="text-align:center">
-                    <textarea id="txtLogObservaciones" readonly style="width:460px;height:55px;resize:none;"></textarea>
-					</div>
-                  </div>
-               </div>
-         </div>
-         
-         <div id="popupHistoriaClinica" style="display:none">
-         	<div>Historia Cl&iacute;nica</div>
-            	<div>
-                	<div id="panelHistoriaClinica" class="ctPanel">
-                    	<table>
-                        	<tr>
-                            	<td>
-                                	<label>Cliente</label>
-                                    <input type="text" readonly id="txtClienteHC" style="width:200px" class="textbox" />      
-                                </td>
-                                <td>
-                                	<label>Nro. Afiliado</label>
-                                    <input type="text" id="txtAfiliadoHC" readonly style="width:200px" class="textbox" />      
-                                </td>
-                                 <td>
-                                	<label>Paciente</label>
-                                    <input type="text" id="txtPacienteHC" readonly style="width:260px" class="textbox" />      
-                                </td>
-                             </tr>
-                         </table>
-                         
-                         <table>
-                        	<tr>
-                            	<td>
-                                	<label class="lblPan">Sexo</label>
-                                    <input type="text" id="txtSexoHC" readonly style="width:70px" class="textbox centrado" />      
-                                </td>
-                                <td>
-                                	<label class="lblPan">Edad</label>
-                                    <input type="text" id="txtEdadHC" readonly style="width:70px;height:19px" class="textbox" />      
-                                </td>
-                                 <td>
-                                	<label class="lblPan">Domicilio</label>
-                                    <input type="text" id="txtDomHC" readonly style="width:300px" class="textbox" />  
-                                    <input type="text" id="txtLocHC" readonly style="width:60px;margin-left:-3px" class="textbox" />    
-                                </td>
-                                <td>
-                                	<label class="lblPan">Tel&eacute;fono</label>
-                                    <input type="text" id="txtTelHC" readonly style="width:148px" class="textbox" />      
-                                </td>
-                             </tr>
-                         </table>
-                         <table>
-                         	<tr>
-                            	<td>
-                                    <label class="lblPan">Observaciones</label>
-                                    <input type="text" id="txtObservHC" readonly style="width:330px" class="textbox" /> 
-                                </td>
-                         		<td>
-						<div class="tdDropDown">
-                                	<label>Desde</label>
-                                	<div id="dtDesdeHC" style="margin-top:-5px"></div>
-						</div>
-                                </td>
-                                <td>
-						<div class="tdDropDown">
-                                	<label>Hasta</label>
-                                    <div id="dtHastaHC" style="margin-top:-5px"></div>
-						</div>
-                                </td>
-                                <td>
-                               		<label>&nbsp;</label>
-                                    <button type="button" id="btnRefreshHC" onClick="refreshHC();" style="width:10px;min-width:30px;margin-top:-15px;background:#1FAEFF"></button>
-                                </td>
-                         	</tr>
-                         </table>
-                         
-                         <div id="grdHistoriaClinica" style="margin-left:auto;margin-right:auto"></div>
-                         
+<div id="popupLogObservaciones" style="display:none">
+    <div>Log de Observaciones</div>
+    <div>
+        <div id="panelLogObservaciones" class="ctPanel">
+            <span class="label label-inverse">Registro &raquo;</span>
+            <table>
+                <tr>
+                    <td>
+                        <div class="tdDropDown">
+                        	<label class="lblPan">Fecha / Hora / Usuario</label>
+                        	<div id="dpDownLogObserv" style="margin-top:-5px"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <label>Usuario</label>
+                        <input type="text" readonly id="txtUsrLogObserv" style="width:220px" class="textbox" />	
+                    </td>
+                    <td>
+                        <div class="tdDropDown">
+                        	<label>Rec.</label>
+                            <div id="chkReclamoLogObserv" style="margin-top:-5px"></div>	
                        </div>
-                     </div>
-                   </div>
+                    </td>
+                </tr>
+            </table>
+            <label style="margin-left:15px">Observaciones</label>
+			<div style="text-align:center">
+                <textarea id="txtLogObservaciones" readonly style="width:460px;height:55px;resize:none;"></textarea>
+			</div>
+        </div>
+    </div>
+</div>
+         
+<div id="popupHistoriaClinica" style="display:none">
+ 	<div>Historia Cl&iacute;nica</div>
+	<div>
+    	<div id="panelHistoriaClinica" class="ctPanel">
+        	<table>
+            	<tr>
+                	<td>
+                    	<label>Cliente</label>
+                        <input type="text" readonly id="txtClienteHC" style="width:200px" class="textbox" />      
+                    </td>
+                    <td>
+                    	<label>Nro. Afiliado</label>
+                        <input type="text" id="txtAfiliadoHC" readonly style="width:200px" class="textbox" />      
+                    </td>
+                     <td>
+                    	<label>Paciente</label>
+                        <input type="text" id="txtPacienteHC" readonly style="width:260px" class="textbox" />      
+                    </td>
+                 </tr>
+             </table>
+             
+            <table>
+            	<tr>
+                	<td>
+                    	<label class="lblPan">Sexo</label>
+                        <input type="text" id="txtSexoHC" readonly style="width:70px" class="textbox centrado" />      
+                    </td>
+                    <td>
+                    	<label class="lblPan">Edad</label>
+                        <input type="text" id="txtEdadHC" readonly style="width:70px;height:19px" class="textbox" />      
+                    </td>
+                     <td>
+                    	<label class="lblPan">Domicilio</label>
+                        <input type="text" id="txtDomHC" readonly style="width:300px" class="textbox" />  
+                        <input type="text" id="txtLocHC" readonly style="width:60px;margin-left:-3px" class="textbox" />    
+                    </td>
+                    <td>
+                    	<label class="lblPan">Tel&eacute;fono</label>
+                        <input type="text" id="txtTelHC" readonly style="width:148px" class="textbox" />      
+                    </td>
+                 </tr>
+            </table>
+            <table>
+             	<tr>
+                	<td>
+                        <label class="lblPan">Observaciones</label>
+                        <input type="text" id="txtObservHC" readonly style="width:330px" class="textbox" /> 
+                    </td>
+             		<td>
+			            <div class="tdDropDown">
+                    	   <label>Desde</label>
+                    	   <div id="dtDesdeHC" style="margin-top:-5px"></div>
+			            </div>
+                    </td>
+                    <td>
+			            <div class="tdDropDown">
+                    	   <label>Hasta</label>
+                            <div id="dtHastaHC" style="margin-top:-5px"></div>
+			            </div>
+                    </td>
+                    <td>
+                   		<label>&nbsp;</label>
+                        <button type="button" id="btnRefreshHC" onClick="refreshHC();" style="width:10px;min-width:30px;margin-top:-15px;background:#1FAEFF"></button>
+                    </td>
+             	</tr>
+            </table>
+             
+            <div id="grdHistoriaClinica" style="margin-left:auto;margin-right:auto"></div>
+             
+        </div>
+    </div>
+</div>
                          
          
             	
     
-    <div id='popupObservaciones' style="display:none">
-		<div>Observaciones</div>
-		<div> 
-    	 <div id="panelObservacionesIncidente" class="clsPanel" style="margin-bottom:3px">
-	<span class="label label-inverse">Incidente &raquo;</span>
-            <div id="contentPanelObservacionesIncidente"> 
+<div id='popupObservaciones' style="display:none">
+	<div>Observaciones</div>
+	<div class="contentPopup"> 
+    	<div style="margin-bottom:3px">
             <table>
                 	<tr>
                     	<td>
-				<div class="tdDropDown">	
-                        	<label>Fecha</label>
-                        	<div id="dtFechaIncObservaciones" style="margin-top:-5px"></div>
-					</div>
+				            <div class="tdDropDown">	
+                        	    <label>Fecha</label>
+                        	    <div id="dtFechaIncObservaciones" style="margin-top:-5px"></div>
+					       </div>
                         </td>
                     	<td>
                         	<label>Nro.</label>
@@ -467,79 +443,70 @@
         	                <input type="text" id="txtPacienteObservaciones" style="width:380px" class="textbox" />
                         </td>    
                         <td>
-				<div class="tdDropDown">
-            	            <label>Recl.</label>
-                	        <div id="chkReclamo" style="margin-top:-5px"></div>
-				</div>
+				            <div class="tdDropDown">
+            	               <label>Recl.</label>
+                	           <div id="chkReclamo" style="margin-top:-5px"></div>
+				            </div>
                         </td>           
                     </tr>
-                </table>
-            		</div>
-               	</div>
+            </table>
+        </div>
                 
-                <div id="panelObservaciones" class="clsPanel">
-        	<span class="label label-inverse" style="margin-bottom:4px">Observaciones &raquo;</span>
-            <div id="contentPanelObservaciones">                  
-                        <textarea id="txtAreaObservacionesRecl" style="width:677px;height:100px;resize:none;margin-left:5px;"></textarea>	     
-            		</div>
-               	</div>
-          <div class="centrado" style="margin-top:7px">
+        <div>          
+            <textarea id="txtAreaObservacionesRecl" style="width:677px;height:100px;resize:none;margin-left:5px;"></textarea>	     
+        </div>
+        <div class="centrado" style="margin-top:7px">
 			<div class="btn-group">
 				<button type="button" id="btnAceptarObservacionesRec" class="btn btnComun">Aceptar</button>
 				<button type="button" id="btnCancelarObservacionesRec" class="btn btnComun">Cancelar</button>
 			</div>
 		</div>      
-           </div>
-      </div>
+    </div>
+</div>
       
       
       
-      <div id='popupAvisos' style="display:none">
-		<div>Tips / Avisos de Servicios</div>
-		<div> 
-    	 <div id="panelAvisos" class="clsPanel">
-        	<span class="label label-inverse">Incidente &raquo;</span>
-            <div id="contentPanelObservacionesIncidente"> 
-            <table>
-                	<tr>
-                    	<td>
-				<div class="tdDropDown">
-                    	    <label>Fecha</label>
-                        	<div id="dtFechaAviso" style="margin-top:-5px"></div>
-					</div>
-                        </td>
-                    	<td>
-	                        <label>Nro.</label>
-    	                    <input type="text" id="txtNroIncAviso" style="width:50px" class="textbox centrado" />
-                        </td>
-                    	<td>
-        	                <label>Gdo.</label>
-            	            <input type="text" id="txtGdoAviso" style="width:50px" class="textbox centrado" />
-                        </td> 
-                        <td>
-                	        <label>Paciente</label>
-                    	    <input type="text" id="txtPacienteAviso" style="width:250px" class="textbox" />
-                        </td>    
-                        <td>
-                        	<label>Tip / Aviso</label>
-	                        <input type="text" id="txtTipAviso" style="width:165px" class="textbox" />
-                        </td>           
-                   </tr>
-           </table>
-            		</div>
-               	</div>
-                
-   
-         <div class="centrado" style="margin-top:12px">
+<div id='popupAvisos' style="display:none">
+	<div>Tips / Avisos de Servicios</div>
+	<div class="contentPopup"> 
+                <table>
+                    	<tr>
+                        	<td>
+    				            <div class="tdDropDown">
+                        	       <label>Fecha</label>
+                            	   <div id="dtFechaAviso" style="margin-top:-5px"></div>
+    					        </div>
+                            </td>
+                        	<td>
+    	                        <label>Nro.</label>
+        	                    <input type="text" id="txtNroIncAviso" style="width:50px" class="textbox centrado" />
+                            </td>
+                        	<td>
+            	                <label>Gdo.</label>
+                	            <input type="text" id="txtGdoAviso" style="width:50px" class="textbox centrado" />
+                            </td> 
+                            <td>
+                    	        <label>Paciente</label>
+                        	    <input type="text" id="txtPacienteAviso" style="width:250px" class="textbox" />
+                            </td>    
+                            <td>
+                            	<label>Tip / Aviso</label>
+    	                        <input type="text" id="txtTipAviso" style="width:165px" class="textbox" />
+                            </td>           
+                       </tr>
+                </table>
+                   
+        <div class="centrado" style="margin-top:12px">
 			<div class="btn-group">
 				<button type="button" id="btnAceptarAviso" class="btn btnComun">Aceptar</button>
 				<button type="button" id="btnCancelarAviso" class="btn btnComun">Cancelar</button>
 			</div>
-		</div>
-                
-           </div>
-      </div>
+		</div>               
+    </div>
+</div>
       
+
+<!-- TERMINA DEFINICION POPUPS DE MENU CONTEXTUAL DE GRILLA DE SERVICIOS -->
 
 <div id="jqxTabsOperativa">
 <ul>
@@ -616,7 +583,7 @@
 </div>
  
 <!--TAB FORMULARIO DE RECEPCION-->
-<div id="contentTabRecepcion">
+<div id="contentTabRecepcion" style="background-color:#f0f0f0" >
 		<!--MENU FORMULARIO DE RECEPCION-->
 		
 			<div id='jqxMenuRecepcion' style="margin-left:5px;margin-top:2px;">
@@ -675,9 +642,9 @@
             
             
             <!--FORMULARIO DE RECEPCION-->
-             <div id="jqxPanelRecepcion" style="margin-left:5px">
+             <div id="jqxPanelRecepcion">
              
-             <div id="contentRecepcion">
+
              	<table>
                 	<tr>
                 		<td>
@@ -865,13 +832,13 @@
            </div>
            
            <!--Termina DIV Panel-->
- 		 </div>
+
                 
      <!--Termina TAB FORMULARIO DE RECEPCION-->      
      </div>
      
      <!--EMPIEZA TAB TRASLADOS-->
-<div>
+<div  style="overflow:hidden;background-color:#f0f0f0">
 
 <div id='jqxMenuTraslados' style="margin-left:5px; margin-top:2px;">
  <ul style="margin-left:85px">
@@ -918,9 +885,9 @@
 </div>
             
             
-         <div>
-           <div id="panelTrasladosGeneral" class="clsPanel" style="margin-top:5px;margin-left:5px">
-            <div id="contentPanelTrasladosGeneral">
+
+           <div >
+
             	<table>
                 	<tr>
                 		<td>
@@ -955,7 +922,7 @@
                         
                         <td>
                         	<label>Paciente</label>
-            				<input type="text" id="txtPacienteTraslado" class="textbox" style="width:220px" />
+            				<input type="text" id="txtPacienteTraslado" class="textbox" style="width:250px" />
                         </td>
                     </tr>
                 </table>
@@ -977,7 +944,7 @@
                         
                         <td>
                         	<label>Motivo de Llamada - S&iacute;ntomas</label>
-            				<input type="text" id="txtSintomasTraslado" class="textbox" style="width:360px" />
+            				<input type="text" id="txtSintomasTraslado" class="textbox" style="width:390px" />
                         </td>
                         
                         <td>
@@ -1013,13 +980,12 @@
                     </tr>
                 </table> 
                 		<label style="margin-top:-5px">Observaciones</label>
-                		<input type="text" id="txtObservTraslado" style="resize:none;margin-left:2px;width:920px" class="textbox" > </textarea>  
+                		<input type="text" id="txtObservTraslado" style="resize:none;margin-left:2px;width:950px" class="textbox" > </textarea>  
                      
-            </div>
          </div>   
   
-  			<div id="panelTrasladosOrigen" class="clsPanel" style="margin-top:1px;margin-left:5px">
-            <div id="contentPanelTrasladosOrigen">
+  			<div>
+                <hr  style="margin-top:-3px;margin-bottom:3px;border-bottom:1px solid black"/>
             	<table>
                 	<tr>
                 		<td>
@@ -1033,7 +999,7 @@
                          </td>
                         <td>
 	                        <label>Domicilio - Calle</label>
-            				<input type="text" id="txtDomTrasladoOrigen" class="textbox itmInput" style="width:303px" />
+            				<input type="text" id="txtDomTrasladoOrigen" class="textbox itmInput" style="width:333px" />
                         </td>
                         
                         <td>
@@ -1073,7 +1039,7 @@
                         
                         <td>
                         	<label>Partido</label>
-                            <input type="text" id="txtPartidoTrasladoOrigen" class="textbox" style="width:220px" />
+                            <input type="text" id="txtPartidoTrasladoOrigen" class="textbox" style="width:250px" />
             				
                         </td>
                         
@@ -1085,14 +1051,12 @@
                         </td>
                         
                     </tr>
-                </table> 
-                 
-            </div>
-         </div>   
+                </table>     
+            </div>   
          
          
-         <div id="panelTrasladosDestino" class="clsPanel" style="margin-top:2px;margin-left:5px">
-            <div id="contentPanelTrasladosDestino">
+         <div>
+                <hr  style="margin-top:-3px;margin-bottom:3px;border-bottom:1px solid black"/>
             	<table>
                 	<tr>
                 		<td>
@@ -1106,7 +1070,7 @@
                          </td>
                         <td>
 	                        <label>Domicilio - Calle</label>
-            				<input type="text" id="txtDomTrasladoDestino" class="textbox itmInput"  style="width:303px" />
+            				<input type="text" id="txtDomTrasladoDestino" class="textbox itmInput"  style="width:333px" />
                         </td>
                         
                         <td>
@@ -1146,7 +1110,7 @@
                         
                         <td id="tdPartidoTrasladoDestino" class="escondoElemento">
                         	<label>Partido</label>
-                            <input type="text" id="txtPartidoTrasladoDestino" class="textbox"  style="width:220px" />     
+                            <input type="text" id="txtPartidoTrasladoDestino" class="textbox"  style="width:250px" />     
                         </td>
                         <td>
 				<div class="tdDropDown">
@@ -1165,10 +1129,7 @@
                         
                     </tr>
                 </table> 
-                
-                
-                 
-            </div>
+                    
          </div> 
          
          <!--<div id="grillasRealizacionProgramaciones" class='escondoElemento'>
