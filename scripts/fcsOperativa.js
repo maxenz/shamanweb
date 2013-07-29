@@ -744,25 +744,21 @@ function pruebaJSON() {
 	
 	function setGrdMoviles() {
 	
-				$.ajax({
-					type: 'GET',
-					dataType: 'json',
-					url:'qryMoviles.php?opt=0',
-					success: function(moviles){
-					
-					
-
-						var source =
-						{
-							localdata: moviles,
-							datatype: "array"
-						};
-					
-						initGrdMoviles(source);						
-					},
-				});
-		
-		
+		$.ajax({
+			type: 'GET',
+			dataType: 'json',
+			url:'qryMoviles.php?opt=0',
+			success: function(moviles){
+			
+				var source =
+				{
+					localdata: moviles,
+					datatype: "array"
+				};
+			
+				initGrdMoviles(source);						
+			},
+		});	
 	}
 	
 	function tieneReclamo(ID){
@@ -843,17 +839,19 @@ function pruebaJSON() {
 		 
 			var data = $('#grdIncidentes').jqxGrid('getrowdata',row);
 			var ID = data["ID"];
-			var bRec = tieneReclamo(ID);
+			var flgRec = data["Reclamo"];
+			console.log(ID + " reclamo: " + flgRec);
+			//var bRec = tieneReclamo(ID);
 			
-			if ((value != '') && (bRec)) {
+			if ((value != '') && (flgRec == 1)) {
 					
 		  		return '<div style="width:100%;height:100%;text-align:center;line-height:26px;background:yellow;color:red;font-weight:bold;">!</div>';  
 				
-			} else if ((value != '') && (!bRec)) {
+			} else if ((value != '') && (flgRec == 0)) {
 				
 				return '<div style="width:100%;height:100%;text-align:center;line-height:26px;background:yellow;color:red;font-weight:bold;"></div>';
 					
-			} else if ((value == '') && (bRec)) {
+			} else if ((value == '') && (flgRec == 1)) {
 				
 				return '<div style="width:100%;height:100%;text-align:center;line-height:26px;color:red;font-weight:bold;">!</div>';					
 				
@@ -1019,6 +1017,7 @@ function pruebaJSON() {
 					datatype: "array"
 				};
 				
+				setReclamos(incidentes);
 				initGrdIncidentes(source);							
 			},
 		});
@@ -1037,20 +1036,23 @@ function pruebaJSON() {
 						 id: 'ID',
     		};	
 	
-		columnasIncidentes = [{ text: 'ID', datafield: 'ID', width: 30, align: 'center',hidden:true },
-							  { text: 'Cod', datafield: 'Grado', width: 40, cellsrenderer: cellsRendererGrado , align: 'center'},
-							  { text: 'Entidad', width:60, datafield: 'Cliente', align: 'center'},
-							  { text: 'Nro', datafield: 'Traslado', width: 40,cellsalign:'center', align: 'center' },
-							  { text: 'Domicilio', datafield: 'Domicilio', width: 130, align: 'center' },
-							  { text: 'Sintomas', datafield: 'Sintomas', width: 120 , align: 'center'},
-							  { text: 'Loc', datafield: 'Localidad', width: 40, cellsrenderer: cellsRendererZona, align: 'center' },
-							  { text: 'SE', datafield: 'SexoEdad', width: 40, cellsalign:'center', align: 'center' },
-							  { text: 'ColGr', datafield: 'ColorGrado', hidden:true},
-							  { text: 'ColZona', datafield: 'ColorZona',hidden:true},
-							  { text: 'Mov', datafield: 'Movil', width: 35, cellsalign:'center', align: 'center' },
-							  { text: 'Fecha', datafield: 'Fecha', width: 70, align: 'center' },
-							  { text: 'Lleg', datafield: 'HoraLlegada', width: 40 , align: 'center'},
-							  { text: 'Paciente', datafield: 'Paciente', width: 180, align: 'center' }]; 
+		columnasIncidentes = [
+								{ text: 'ID', datafield: 'ID', width: 30, align: 'center',hidden:true },
+								{ text: 'Cod', datafield: 'Grado', width: 40, cellsrenderer: cellsRendererGrado , align: 'center'},
+								{ text: 'Entidad', width:60, datafield: 'Cliente', align: 'center'},
+								{ text: 'Nro', datafield: 'Traslado', width: 40,cellsalign:'center', align: 'center' },
+								{ text: 'Domicilio', datafield: 'Domicilio', width: 130, align: 'center' },
+								{ text: 'Sintomas', datafield: 'Sintomas', width: 120 , align: 'center'},
+								{ text: 'Loc', datafield: 'Localidad', width: 40, cellsrenderer: cellsRendererZona, align: 'center' },
+								{ text: 'SE', datafield: 'SexoEdad', width: 40, cellsalign:'center', align: 'center' },
+								{ text: 'ColGr', datafield: 'ColorGrado', hidden:true},
+								{ text: 'ColZona', datafield: 'ColorZona',hidden:true},
+								{ text: 'Mov', datafield: 'Movil', width: 35, cellsalign:'center', align: 'center' },
+								{ text: 'Fecha', datafield: 'Fecha', width: 70, align: 'center' },
+								{ text: 'Lleg', datafield: 'HoraLlegada', width: 40 , align: 'center'},
+								{ text: 'Paciente', datafield: 'Paciente', width: 180, align: 'center' },
+								{ datafield: 'Aviso', hidden: true}
+							  ]; 
 	}
 	
 	function setHistorial(pInc) {
@@ -2001,6 +2003,21 @@ function pruebaJSON() {
 		}
 
 	}
+
+	function setReclamos(incidentes) {
+
+		$.ajax({
+			type: "POST",
+			dataType: "json",
+			data: { pArray : incidentes },
+			url: "setReclamos.php",
+			success: function(datos){	
+
+				
+			}
+		});
+
+	}
 	
 	function setGrillaTimer(){
 		
@@ -2136,8 +2153,10 @@ function pruebaJSON() {
 		var grado = data["Grado"];
 		var paciente = data["Paciente"];
 		var colorGdo = data["ColorGrado"];
+		var aviso = data["Aviso"];
 		fechaInc = fechaInc.substring(0,10);
 		fechaInc = strDateToJavascriptDate(fechaInc);
+
 		
 		var vecContenido = [];
 		vecContenido[0] = fechaInc;
@@ -2145,6 +2164,7 @@ function pruebaJSON() {
 		vecContenido[2] = grado;
 		vecContenido[3] = colorGdo;
 		vecContenido[4] = paciente;
+		vecContenido[5] = aviso;
 		
 		return vecContenido;
 			
@@ -2353,6 +2373,9 @@ function pruebaJSON() {
 		var observ = $('#txtAreaObservacionesRecl').val();
 		var checked = $('#chkReclamo').jqxCheckBox('checked');
 		if (checked) flgRec = 1;
+		if ($('#txtAreaObservacionesRecl').val() == '') {
+			setMessage('error',1200,'Debe ingresar una observación.','','');
+		} else {
 		$.ajax({
 				type: "GET",
 				url: "updateIncidentes.php?opt=1&fecha="+fecha+"&inc="+inc+"&observ="+observ+"&flgRec="+flgRec+"&user="+user,
@@ -2363,7 +2386,8 @@ function pruebaJSON() {
 					$('#txtAreaObservacionesRecl').val('');
 				
 				}
-			});				
+			});	
+		}			
 	}
 	
 	
@@ -2476,6 +2500,7 @@ function pruebaJSON() {
 		
 		if (txtToFocus != '') $('#notif').notify({ onClosed: $('#'+txtToFocus).focus()}) ;
 		if (pos != '') $('#notif').css("top",pos+"px");
+		$('#notif').css("z-index",99999);
 	
 	}
 	
@@ -3094,7 +3119,7 @@ $('#grdIncidentes').on('rowdoubleclick', function (event)
 	$('#popupObservaciones').on('open',function(e) {
 		
 		var vecObserv = getDataIncidenteForPopup();
-		
+
 		$('#dtFechaIncObservaciones').jqxDateTimeInput('setDate', vecObserv[0]);
 		$('#panelObservacionesIncidente :input').attr("disabled",true);
 		$('#txtNroIncObservaciones').val(vecObserv[1]);
@@ -3116,6 +3141,7 @@ $('#grdIncidentes').on('rowdoubleclick', function (event)
 		$('#txtGdoAviso').css("background-color","#"+vecAvisos[3]);
 		$('#txtPacienteAviso').val(vecAvisos[4]);
 		$('#popupAvisos').jqxWindow('focus');
+		$('#txtTipAviso').val(vecAvisos[5]);
 		$('#txtTipAviso').focus();
 			
 	});

@@ -1289,7 +1289,6 @@ var spinner = new Spinner(opts).spin(target);
 <script src="../scripts/fcsOperativa.js"></script>
 <script>
 
-
 //var user = '<?php echo $_SESSION['s_username'] ?>';
 
 //setGrillaTimer();
@@ -1302,20 +1301,7 @@ setInitialData();
 
 //initSetGraficos();
 
-
-
 //setDataGrillaSugerencias(0,'','');
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 
