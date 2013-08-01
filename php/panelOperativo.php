@@ -312,9 +312,8 @@
 <div id="popupLogObservaciones" style="display:none">
     <div>Log de Observaciones</div>
     <div>
-        <div id="panelLogObservaciones" class="ctPanel">
-            <span class="label label-inverse">Registro &raquo;</span>
-            <table>
+        <div id="panelLogObservaciones">
+            <table style="margin-left:auto;margin-right:auto">
                 <tr>
                     <td>
                         <div class="tdDropDown">

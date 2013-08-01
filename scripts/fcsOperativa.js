@@ -9,7 +9,7 @@ var flgLoc = 0;
 var flgSanatorio = 0;
 var flgSintomas = 0;
 var flgIncTras = 0;
-var vecReclamos = [];
+vecReclamos = [];
 var datosPaciente = [];	
 var columnas = [];
 var columnasHistorialTraslado = [];
@@ -17,7 +17,7 @@ var columnasProgramacionTraslado = [];
 var sourceGrados = [];
 var sourceProgramacionTraslado = [];
 var sourceHistorialTraslado = [];
-var  cellsRendererGrado, cellsRendererZona,dataAdapter,dataAdapterSug,dataAdapterDiag,cellsRendererIncMov;
+var cellsRendererGrado, cellsRendererZona,dataAdapter,dataAdapterSug,dataAdapterDiag,cellsRendererIncMov;
 var acumCategorizador = 0;
 var flgPediatrico = 0;
 var idSintoma = 0;
@@ -260,7 +260,7 @@ function pruebaJSON() {
 		$('#popupAvisos').jqxWindow({ position: { x: x, y: y} });
 		
 		//POPUP LOG OBSERVACIONES
-		$("#popupLogObservaciones").jqxWindow({ height:210, width: 500, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
+		$("#popupLogObservaciones").jqxWindow({ height:190, width: 500, theme: 'metro', autoOpen:false, isModal: true, resizable: false, animationType: 'combined'});
 		x = ($(window).width() - $("#popupLogObservaciones").jqxWindow('width')) / 2 + $(window).scrollLeft();
 	       y = ($(window).height() - $("#popupLogObservaciones").jqxWindow('height')) / 2 + $(window).scrollTop();
 		$('#popupLogObservaciones').jqxWindow({ position: { x: x, y: y} });
@@ -623,6 +623,8 @@ function pruebaJSON() {
 	}
 	
 	function initGrdIncidentes(datos) {
+
+		
 	
 		 $("#grdIncidentes").jqxGrid({
 			width: 800,
@@ -637,7 +639,7 @@ function pruebaJSON() {
 			columns: columnasIncidentes,
 			source: datos,
 			theme: 'metro',
-   		 });						
+   		 });			
 		
 	}
 	
@@ -686,8 +688,7 @@ function pruebaJSON() {
 				initGrdDiagnosticos();
 				initGrdHistorial();
 				initGrdProgramacion();
-				setRenderersIncidentes();
-				setColumnasIncidentes();		
+		
 				setRenderersMoviles();
 				setColumnasMoviles();
 				setTooltips();
@@ -706,10 +707,14 @@ function pruebaJSON() {
 						datatype: "json"
 					};
 
-				initGrdMoviles(moviles);
+				var jsonIncidentes = JSON.parse(incidentes.localdata);
+
+				setRenderersIncidentes();
+				setColumnasIncidentes();
 				initGrdIncidentes(incidentes);
 				initDropDown(datos.iva,datos.grados);
 				initLogIncidentes(datos.logInc);
+				initGrdMoviles(moviles); 
 				flgMaxEmergencia = datos.valorEmer;
 				spinner.stop();
 				$('#jqxTabsOperativa').css("display","block");
@@ -765,6 +770,7 @@ function pruebaJSON() {
 		
 		var bRec = false;
 		ID = ID.toString();
+		console.log(vecReclamos);
 		
 		for (var i = 0; i < vecReclamos.length; i++) {
 			
@@ -839,19 +845,17 @@ function pruebaJSON() {
 		 
 			var data = $('#grdIncidentes').jqxGrid('getrowdata',row);
 			var ID = data["ID"];
-			var flgRec = data["Reclamo"];
-			console.log(ID + " reclamo: " + flgRec);
-			//var bRec = tieneReclamo(ID);
+			var reclamo = data["Reclamo"];
 			
-			if ((value != '') && (flgRec == 1)) {
+			if ((value != '') && (reclamo == 1)) {
 					
 		  		return '<div style="width:100%;height:100%;text-align:center;line-height:26px;background:yellow;color:red;font-weight:bold;">!</div>';  
 				
-			} else if ((value != '') && (flgRec == 0)) {
+			} else if ((value != '') && (reclamo == 0)) {
 				
 				return '<div style="width:100%;height:100%;text-align:center;line-height:26px;background:yellow;color:red;font-weight:bold;"></div>';
 					
-			} else if ((value == '') && (flgRec == 1)) {
+			} else if ((value == '') && (reclamo == 1)) {
 				
 				return '<div style="width:100%;height:100%;text-align:center;line-height:26px;color:red;font-weight:bold;">!</div>';					
 				
@@ -1000,7 +1004,6 @@ function pruebaJSON() {
 							   {text: 'ViajeId', datafield: 'ViajeId', hidden:true}
 							   ]; 
 	
-	
 	}
 	
 	function setIncidentesActuales() {
@@ -1017,7 +1020,6 @@ function pruebaJSON() {
 					datatype: "array"
 				};
 				
-				setReclamos(incidentes);
 				initGrdIncidentes(source);							
 			},
 		});
@@ -1655,8 +1657,6 @@ function pruebaJSON() {
 			type : 'GET',
 			success : function(pInc){
 			
-				pInc = parseInt(pInc);
-				pInc = pInc + 1;
 				$('#txtNroIncidente').val(pInc);
 		
 			}
@@ -2004,20 +2004,26 @@ function pruebaJSON() {
 
 	}
 
-	function setReclamos(incidentes) {
+	// function setReclamos(incidentes) {
 
-		$.ajax({
-			type: "POST",
-			dataType: "json",
-			data: { pArray : incidentes },
-			url: "setReclamos.php",
-			success: function(datos){	
+	// 	var vRec = [];
 
-				
-			}
-		});
+	// 	for (var i = 0; i < incidentes.length; i++) {
+	// 		vRec.push(incidentes[i].ID);
+	// 	}
 
-	}
+
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		data: { pArray : vRec },
+	// 		url: "setReclamos.php",
+	// 		success: function(datos){	
+
+	// 			vecReclamos = datos;
+	// 			console.log(vecReclamos);
+	// 		}
+	// 	});
+	// }
 	
 	function setGrillaTimer(){
 		

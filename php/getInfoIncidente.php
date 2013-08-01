@@ -115,6 +115,7 @@
 		$strHoy = "" . $hoy;
 		$db = new cDB();
 		$db->Connect();
+		$rtaInc = "";
 		
 		$SQL = "SELECT TOP 1 NroIncidente FROM Incidentes WHERE FecIncidente = cast('$hoy' as datetime) AND NroIncidente <> '' ORDER BY NroIncidente DESC";
 		
@@ -123,17 +124,40 @@
 		if ($fila = $db->Next()) {
 
 			$nroInc = odbc_result($fila,'NroIncidente');
+			$inc = (int) $nroInc;
+			$rtaInc = getSecuencial($inc);
 			
 		} else {
 
-			$nroInc = "0";
+			$rtaInc = "001";
 		
 		}		
 		
-		echo $nroInc;
+		echo $rtaInc;
 	
+	}
+
+	function getSecuencial($inc) {
+
+		$strInc = "";
+
+		switch ($inc) {
+
+			case ($inc < 9) :
+				$inc++;
+				$strInc = "00" . $inc;
+			break;
+
+			case (($inc >=9) && ($inc < 999)) :
+				$inc++;
+				$strInc = "0" . $inc;
+			break;
+
+		}
+
+		return $strInc;
+
 	}
 	
 	
-
 ?>

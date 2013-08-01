@@ -33,7 +33,7 @@
 			$SQLINC = $SQLINC . " san.AbreviaturaId as sanAbrID, vij.ViajeId as viajeID,";	
 		}
 		$SQLINC = $SQLINC . "dom.Domicilio as dom, inc.Sintomas as sint, zon.ColorHexa as zonColor, Loc.AbreviaturaId as locAbrID, inc.Sexo as incSexo,";
-		$SQLINC = $SQLINC . "inc.Edad as incEdad, mov.Movil as MovilDespachado, inc.Aviso as Aviso, inc.Observaciones as Observaciones,incObs.flgReclamo as reclamo ";
+		$SQLINC = $SQLINC . "inc.Edad as incEdad, mov.Movil as MovilDespachado, inc.Aviso as Aviso, inc.Observaciones as Observaciones ";
 		$SQLINC = $SQLINC . "FROM IncidentesViajes vij ";
 		$SQLINC = $SQLINC . "INNER JOIN IncidentesDomicilios dom ON (vij.IncidenteDomicilioId = dom.ID) ";
 		$SQLINC = $SQLINC . "INNER JOIN Incidentes inc ON (dom.IncidenteId = inc.ID) ";
@@ -44,7 +44,6 @@
 		$SQLINC = $SQLINC . "LEFT JOIN Moviles mov ON (vij.MovilId = mov.ID) ";
 		$SQLINC = $SQLINC . "LEFT JOIN Moviles pre ON (vij.MovilPreasignadoId = pre.ID) ";
 		$SQLINC = $SQLINC . "LEFT JOIN Sanatorios san ON (dom.SanatorioId = san.ID) ";
-		$SQLINC = $SQLINC . "LEFT JOIN IncidentesObservaciones incObs ON (inc.ID = incObs.IncidenteId) ";
 		$SQLINC = $SQLINC . "WHERE vij.flgStatus = 0 AND gdo.flgIntDomiciliaria = 0 ";
 		$SQLINC = $SQLINC . "ORDER BY gdo.Orden, vij.ViajeId ";
 				
@@ -56,6 +55,9 @@
 					$vecLlamada = array();
 					$vecLlamada = explode(" ",odbc_result($fila,'llam'));
 					$llamada = str_split($vecLlamada[1],5);
+					$id = odbc_result($fila,'incID');
+					$reclamo = tieneReclamo($id);
+
 						
 					$datos[] = array(
 						'ID' => odbc_result($fila,'incID'),
@@ -79,7 +81,7 @@
 						'ViajeId' => odbc_result($fila,'ViajeId'),
 						'MovilPreasignado' => odbc_result($fila,'MovilPreasignado'),
 						'MovilDespachado' => odbc_result($fila,'MovilDespachado'),
-						'Reclamo' => odbc_result($fila,'reclamo')
+						'Reclamo' => $reclamo
 					);				
 				} else {
 						
@@ -121,6 +123,24 @@
 		
 		$db->Disconnect();
 	
+	}
+
+	function tieneReclamo($id){
+	
+		$db = new cDB();
+		$db->Connect();
+		$SQL = "SELECT * FROM IncidentesObservaciones WHERE (IncidenteId = $id) AND (flgReclamo = 1)";
+		$db->Query($SQL);
+		if ($fila = $db->Next()) {	
+
+			return 1;
+
+		} else {
+
+			return 0;
+		}
+		
+		$db->Disconnect();			
 	}
 
 ?>
