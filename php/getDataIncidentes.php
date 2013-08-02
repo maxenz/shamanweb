@@ -117,9 +117,8 @@
 			}
 				return json_encode($datos);
 				
-			} else {
-				return "La tabla regiones está vacía.<br />";
-		}
+			}
+		
 		
 		$db->Disconnect();
 	

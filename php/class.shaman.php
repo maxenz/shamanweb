@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
 class cDB {
 	var $link = NULL;
 	var $errmsg = "";

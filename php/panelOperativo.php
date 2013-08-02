@@ -127,19 +127,20 @@
            		<input type="hidden" id="hidRowIncidente" />
                 <input type="hidden" id="hidIdAfiliado" />
                 <input type="hidden" id="hidAbrLoc" />
+                <div id="grpSugerencia">
             	<table>
                 	<tr>
                     	<td>
                             <label id="movEmpresa">M&oacute;vil</label>
-                            <input type="text" id="txtMovEmpresa" style="width:80px" class="textbox centrado" />
+                            <input type="text" id="txtMovEmpresa" readonly style="width:80px" class="textbox centrado" />
                         </td>
                     	<td>
                             <label id="estNombre">Estado</label>
-                            <input type="text" id="txtEstNombre" style="width:150px" class="textbox" />
+                            <input type="text" id="txtEstNombre" readonly style="width:150px" class="textbox" />
                         </td>
                     	<td>
                             <label id="tipoMovCob">Tipo de M&oacute;vil</label>
-                            <input type="text" id="txtTipoMovCob" style="width:150px" class="textbox" />
+                            <input type="text" id="txtTipoMovCob" readonly style="width:150px" class="textbox" />
                         </td>
                         <td id="accionPreDesp" style="display:none">
                             <div class="tdDropDown" id="accion" >
@@ -150,6 +151,7 @@
      	
                     </tr>
                 </table>
+            </div>
         </div>
 
 		<div class="centrado" style="margin-top:10px">

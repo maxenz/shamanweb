@@ -455,13 +455,18 @@ function pruebaJSON() {
 		
 	function initGrdSugerenciaMovilesEmpresas(sourceMovilesEmpresas,columnasMovilesEmpresas) {
 		
+		var srcSugerencia = 
+					{
+						localdata: sourceMovilesEmpresas,
+						datatype: "json"
+					};
+		var dASugerencia = new $.jqx.dataAdapter(srcSugerencia);
 		$("#grdSugerenciaMovilesEmpresas").jqxGrid({
 			width: 680,
 			height:110,
-			columnsresize: false,
-	        source: sourceMovilesEmpresas,
-	        theme: 'metro',
-	        columns: columnasMovilesEmpresas
+			columns: columnasMovilesEmpresas,
+	        source: dASugerencia,
+	        theme: 'metro'
 	    });			
 	}
 	
@@ -666,8 +671,11 @@ function pruebaJSON() {
 			type: 'GET',
 			dataType: 'json',
 			url: 'getInitialData.php',
+			error: function (request, status, error) {
+        		console.log(request.responseText);
+    		},
 			success: function(datos){
-				
+
 				$(document).ready(function() {
 			
 				//$('#tituloOpcion').text('Operativa');
@@ -770,7 +778,7 @@ function pruebaJSON() {
 		
 		var bRec = false;
 		ID = ID.toString();
-		console.log(vecReclamos);
+
 		
 		for (var i = 0; i < vecReclamos.length; i++) {
 			
@@ -804,8 +812,6 @@ function pruebaJSON() {
 	
 	function setRenderersIncidentes() {
 	
-	
-		
 		 cellsRendererGrado = function (row, columnfield, value, defaulthtml, columnproperties) {
 			var data = $('#grdIncidentes').jqxGrid('getrowdata',row);
 			var color = "#" + data["ColorGrado"];	  
@@ -815,14 +821,14 @@ function pruebaJSON() {
 		cellsRendererSalida = function(row,columnfield,value,defaulthtml,columnproperties){
 			var data = $('#grdIncidentes').jqxGrid('getrowdata',row);
 			var movDespachado = data["MovilDespachado"];
-			
-			if (movDespachado != 0 ) {
+			if (movDespachado) {
 			
 				return '<div style="width:35px;height:27px;text-align:center;line-height:27px;font-weight:bold;color:black">'+value+'</div>';
 			
 			} else {
 				var movPreasignado = data["MovilPreasignado"];
-				if (movPreasignado != 0) {
+
+				if (movPreasignado) {
 					
 				return '<div style="width:35px;height:27px;text-align:center;line-height:27px;font-weight:bold;color:blue">'+movPreasignado+'</div>';
 				}
@@ -1312,6 +1318,8 @@ function pruebaJSON() {
 	
 	
 	function setDataGrillaSugerencias(opt,loc,gdo) {
+
+		limpiarPopupSugerencias();
 	
 		if (opt == 0) {
 		
@@ -1324,6 +1332,14 @@ function pruebaJSON() {
 	
 		//$("#grdSugerenciaMovilesEmpresas").jqxGrid({ _cachedcolumns: null });
 		//$('#grdSugerenciaMovilesEmpresas').jqxGrid({ columns : columnasSugerenciasDespacho, source: sourceSugerenciasDespacho  });	
+	}
+
+	function limpiarPopupSugerencias() {
+
+		$('#txtMovEmpresa').val('');
+		$('#txtEstNombre').val('');
+		$('#txtTipoMovCob').val('');
+
 	}
 	
 	function getToday() {
@@ -2420,11 +2436,11 @@ function pruebaJSON() {
 
 	
 	
-		function validoPreasignacion() {
+	function validoPreasignacion() {
 		
 		var bPreasignar = true;
 		
-		$('#panelPreDespMovilEmpresa input[type="text"]').each(function(index, element) {
+		$('#grpSugerencia input[type="text"]').each(function(index, element) {
             
 			if ($(this).val() == '') {
 				
@@ -2443,16 +2459,15 @@ function pruebaJSON() {
 		fechaInc = getFechaSQL(fechaInc);
 		var nroMov = $('#txtMovEmpresa').val();
 		var idViaje = $('#hidIdViaje').val();
+		if (!validoPreasignacion()) nroMov = 0;
 		
-		if (nroMov == '') nroMov = 0;
-	
 		$.ajax({
 				type: "GET",
 				url: "setSalidas.php?opt=0&fecha="+fechaInc+"&idViaje="+idViaje+"&mov="+nroMov,
 				success: function(datos){
-				
-					refreshDataInc(0);
+								
 					$('#popupPreasignoDespacho').jqxWindow('close');
+					refreshDataInc(0);	
 										
 				}
 			});
@@ -2464,25 +2479,61 @@ function pruebaJSON() {
 		fechaInc = getFechaSQL(fechaInc);
 		var nroMov = $('#txtMovEmpresa').val();
 		var idViaje = $('#hidIdViaje').val();
+		var tipoServicio = getTipoServicio();
+		var condicion = getTipoAccion();
 		
 		if ((nroMov == '')) {
 		
-			alert('Debe indicar un móvil.');
+			setMessage('error',1000,'Debe indicar un móvil para despachar el servicio.','','');
 		
 		} else {
+
+			var url = "setSalidas.php?opt=1";
+			url+= "&fecha="+fechaInc;
+			url+= "&mov="+nroMov;
+			url+= "&idViaje="+idViaje;
+			url+= "&tServ=" +tipoServicio;
+			url+= "&cond=" +condicion;
 		
 			$.ajax({
 				type: "GET",
-				url: "setSalidas.php?opt=1&fecha="+fechaInc+"&mov="+nroMov+"&idViaje="+idViaje,
+				url: url,
 				success: function(datos){
-					
 
+					console.log(datos);
 					refreshDataInc(0);
 					
-				
 				}
 			});	
 		}	
+	}
+
+	function getTipoServicio() {
+
+		if ($('#movEmpresa').text() == 'Empresa') {
+
+			return 'Z';
+
+		} else {
+
+			return 'S';
+		}
+	}
+
+	function getTipoAccion() {
+
+		var opt = $('#dpDownAccion').jqxDropDownList('getSelectedIndex');
+		switch (opt) {
+
+			case 0:
+				return 'REE';
+			break;
+
+			case 1:
+				return 'APO';
+			break;
+		}
+		
 	}
 	
 	function strDateToJavascriptDate(fecha) {
@@ -3747,26 +3798,15 @@ $('#grdIncidentes').on('rowdoubleclick', function (event)
 	
 	$('#btnAceptarPreDesp').click(function(e) {
 	
-		if ($('#hidFlgSalida').val() == 0) {
-		
-			preasignoIncidente();
-		
-		} else {
-		
-			despachoIncidente();
-		
-		}
-        		
-		//var bPreasignar = validoPreasignacion();
-		
-		// if (bPreasignar) {
+			if ($('#hidFlgSalida').val() == 0) {
 			
-			// preasignoIncidente();
-				
-		// } else {
+				preasignoIncidente();
 			
-			// alert('Complete todos los campos para preasignar');	
-		// }
+			} else {
+			
+				despachoIncidente();
+			
+			}
     });
 	
 	$('#popupClientes').on('open',function(ev){

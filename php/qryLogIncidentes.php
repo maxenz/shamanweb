@@ -69,12 +69,9 @@
 				
 				return $log;
 													
-			} else {
+			} 
 							
-				echo "No hay registros";	
-							
-			}
-							
+			
 			$db->Disconnect();
 		
 	}
