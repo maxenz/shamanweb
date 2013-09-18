@@ -1,13 +1,8 @@
 <?php
-/*
-	Clase para manejo de base de datos MySQL.
-	Version: 1.2.1
-	Created: long time ago.
-	Modified: 2012-06-24
-	Author: DriverOp. http://driverop.com.ar/
-	Licence: LGPL 3. http://www.gnu.org/licenses/lgpl.html
-*/
-class cDB {
+
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+class cDBCache {
 	var $link = NULL;
 	var $errmsg = "";
 	var $error = false;
@@ -18,33 +13,36 @@ class cDB {
 	var $last_id = 0;
 	var $lastsql = "";
 	
-	function __construct($dbhost = null, $dbname = null, $dbuser = null, $dbpass = null) {
-		if (!empty($dbhost) and !empty($dbname) and !empty($dbuser) and !empty($dbpass)) {
-			$this->Connect($dbhost, $dbname, $dbuser, $dbpass);
+	function __construct($dbDSN = null, $dbuser = null, $dbpass = null) {
+		if (!empty($dbDSN) and !empty($dbuser) and !empty($dbpass)) {
+			$this->Connect($dbDSN, $dbuser, $dbpass);
 		}
 	}
 	
 	function CheckError() {
-		$this->errno = mysql_errno();
+		$this->errno = odbc_error();
 		$this->error = $this->errno != 0;
-		$this->errmsg = $this->errno.": ".mysql_error();
+		$this->errmsg = $this->errno.": ".odbc_errormsg();
 		return $this->error;
 	}
 	
-	function Connect($dbhost, $dbname, $dbuser, $dbpass) {
-		$this->link = @mysql_connect($dbhost, $dbuser, $dbpass, true);
-        if (!$this->CheckError()) {
-            @mysql_select_db($dbname);
-        }
-        $this->CheckError();
-        return $this->error;
+	function Connect() {
+
+		$this->link = odbc_connect('phpODBC','_SYSTEM','sys');
+
+		if (!$this->link) {
+			return "Connection Failed: " . $this->link;}
+		
+		return '';
     }
 	
 	function Disconnect() {
+		
 		if ($this->link !== NULL) {
-			mysql_close($this->link);
+			odbc_close($this->link);
 			$this->link = NULL;
 		}
+
 	}
 	
 	function IsConnected() {
@@ -61,15 +59,16 @@ class cDB {
 	
 	function Query($sql) {
 		$this->numrows = 0;
-		$this->result = mysql_query($sql,$this->link);
+		$this->result = odbc_exec($this->link, $sql);
 		$this->lastsql = $sql;
 		if (!$this->CheckError()) {	
 			if (!is_bool($this->result)) {
-				$this->numrows = mysql_num_rows($this->result);
+				$this->numrows = odbc_num_rows($this->result);
 			} else {
-				$this->affectedrows = mysql_affected_rows($this->link);
+				$this->affectedrows = odbc_num_rows($this->link);
 			}
 		}
+		
 		return $this->result;
 	}
 	
@@ -78,14 +77,14 @@ class cDB {
 		if (!is_array($lista)) {
 			$this->error = true;
 			$this->errno = -1;
-			$this->errmsg = "Segundo parámetro no es array ('campo'=>'valor')";
+			$this->errmsg = "Segundo parÃ¡metro no es array ('campo'=>'valor')";
 			return false; }
 		else  {
 			$sql = "UPDATE `".$tabla."` SET";
 			foreach ($lista as $key => $value) {
 				$sql .= " `".$key."` = '".$value."',";
 			}
-			$sql = substr($sql, 0, -1); // Quita la última coma.
+			$sql = substr($sql, 0, -1); // Quita la Ãºltima coma.
 			$where = trim($where);
 			if (!empty($where)) {  $sql .= " WHERE ".$where; }
 			$sql .= ";";
@@ -105,7 +104,7 @@ class cDB {
 		if (!is_array($lista)) {
 			$this->error = true;
 			$this->errno = -1;
-			$this->errmsg = "Segundo parámetro no es array ('campo'=>'valor')";
+			$this->errmsg = "Segundo parÃ¡metro no es array ('campo'=>'valor')";
 			return false;
 		} else {
 			$sql = "INSERT INTO `".$tabla."` (`".implode("`, `",array_keys($lista))."`) VALUES ('".implode("', '",array_values($lista))."');";
@@ -143,15 +142,17 @@ class cDB {
 		}
 		else { return false; }
 	}
-	
+
 	function Next($res = NULL) {
 		if ($res == NULL) {
 			$res = $this->result;
 		}
-		if (mysql_num_rows($res) > 0) {
-			return mysql_fetch_assoc($res);
+		if (odbc_fetch_row($res)) {
+			return  $res;}
+		else {
+			return false;
 		}
-		else { return false; }
+
 	}
 
 	function Last($res = NULL) {
@@ -231,5 +232,12 @@ class cDB {
 	}
 	
 }
+
+
+
+
+
+
+
 
 ?>

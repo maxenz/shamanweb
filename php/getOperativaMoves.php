@@ -34,6 +34,7 @@
 			
 			$inc = odbc_result($fila,'NroIncidente');	
 		}
+
 		
 		$SQL = "SELECT TOP 1 A.ID as idInc FROM Incidentes A INNER JOIN GradosOperativos B ON (A.GradoOperativoId = B.ID) ";
 		$SQL = $SQL . "WHERE (A.FecIncidente = convert(datetime,'$fec')) AND (B.flgIntDomiciliaria = 0) ";
@@ -41,7 +42,7 @@
 		$SQL = $SQL . "AND (A.NroIncidente $pPos '$inc') ";
 		$SQL = $SQL . "ORDER BY A.NroIncidente";
 		if ($pPos == '<') $SQL = $SQL . " DESC ";
-			
+		
 		$db->Query($SQL);
 		
 		if ($fila = $db->Next()) {

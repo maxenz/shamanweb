@@ -8,6 +8,7 @@
 	$locID = $vecID[0];
 	$gdoID = $vecID[1];
 
+
 	switch ($opt) {
 		
 		case 0:

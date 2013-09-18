@@ -1,7 +1,18 @@
 body {
 
 padding-top:80px;
+overflow: hidden;
 	
+}
+
+.ctIndex {
+
+	display:none;
+}
+
+.nav li.dropdown {
+
+	display:none;
 }
 
 img {

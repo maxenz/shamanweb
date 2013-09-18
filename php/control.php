@@ -1,10 +1,14 @@
 <?php
 
-	session_start();
 	require("class.shaman.php");
+	session_start();
 	$_SESSION["dsnSistema"] = 'shamanexpress';
 	$_SESSION["usr"] = 'dbaadmin';
 	$_SESSION["password"] = 'yeike';
+	$version = $_POST["version"];
+	$_SESSION["v"] = $version;
+	$urlError = "Location: ../ingresar/login.php?error=1&v=".$version;
+	//$_SESSION["post"] = $_POST[""]
 
 	$db = new cDB();
 	$db->Connect();
@@ -12,7 +16,7 @@
 	if (($_POST['usuario']) == "") {
 		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
 		$db->Disconnect();
-		header("Location: ../login/login.php?error=1");
+		header($urlError);
 		exit();
 
 	}
@@ -20,7 +24,7 @@
 	if (($_POST['password']) == "") {
 		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
 		$db->Disconnect();
-		header("Location: ../login/login.php?error=1");
+		header($urlError);
 		exit();
 	}
 
@@ -37,7 +41,7 @@
 			if(odbc_result($data,'verifPass') == 0) {
 				$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
 				$db->Disconnect();
-				header("Location: ../login/login.php?error=1");
+				header($urlError);
 				exit();
 			}
 		}
@@ -45,7 +49,7 @@
 	
 		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
 		$db->Disconnect();
-		header("Location: ../login/login.php?error=1");
+		header($urlError);
 		exit();
 				
 	}

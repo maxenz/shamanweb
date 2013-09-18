@@ -25,6 +25,7 @@
 	<script src="../jqwidgets/jqxgrid.columnsresize.js"></script>
 	<script src="../jqwidgets/jqxcalendar.js"></script>
 	<script src="../jqwidgets/jqxlistbox.js"></script>
+	<script src="../jqwidgets/jqxchart.js"></script>
 	<script src="../jqwidgets/globalization/jquery.global.js"></script>
 	<script src="../jqwidgets/jqxcheckbox.js"></script>
 	<script src="../scripts/global.js"></script>
@@ -36,7 +37,8 @@
 	<script type="text/javascript" src="../bootmetro-0.6.0/scripts/bootmetro.js"></script>
 	<script type="text/javascript" src="../bootmetro-0.6.0/scripts/bootmetro-charms.js"></script>
 	<script type="text/javascript" src="../scripts/context.js"></script>
-   
+
+  
 	<script type="text/javascript">
    
 	setTooltips();
@@ -44,7 +46,6 @@
    
 	function setTooltips() {
 	
-		//$(".metro").metro();
 		$('#home').tooltip({title: 'Ir a Home', placement: 'bottom'});
 		$('#close').tooltip({title: 'Cerrar Sesión', placement: 'bottom'});
 		$('#btnFacebook').tooltip({title: 'Facebook', placement: 'top'});
@@ -124,18 +125,10 @@
 		
 	
 	function showLogin() {
-	
-		window.location = '../login/login.php';
+		
+		window.location = '../ingresar/version.php';
 	
 	}
-	
-	
 	  
    </script>
    
-	
-
-
-
-
-  

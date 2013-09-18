@@ -2,42 +2,40 @@
 <html>
 <head>
 
-<!--------------------
-LOGIN FORM
-by: Amit Jakhu
-www.amitjakhu.com
---------------------->
-
-<!--META-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login Form</title>
+<title>Shaman SGE - Login</title>
 
-<!--STYLESHEETS-->
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/stylelogin.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 
-<!--SCRIPTS-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-<!--Slider-in icons-->
+
 <script type="text/javascript">
+
 $(document).ready(function() {
-	$(".username").focus(function() {
-		$(".user-icon").css("left","-48px");
-	});
-	$(".username").blur(function() {
-		$(".user-icon").css("left","0px");
-	});
 	
-	$(".password").focus(function() {
-		$(".pass-icon").css("left","-48px");
-	});
-	$(".password").blur(function() {
-		$(".pass-icon").css("left","0px");
-	});
+<?php
+
+$version = $_GET["v"];
+
+
+session_start();
+if (isset($_GET["error"])) {
+	
+?>
+    
+var error = '<?php echo $_SESSION['error']; ?>';
+alert(error);
+    <?php
+}
+
+ ?>
+
 });
 </script>
 
 </head>
-<body>
+<body class="invisible">
 
 <!--WRAPPER-->
 <div id="wrapper">
@@ -48,7 +46,7 @@ $(document).ready(function() {
     <!--END SLIDE-IN ICONS-->
 
 <!--LOGIN FORM-->
-<form name="login-form" class="login-form" action="../control.php" method="post">
+<form name="login-form" class="login-form" action="../php/control.php" method="post">
 
 	<!--HEADER-->
     <div class="header">
@@ -61,6 +59,7 @@ $(document).ready(function() {
     <div class="content">
 	<!--USERNAME--><input name="usuario" type="text" class="input username" value=""  /><!--END USERNAME-->
     <!--PASSWORD--><input name="password" type="password" class="input password" value=""  /><!--END PASSWORD-->
+    <input type="hidden" name="version" value="<?php echo $version ?>"></input>
     </div>
     <!--END CONTENT-->
     
@@ -77,6 +76,26 @@ $(document).ready(function() {
 <!--END WRAPPER-->
 
 <!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+
+
+<script>
+
+var version = '<?php echo $version ?>';
+//alert(version);
+
+if (version == 'full') {
+
+    $('.login-form .footer .button ').css("background","green");
+    $('.login-form .footer .button ').css("border","1px solid green");
+    $('.login-form .footer .button:hover').css("background","green");
+    $('body').css("background","green");
+
+}
+
+    $('body').removeClass("invisible");
+
+</script>
+
 
 </body>
 </html>

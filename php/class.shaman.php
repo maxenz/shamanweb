@@ -28,7 +28,15 @@ class cDB {
 	
 	function Connect() {
 		
-		$this->link = odbc_connect('shamanexpress','dbaadmin','yeike');
+		// if ($odbc == 0) {
+
+		$this->link = odbc_connect('shamanexpress','dbaadmin','yeike'); //SHAMAN WEB EXPRESS
+
+		// } else {
+
+		//$this->link = odbc_connect('phpODBC','_SYSTEM','sys'); // SHAMAN WEB FULL
+
+		// }
 
 		if (!$this->link) {
 			return "Connection Failed: " . $this->link;}

@@ -509,14 +509,14 @@
 
 <!-- TERMINA DEFINICION POPUPS DE MENU CONTEXTUAL DE GRILLA DE SERVICIOS -->
 
-<div id="jqxTabsOperativa">
+<div id="jqxTabsOperativa" style="overflow:hidden">
 <ul>
 <li id="tabDespacho">Despacho</li>
 <li id="tabRecepcion">Recepcion</li>
 <li id="tabTraslado">Traslados</li>
 </ul>
 <div>
-<div id="panelIncidentesPrincipal" style="margin-left:5px">
+<div id="panelIncidentesPrincipal" style="border:none;margin-left:2px">
 <div id="contentPanelIncidentesPrincipal">
 <table>
 	<tr valign="top">
@@ -551,13 +551,9 @@
 				<li><a  tabindex="-1" id="itmCtxBajaOperativa" href="#">Baja Operativa de M&oacute;viles</a></li> 
 			</ul>
 		</div>
-		  
-		  
-		  
-		  
-		  
-<div id="logs" style="margin-top:5px;margin-left:3px;margin-bottom:3px;line-height:20px">
-<table>
+		  	  
+<div id="logs" style="margin-top:5px;margin-left:3px;margin-bottom:1px;line-height:20px">
+<table style="margin-left:auto;margin-right:auto">
 	<tr>
 		<td><div id="dropDownTipoIncidentes"></div></td>
 		<td><div id="jqxSelGradoChart" style="margin-right:30px"></div></td>
@@ -565,24 +561,27 @@
 		<td><div id="logIncidentes"></div></td>
 	</tr>
 </table>
+
+
+
 </div>
 
-<hr style="margin-top:1px" />
-<!--<table>
-	<tr>
-		<td>
-			<div id='jqxChartTiemposOperativos' style="width:465px; height: 130px; margin-top:10px; margin-left:5px"></div>
-		</td>
-		<td>
-			<div id='jqxChartServicios' style="width:465px; height: 130px; margin-top:10px; position: relative; left: 0px;
+<table>
+    <tr>
+        <td>
+            <div id='jqxChartTiemposOperativos' style="width:465px; height: 130px; margin-top:10px; margin-left:10px"></div>
+        </td>
+        <td>
+            <div id='jqxChartServicios' style="width:465px; height: 130px; margin-top:10px; position: relative; left: 0px;
             top: 0px;"></div>
-		</td>
-		</tr>
-</table>-->
+        </td>
+        </tr>
+</table>
+
 </div>
 </div>
 </div>
- 
+                
 <!--TAB FORMULARIO DE RECEPCION-->
 <div id="contentTabRecepcion" style="background-color:#f0f0f0" >
 		<!--MENU FORMULARIO DE RECEPCION-->
@@ -590,9 +589,9 @@
 			<div id='jqxMenuRecepcion' style="margin-left:5px;margin-top:2px;">
 
                 <ul style="margin-left:85px">
-                    <li> 
+                    <li id="itmAgregar2"> 
 				<span class="win-commandimage" id="itmAgregar">&#xe03e;</span>
-			</li>		              
+			     </li>		              
                     <li>
                          <span class="win-commandimage" id="itmCancelar">&#xe20a;</span>
                     </li>
@@ -1290,19 +1289,11 @@ var spinner = new Spinner(opts).spin(target);
 <script src="../scripts/fcsOperativa.js"></script>
 <script>
 
-//var user = '<?php echo $_SESSION['s_username'] ?>';
+var version = '<?php echo $_SESSION["v"]; ?>';
 
-//setGrillaTimer();
+setInitialData(version);
 
-//INICIO Y SETEO GRILLA DE MOVILES
 
-setInitialData();
-
-//setUser(user);
-
-//initSetGraficos();
-
-//setDataGrillaSugerencias(0,'','');
 
 </script>
 

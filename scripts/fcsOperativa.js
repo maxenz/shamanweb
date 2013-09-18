@@ -77,7 +77,6 @@ function initDateTimeInput() {
 	
 function initPaneles() {
 		
-
 	$('#panelPreDespMovilEmpresa').jqxPanel({width:690,height:80,theme:'metro'});
 	$('#panelPreDespIncidente').jqxPanel({width:690,height:80,theme:'metro'});
 	$('#panelPreDespSugerencia').jqxPanel({width:690,height:135,theme:'metro'});
@@ -89,7 +88,7 @@ function initPaneles() {
 	$('#panelTrasladosGeneral').jqxPanel({width:955,height:165,theme:'metro'});
 	$('#panelTrasladosOrigen').jqxPanel({width:955,height:110,theme:'metro'});
 	$('#panelTrasladosDestino').jqxPanel({width:955,height:110,theme:'metro'});
-	$('#panelIncidentesPrincipal').jqxPanel({width:950, height:440, theme:'metro'});	
+	$('#panelIncidentesPrincipal').jqxPanel({width:958, height:440, theme:'metro'});	
 }
 	
 function pruebaJSON() {
@@ -651,7 +650,7 @@ function pruebaJSON() {
 	function initGrdMoviles(datos) {
 		
 		$("#grdMoviles").jqxGrid({
-			width: 140,
+			width: 150,
 			height:255,
 			columnsresize: true,
 			filterable: true,
@@ -665,8 +664,8 @@ function pruebaJSON() {
 		
 	}
 	
-	function setInitialData() {
-		
+	function setInitialData(version) {
+
 		$.ajax({
 			type: 'GET',
 			dataType: 'json',
@@ -680,6 +679,7 @@ function pruebaJSON() {
 			
 				//$('#tituloOpcion').text('Operativa');
 				//initGrdLocalidades();
+
 				initGrdClientes();
 				initGrdSintomas();											//SETEO GRILLA DE BUSQUEDA DE SINTOMAS (POPUP SINTOMAS)
 				initGrdSanatorios();	
@@ -690,19 +690,18 @@ function pruebaJSON() {
 				initPaneles();													//INICIALIZACION PANELES
 				initDateTimeInput();											//INICIALIZACION DATE_TIME_INPUT
 				initBotones();
-				initCheckbox();													//INICIALIZACION CHECKBOX
+				initCheckbox();													//INICIALIZACION CHECKBOX																
 				setPopupsGenerales();
 				initPopUpsOperativa();											//INICIALIZO TODOS LOS POPUPS UTILIZADOS EN EL FORMULARIO DE RECEPCION
 				initGrdDiagnosticos();
 				initGrdHistorial();
 				initGrdProgramacion();
-		
 				setRenderersMoviles();
 				setColumnasMoviles();
 				setTooltips();
 				bindEventosOperativa();
 				bindGrillaLocalidades();
-				
+
 				var moviles =
 					{
 						localdata: datos.moviles,
@@ -726,24 +725,39 @@ function pruebaJSON() {
 				flgMaxEmergencia = datos.valorEmer;
 				spinner.stop();
 				$('#jqxTabsOperativa').css("display","block");
-				focusGrdIncidentes();
-				
+				opcionesSegunVersion(version);	
+				initSetGraficos();
+				focusGrdIncidentes();	
 				});
 			}			
 		});
 
 	}
+
+	function opcionesSegunVersion(version) {
+
+	    if (version == 'full') {
+
+	        $('#jqxMenuRecepcion li span').unbind('click').removeAttr('onClick');
+
+	    } else {
+
+	        $('.nav li.dropdown').css("display","block");
+	    }
+
+	    setInitialData(version);
+
+}
 	 
 	 function initLogIncidentes(log) {
 	 
 		$('#logIncidentes').html(log);
 	 
-	 
-	 }
+	}
 	 
 	 function setColumnasMoviles() {
 	 
-		 columnasMoviles = [
+		columnasMoviles = [
 			{ text: 'Mov', datafield: 'Movil', width: '30%', cellsrenderer: cellsRendererMovil, align: 'center' },
 			{ text: 'Sit', datafield: 'Situacion', width: '30%', cellsrenderer: cellsRendererSituacion, align: 'center'},
 			{ text: 'Loc', width:'40%', datafield: 'Localidad', cellsalign:'center', align: 'center'},
@@ -751,10 +765,8 @@ function pruebaJSON() {
 			{ text: 'ColorSituacion', datafield: 'ColorSituacion', hidden:true}
 		];
 	  
-	 }
+	}
 	 
-
-	
 	function setGrdMoviles() {
 	
 		$.ajax({
@@ -793,20 +805,18 @@ function pruebaJSON() {
 	
 	function setRenderersMoviles() {
 		
-		 cellsRendererMovil = function (row, columnfield, value, defaulthtml, columnproperties) {
+		cellsRendererMovil = function (row, columnfield, value, defaulthtml, columnproperties) {
 		var data = $('#grdMoviles').jqxGrid('getrowdata',row);
 		var color = "#" + data["ColorMovil"];
 		return '<div style="width:45px;height:27px;text-align:center;line-height:27px;background: ' + color + ';">'+ value + '</div>';
-		
 		      
-     }
+    	}
 	 
-	 	 cellsRendererSituacion = function (row, columnfield, value, defaulthtml, columnproperties) {
+	 	cellsRendererSituacion = function (row, columnfield, value, defaulthtml, columnproperties) {
 		var data = $('#grdMoviles').jqxGrid('getrowdata',row);
-		var color = "#" + data["ColorSituacion"];
-              
+		var color = "#" + data["ColorSituacion"];      
     	return '<div style="width:45px;height:27px;text-align:center;line-height:27px;background: ' + color + ';">'+ value + '</div>';
-     }	
+    	}	
 		
 	}
 	
@@ -873,100 +883,102 @@ function pruebaJSON() {
 		
 	}
 	
-	// function initSetGraficos() {
+	function initSetGraficos() {
 		
-		// var sampleData = [
-			// { Grado: 'Grado', Despacho: 25, Salida: 74, Desplazamiento: 46, Atencion: 48}
-               // ];
+		var sampleData = [
+			{ Grado: 'Grado', Despacho: 25, Salida: 74, Desplazamiento: 46, Atencion: 48}
+               ];
 			   
-            // var settings = {
-                // title: "Tiempos Operativos",
-                // showLegend: true,
-                // enableAnimations: true,
-                // padding: { left: 20, top: 5, right: 20, bottom: 5 },
-                // titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
-                // source: sampleData,
-                // categoryAxis:
-                    // {
-                        // dataField: 'Grado',
-                        // showGridLines: true,
-                        // flip: false
-                    // },
-                // colorScheme: 'scheme01',
-                // seriesGroups:
-                    // [
-                        // {
-                            // type: 'column',
-                            // orientation: 'horizontal',
-                            // columnsGapPercent: 30,
-                            // valueAxis:
-                            // {
-                                // flip: true,
-                                // unitInterval: 10,
-                                // maxValue: 100,
-								// minValue:0,
-                                // displayValueAxis: true,
+            var settings = {
+                title: "Tiempos Operativos",
+                description: "",
+                showLegend: true,
+                enableAnimations: true,
+                padding: { left: 20, top: 5, right: 20, bottom: 5 },
+                titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+                source: sampleData,
+                categoryAxis:
+                    {
+                        dataField: 'Grado',
+                        showGridLines: true,
+                        flip: false
+                    },
+                colorScheme: 'scheme01',
+                seriesGroups:
+                    [
+                        {
+                            type: 'column',
+                            orientation: 'horizontal',
+                            columnsGapPercent: 30,
+                            valueAxis:
+                            {
+                                flip: true,
+                                unitInterval: 10,
+                                maxValue: 100,
+								minValue:0,
+                                displayValueAxis: true,
                                 
-                            // },
-                            // series: [
-                                    // {dataField: 'Despacho', displayText: 'Despacho' },
-									// {dataField: 'Salida', displayText: 'Salida'},
-									// {dataField: 'Desplazamiento', displayText: 'Desplazamiento'},
-									// {dataField: 'Atencion', displayText: 'Atencion'}
+                            },
+                            series: [
+                                    {dataField: 'Despacho', displayText: 'Despacho' },
+									{dataField: 'Salida', displayText: 'Salida'},
+									{dataField: 'Desplazamiento', displayText: 'Desplazamiento'},
+									{dataField: 'Atencion', displayText: 'Atencion'}
 								
-                                // ]
-                        // }
-                    // ]
-            // };
+                                ]
+                        }
+                    ]
+            };
 			
-            // $('#jqxChartTiemposOperativos').jqxChart(settings);
+            $('#jqxChartTiemposOperativos').jqxChart(settings);
 			
 
 
-// //SETEO DATA PARA GRAFICO DE TORTA (ESTO NO ESTA OPERATIVO TODAVIA, SON DATOS DE EJEMPLO)
+//SETEO DATA PARA GRAFICO DE TORTA (ESTO NO ESTA OPERATIVO TODAVIA, SON DATOS DE EJEMPLO)
 
-		// var data3 = [
-   			// {Grado: "Rojo", Cantidad: 33},
-			// {Grado: "Amarillo", Cantidad: 21},
-			// {Grado: "Verde", Cantidad: 31},
-		// ]
+		var data3 = [
+   			{Grado: "Rojo", Cantidad: 33},
+			{Grado: "Amarillo", Cantidad: 21},
+			{Grado: "Verde", Cantidad: 31},
+		]
 
-		// var pruebaArray = ['#FF0000', '#ffff00', '#48B15D'];    
+		var pruebaArray = ['#FF0000', '#ffff00', '#48B15D'];    
 
-		// $.jqx._jqxChart.prototype.colorSchemes.push({ name: 'myScheme', colors: pruebaArray  });
-		// var settingsTorta = {
-			// title: "Distribución de servicios",
-			// enableAnimations: true,
-			// showLegend: false,
-			// legendPosition: { left: 50, top: 30, width: 50, height: 50 },
-			// padding: { left: 5, top: 5, right: 5, bottom: 5 },
-			// titlePadding: { left: 0, top: 0, right: 0, bottom: 10 },
-			// source: data3,
-			// colorScheme: 'myScheme',
-			// seriesGroups:
-			// [
-				// {
-					// type: 'pie',
-					// showLabels: true,
-					// series:
-						// [
-							// {
-								// dataField: 'Cantidad',
-								// displayText: 'Grado',
-								// labelRadius: 30,
-								// initialAngle: 15,
-								// radius: 45,
-								// innerRadius: 45,
-								// centerOffset: 0
-							// }
-						// ]
-				// }
-			// ]
-	// };
+		$.jqx._jqxChart.prototype.colorSchemes.push({ name: 'myScheme', colors: pruebaArray  });
+		var settingsTorta = {
+			title: "Distribución de servicios",
+			description: "",
+			enableAnimations: true,
+			showLegend: false,
+			legendPosition: { left: 50, top: 30, width: 50, height: 50 },
+			padding: { left: 5, top: 5, right: 5, bottom: 5 },
+			titlePadding: { left: 0, top: 0, right: 0, bottom: 10 },
+			source: data3,
+			colorScheme: 'myScheme',
+			seriesGroups:
+			[
+				{
+					type: 'pie',
+					showLabels: true,
+					series:
+						[
+							{
+								dataField: 'Cantidad',
+								displayText: 'Grado',
+								labelRadius: 30,
+								initialAngle: 15,
+								radius: 45,
+								innerRadius: 45,
+								centerOffset: 0
+							}
+						]
+				}
+			]
+	};
 			
-		// $('#jqxChartServicios').jqxChart(settingsTorta);		
+		$('#jqxChartServicios').jqxChart(settingsTorta);		
 	
-	// }
+	}
 	
 	function refreshDataInc(opt) {
 			
@@ -1346,7 +1358,7 @@ function pruebaJSON() {
 	
 		var today = new Date();
 		var dd = today.getDate();
-		var mm = today.getMonth()+1; //January is 0!
+		var mm = today.getMonth()+1;
 
 		var yyyy = today.getFullYear();
 		if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+'-'+mm+'-'+dd;
@@ -1355,16 +1367,20 @@ function pruebaJSON() {
 	}
 	
 	function moveRecepcion(mov,pPos) {
-		
+	
 		var fec = getToday();
 		var id = $('#hidRowIncidente').val();
-				
+		var page = "getOperativaMoves.php?";
+		var parameters = "mov="+mov+"&fec="+fec+"&id="+id+"&pPos="+pPos;
+		console.log(parameters);
+		var urlMove = page + parameters
+		
+			
 		$.ajax({
 				type: "GET",
-				dataType: "json",
-				url: "getOperativaMoves.php?mov="+mov+"&fec="+fec+"&id="+id+"&pPos="+pPos,
-				success: function(datos){			
-					
+				dataType: 'json',
+				url: urlMove,
+				success: function(datos){		
 					
 					if (datos === 0) {
 						
@@ -1379,10 +1395,14 @@ function pruebaJSON() {
   						setProgramacion(idRow);		  
 	
 					}
-		
-				}
+				},
+
+				error: function (xhr, ajaxOptions, thrownError) {
+
+			        alert(thrownError);
+
+      			}
 		});				
-	
 	}
 	
 	function setLogIncidentes(tip) {
@@ -1418,9 +1438,6 @@ function pruebaJSON() {
 		// $('#jqxChartTiemposOperativos').jqxChart({  source: dataAdapterGradosUpdated });
 				
 	// }
-	
-	
-	
 			
 	function setDataPacienteRecepcion(idRow) {			//CON EL ID DEL INCIDENTE, BUSCO EN LA BASE DE DATOS VIA AJAX LOS DATOS DEL INCIDENTE
 			
@@ -1501,7 +1518,7 @@ function pruebaJSON() {
 		datosPaciente[24] = datos[0].Sintomas;
 		$('#hidRowIncidente').val(datos[0].ID);
 		$('#hidIdAfiliado').val(datos[0].idAfi);
-					
+				
 	}
 
 	function setTextBoxPacientes() {		//LLENO LOS TEXTBOX DEL FORMULARIO CON LOS DATOS DEL ARRAY DEL INCIDENTE
@@ -1552,8 +1569,18 @@ function pruebaJSON() {
 		$('#txtAviso').val(datosPaciente[20]);
 		$('#txtObservaciones').val(datosPaciente[21]);
 		fechaInc = datosPaciente[22];
-		fechaInc = fechaInc.substring(0,10);
-		fechaInc = strDateToJavascriptDate(fechaInc);	
+
+		if (fechaInc.length == 8) {
+
+			fechaInc = cacheDateToJavascript(fechaInc);
+
+		} else {
+
+			fechaInc = fechaInc.substring(0,10);
+			fechaInc = strDateToJavascriptDate(fechaInc);	
+
+		}
+					console.log(fechaInc);
 		$('#jqxDateIncidente').jqxDateTimeInput('setDate', fechaInc);
 
 		$('#txtReferencias').val(datosPaciente[23]);
@@ -2538,12 +2565,25 @@ function pruebaJSON() {
 	
 	function strDateToJavascriptDate(fecha) {
 		
-		var anio  = parseInt(fecha.substring(0,4));
+		var anio  = fecha.substring(0,4);
 		var mes   = parseInt(fecha.substring(5,7));
+		mes = mes.toString();
 		var dia   = parseInt(fecha.substring(8,10));
-		var fechaJs = new Date(anio, mes-1, dia);
+		dia = dia.toString();
+		var fechaJs = anio + ", " + mes + ", " + dia;
 		return fechaJs;
 		
+	}
+
+	function cacheDateToJavascript(fecha) {
+
+		var anio  = fecha.substring(0,4);
+		var mes   = parseInt(fecha.substring(4,6));
+		mes = mes.toString();
+		var dia   = parseInt(fecha.substring(6,8));
+		dia = dia.toString();
+		var fechaJs = anio + ", " + mes + ", " + dia;
+		return fechaJs;
 	}
 	
 	function setMessage(typeMsg,timeDelay,msg,txtToFocus,pos) {

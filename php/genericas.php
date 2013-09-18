@@ -140,5 +140,49 @@
 		
 		return $pFecha;	
 	}
+
+	
+	function getColor($rgbColor) {
+
+		$vColores = array();
+
+		$cColores = new stdClass();
+		$cColores->rgb = '255';
+		$cColores->hexa ='FF0000';
+		$vColores[] = $cColores;
+
+		$cColores = new stdClass();		
+		$cColores->rgb = '65535';
+		$cColores->hexa ='FFE600';
+		$vColores[] = $cColores;
+
+		$cColores = new stdClass();
+		$cColores->rgb = '16744703';
+		$cColores->hexa ='00FFFF';
+		$vColores[] = $cColores;
+
+		$cColores = new stdClass();
+		$cColores->rgb = '16776960';
+		$cColores->hexa ='00FFFF';
+		$vColores[] = $cColores;
+
+		$cColores = new stdClass();
+		$cColores->rgb = '49152';
+		$cColores->hexa ='00FF37';
+		$vColores[] = $cColores;
+
+		$hexaColor = "";
+
+		for ($i = 0; $i < sizeOf($vColores); $i++) {
+
+			if ($vColores[$i]->rgb == $rgbColor) {
+
+				$hexaColor = $vColores[$i]->hexa;
+			}
+		}
+
+		return $hexaColor;
+	}
+
 	
 ?>
