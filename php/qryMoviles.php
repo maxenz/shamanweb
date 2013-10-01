@@ -74,8 +74,8 @@
 				
 			while($fila = $db->Next()) {
 
-				$colLoc = odbc_result($fila,'ColorLoc');
-				$colLoc = getColor($colLoc);
+				//$colLoc = odbc_result($fila,'ColorLoc');
+				//$colLoc = getColor($colLoc);
 				$colSituacion = odbc_result($fila,'ColorSituacion');
 				$colSituacion = getColor($colSituacion);
 				
@@ -85,7 +85,7 @@
 					'ColorSituacion' => $colSituacion,
 					'Localidad' => odbc_result($fila,'Loc'),
 					'Situacion' => odbc_result($fila,'Situacion'),	
-					'ColorLocalidad' => $colLoc,    
+					//'ColorLocalidad' => $colLoc,    
 				);
 				
 			}

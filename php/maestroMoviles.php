@@ -175,7 +175,7 @@
 	initGrdMaestroMoviles();
 	initGrdHistorialMovil();
 	setGrdMaestroMoviles(0,-1);
-	
+    $('.nav li.dropdown').css("display","block");	
 </script>
 </body>
 </html>

@@ -177,7 +177,7 @@
 	initGrdMaestroVehiculos();	
 	setGrdMaestroVehiculos();
 	setDropDown();
-	
+  $('.nav li.dropdown').css("display","block");	
 </script>
 </body>
 </html>

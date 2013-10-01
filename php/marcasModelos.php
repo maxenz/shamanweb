@@ -108,7 +108,7 @@
 	bindEventos();
 	setFocusNext();
 	setFocusGrid();
-	
+    $('.nav li.dropdown').css("display","block");	
 </script>
 </body>
 </html>

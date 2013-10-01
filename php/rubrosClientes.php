@@ -1,4 +1,4 @@
-p<?php
+<?php
 
  include_once("_header.php");
 
@@ -108,6 +108,7 @@ p<?php
 		bindEventos();
 		setFocusGrid();
 		setFocusNext();
+		$('.nav li.dropdown').css("display","block");
 		
 	</script>
 

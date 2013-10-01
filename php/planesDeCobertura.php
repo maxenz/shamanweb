@@ -135,7 +135,7 @@
 		setStyleFocusButtons();
 		setFocusNext();
 		bindEventos();
-		
+    	$('.nav li.dropdown').css("display","block");		
 	</script>
 
  </body>

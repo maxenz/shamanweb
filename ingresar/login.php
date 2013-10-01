@@ -8,6 +8,7 @@
 <link href="css/stylelogin.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/jquery.leanModal.min"></script>
 
 
 <script type="text/javascript">
@@ -33,6 +34,21 @@ alert(error);
 
 });
 </script>
+
+<style>
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+</style>
 
 </head>
 <body class="invisible">
@@ -75,6 +91,8 @@ alert(error);
 </div>
 <!--END WRAPPER-->
 
+<input type="button" value="modal" id="btnModal"/>
+
 <!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
 
 
@@ -93,6 +111,7 @@ if (version == 'full') {
 }
 
     $('body').removeClass("invisible");
+    $("#btnModal").leanModal();
 
 </script>
 

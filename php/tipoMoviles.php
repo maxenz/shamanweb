@@ -130,7 +130,7 @@
 	bindEventos();
 	initGrdTipoMoviles();	
 	setGrdTipoMoviles();
-		
+    $('.nav li.dropdown').css("display","block");		
 </script>
 </body>
 </html>

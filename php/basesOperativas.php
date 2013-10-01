@@ -196,7 +196,7 @@
 	setStyleFocusButtons();
 	setGrillaBusquedaLocalidades();
 	bindGrillaLocalidades();
-			
+    $('.nav li.dropdown').css("display","block");			
 </script>
 </body>
 </html>

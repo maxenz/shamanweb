@@ -17,7 +17,7 @@
 			case 0:
 
 				$optGrillaInc = $_GET["optGrillaInc"];
-
+                
 				echo getIncidentes($optGrillaInc,$_SESSION["v"]);
 				
 			break;
@@ -63,6 +63,7 @@
 			$SQLINC .= "LEFT JOIN Sanatorios san ON (dom.SanatorioId = san.ID) ";
 			$SQLINC .= "WHERE vij.flgStatus = 0 AND gdo.flgIntDomiciliaria = 0 ";
 			$SQLINC .= "ORDER BY gdo.Orden, vij.ViajeId ";
+            
 
 			$db->Query($SQLINC);
 

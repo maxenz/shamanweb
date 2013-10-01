@@ -1,0 +1,3237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>shamanweb</Name>
+    <ProjectGuid>5196295d-f3fb-4935-831a-bccdd5569ab7</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>shamanweb</RootNamespace>
+    <!-- important to be opened by PHP Tools, when also Phalanger Tools are installed -->
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>shamanweb</AssemblyName>
+    <IISProjectUrl>http://localhost:42174/</IISProjectUrl>
+    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+    <Server>Custom</Server>
+    <CustomServerUrl>http://localhost:4545/</CustomServerUrl>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevAutoPort>True</PHPDevAutoPort>
+    <PHPDevPort>45411</PHPDevPort>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".git\COMMIT_EDITMSG">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\config">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\description">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\FETCH_HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\applypatch-msg.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\commit-msg.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\post-commit.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\post-receive.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\post-update.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\pre-applypatch.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\pre-commit.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\pre-push.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\pre-rebase.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\prepare-commit-msg.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\hooks\update.sample">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\index">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\info\exclude">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\logs\HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\logs\refs\heads\master">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\logs\refs\remotes\origin\HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\logs\refs\remotes\origin\master">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\03\b8352e9fbb4f6ec2a9bbebc59fe6861b96489e">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\04\64a7d334749a2ee98c72bcc9a9476d0b04cce1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\06\62cb96bfb78cb2603df4bc9995314bd6806312">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\06\a4ba9e36cea75b068ee53260b85cfbc85cd623">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\08\63faaa4532ae1f70e269f2b1af9f1f535469aa">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\0a\34ab0de481b4fcc08286b928d1b72e710f47c7">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\0a\e7b277703ff4d4ec7d89a4a36f90d5b108bef2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\0e\6f64d1ecc11c00269959046d8abbc1b46f0428">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\0e\f30f2b3f0689a1c9b39409386f8175f89d01d7">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\0f\777b179e8834e7cca4b016e305ed1abbf4a0be">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\10\1e771fc07f1f3995e3637247135e9065f471d9">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\13\7717c1fd39d22598529352f103f39bda88cfab">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\14\cf71e1ab9c714c994fb43309f8c9741d8f1d25">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\14\dfb114eecae2a5c39b6dc08733bdd861ace221">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\16\30a5031c0665dfe73faa9f5bbae8a42bcd7f34">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\1a\f40bcda7f7d69c0eedb53556a343447fad5940">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\1c\15d20637cbca8089d0aef20a086ee129ba37ee">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\1c\fd574b66450c100359ba80a621503d55e6be1a">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\1f\353f9e99c4117d0743d512917c8d4504111106">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\25\ffaff4ef6065ddd23b11a827d05114ea484a0d">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\26\33b07286f635d8d58a8d1369fa4a3cf7ea78fb">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\2b\5890e0b74b063ff3114e8f855d882451ddd8dd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\2e\db4ec34cbc0b6559b808a3a1f31e0e587742ff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\2f\6775bed63d164984e4412110311bca949efc41">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\37\3f84fe7988f6e5584126bed16447fdd5fad44a">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\39\8457d0fa600f8884ab4afcdde738feeb9f4876">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\39\e585577c0355e68c9399e4cfb56cee2a99f473">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\3b\90a6581c2a65285e972546b033a233a601ba05">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\3c\6b1a085952c8820dbc4acd0d6bf687d0668508">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\3d\6f26559add1d059e1e79700c7f4bdaa2760888">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\40\f23c0eb17b7c40cac56072a254a4619916dbed">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\44\d08e18538ad217a5e3453626a2597f823645f1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\46\235b6166a9b7a6cfa4bb3991ae5c585ba516fc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\46\be768cab02b5b065d3748698207f60b9d8aeb1">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\46\d3d5aef85f213281514ac1976d1b634c6948d6">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\48\013c5ab639f6fefcc00e489f88aedfeb96b862">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\4b\661cb298d9f9743fe80915eebd651af637cb20">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\4d\c4920bb828e8bfb5f7efc8f4c074af9e2784ab">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\50\cff872e5328124309882c151f7dd49520f3850">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\52\25c1d38dfd946f80c360178eb83215278c576f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\55\568227a4a94c055afa4eb002bf66a3a2fd5d79">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\58\b598e6fabb7b8ff1f6ea6673a4c04013e2a10a">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\5c\c7d045a1fbdd2628960e7ff7a868dec05a1a4c">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\5c\de50d68f4cf9929d71ecbc5e224d18b6948568">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\5d\aa6ffb25ff173449e11418e2c20c5e8f0fdf77">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\5e\364748b1fbe3d4eefb1080f1fd594e135a9afe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\61\bccad9552931c10894354ad6dbb17cc153de33">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\63\d1b093a943019ea8278f471ec45003c212d9aa">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\64\3f9aa9c2efe63150084b2982892557e386eaed">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\67\13dcb0d3e33e7647d4e1d3069c0160a74b891f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\6a\7b6b10979999e3cea7208eb99df64a369c9022">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\6e\d99b0fa1568568b87a55fab31a5056d6ea7709">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\70\125459f7d593b79cabc75bd60b91943aa65e93">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\70\99936748d3c186bc6031d9d9c09c60a67ca829">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\71\e0b06f6fb10b57decc60b80603d656f86a4d11">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\72\10617dcd6920b0511209e29cca4fb681b51c9c">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\73\864bcdf20177bb0855745c060f00f55417170d">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\74\909fbb5660bcb3ad6ea2bd48d4cc43e98910fe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\76\5160c852facc596eef4575a64de374a7834707">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\77\acfba004685199d1e3b18f1de7379dd15a46a8">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\7b\6d187ac28fa773e60386e9a9a040814a2f91b3">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\7b\727e74350cbef7d079ea93d8da23a511eaa961">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\7d\17b6d1e28c3a0e9089396217f7c7dcab9cddef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\80\ec26e85a0368a97c521050808852b7842a59da">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\82\739604eb07ddeee0fc86bbc50685216ab9f5a2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\85\69af337527b7ac070843973d1b7fb0f6f35236">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\85\6b5783a921035b7b71158f39a778fc867c0612">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\86\22d7fe413ab0dba1c34e54ca0769cab01ec66a">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\87\7e08efd73d78a59e0310582e8ed35c60f8694f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\8b\2545868e653959ec52b52befdf404834ba7dbc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\8e\19e3a3041c915d9bdffd8227ef561f0b31ef3f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\8f\264ebb2c5f8903a41ce9c2824ca8899a5a01e4">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\91\a3843334ba5a216aa9f8058c4d9d526456da91">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\91\d0a5eb55b35625f38ed64fb4c099be0f614953">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\92\dded5efbab68a5a192c4df488757bbacc93013">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\97\480d55f689be4d7c789f6f458fde728b173c60">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\97\95787bab30dc491c507c546272babc2a431047">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\98\fb2dc4c9d3509baac35ebe1e488b76280c3f59">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\9d\68cad5cf3eb632de75b7d51643fd139bf04cb2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\9f\5d1ffde0f33bc94746c4a4a9c8acc771ebe9d5">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\9f\d3c5c4e7db1aa8d9d38b6e3743fd6a04b37877">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\a3\d90f596e0e7b59634827b2bea932debc84f7f2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\a5\75fd32b91c130da5838a14f276477ca5074b83">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\a6\c3b3cc5facbe0cae3d075ffa66c45fe41b9ea0">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\ac\a8feb794c190577172a538cab25c341e514375">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b2\1c589b84dc274a1bcb4763d43c7b26da1e3558">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b3\442de4fcf8ea005b65b6a6401d28c7c874813d">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b7\d94ad7c2252246bf30c3e8c36ccd5aa3463b89">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b7\f95b79f4f6e5bbf381f13121f5faa278625878">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b8\85bc6cab28e8da1de2d35648318e7934a05358">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b9\3696e119ca1f2e82d20c687ac734a89a1a4b05">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b9\519fbd7671e59872d97a33923aacf7294b5e78">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b9\64aaff3efa16f6273fc91a078b06a2a299237c">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\b9\bd17e158d87fb1477f7ac3ddbb5a676f3c26d2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\bd\6b42d2335ebc1a01bb5399c060fdf320638894">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\c1\793bee9e839661b9b0bb62484a781f1a05c1b3">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\c1\c24e60c9d89758ed3dbd1990822d97271342f3">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\c8\a56c1794c6222d4f1d0f2085b4eb5e3d6fad4b">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\c9\e5805848edddba703392da4fb26df3b1c35694">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\ca\729055ee271ee334fbfafe2d1afa11185233c3">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\cc\57657fc818590210ae334f0299d552aac9cd58">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\cf\38d8d16724a66adcf33eb5927af6573cd2b9de">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d0\96f0ceda0e20fcc1b3e145625ab94a045c5895">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d3\659246915cacb0c9204271f1f9fc5f77049eac">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d3\7742c0020dd568580737066990be87d1651813">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d5\54c8ef3c3ef8a5c308d0e552904f79261fc903">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d7\36646e2807a6b7a21643fcbf3edadfda42dafa">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d7\d64a58dd5657ac2a7ce28e9bd12e57f64d83b5">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\d9\167524746997b181fb0f4ac7e3ad749ecc3955">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\da\4170647dd102aa92a57cb4936ff6dfa58d78c2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\db\551ea9027b51efeb140b4982de6e68ba0454a8">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\dc\f351c867e1e85690e2e26c6a6fac8c10de9147">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\de\391317ef43f772a9d79bb2efa6ba8b1e469f15">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e0\200dcca408e6d8aa346f94a128ca30459e50ce">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e0\42c40f7bab88eb52f46834c09549b049a122b8">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e0\b28b9d0767dfe8111a23bdaeaf31fac33fadb8">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e0\d23c5cbf70a879ddb8821de7bdc644391ffd1f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e1\e4e747d82cbe783887db0a2eec017ce021a263">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e1\ee09e225436f8117059473af82e4301659b019">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e3\1d487ef572924d95785c277a1d81f26f98176a">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e3\6fbb1aeddbb977eaee7c14cc0ce145b4f1c25d">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\e4\b06826a56f0dbab5478ef502331c92df4187bc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\ef\c61420e5c63b33863a2258b205fe7d4d747b70">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\ef\c79a092d38e486abcf67eb8b15f05baa99c2d8">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\f2\bb52383a360dfd384c32663fbeebca6aa23805">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\f3\46741ca67dba8e2189b5dd4c30251e72deab7e">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\f7\dcce50499d66750d8197482fe0dd781d4c4507">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\f9\220839f63241350950ad198e311006329985fa">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\fc\5f4d0f8541ea25c1b1de817a30ce244cadc61f">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\ff\0a6084c548b6721b7fad155240342ab5cb9a8c">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\pack\pack-4dfa26f17748195c440605817a1a774a2fd9cb2c.idx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\objects\pack\pack-4dfa26f17748195c440605817a1a774a2fd9cb2c.pack">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\ORIG_HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\packed-refs">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\refs\heads\master">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\refs\remotes\origin\HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\refs\remotes\origin\master">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\.gitignore">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\appbar-demo.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\base-css.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\index.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\hulk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\jshint">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\jshint.cmd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\lessc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\lessc.cmd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\recess">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\recess.cmd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\uglifyjs">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\.bin\uglifyjs.cmd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\.gitmodules">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\.git_ignore">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\bin\hulk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\lib\compiler.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\lib\hogan.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\lib\template.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\LICENSE">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\Makefile">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\package.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\html\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\index.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\index.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\mustache.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\Changes">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\Rakefile">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\comments.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\comments.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\delimiters.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\delimiters.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\interpolation.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\interpolation.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\inverted.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\inverted.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\partials.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\partials.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\sections.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\sections.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\~lambdas.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\~lambdas.yml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\TESTING.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\templates\list.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\tools\release.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\tools\web_templates.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\1.0.0\hogan.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\1.0.0\hogan.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.0\hogan.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.0\hogan.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.3\hogan.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.3\hogan.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.amd.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.common.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.amd.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.common.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.mustache.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.mustache.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\favicon.ico">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\images\logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\images\noise.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\images\small-hogan-icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\images\stripes.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\index.html.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\stylesheets\layout.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\stylesheets\skeleton.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\wrappers\amd.js.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\wrappers\common.js.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\wrappers\js.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\node_modules\hogan.js\wrappers\mustache.js.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\build\package.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\components.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\bootmetro-charms.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\bootmetro-tiles.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\bootmetro.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\bootstrap-responsive.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\bootstrap.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\datepicker.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\demo-old.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\demo.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\icomoon.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\LICENSE">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\metro-ui-dark.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\css\metro-ui-light.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\IcoMoon.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\IcoMoon.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\IcoMoon.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\IcoMoon.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\IcoMoon.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\IcoMoon.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\IcoMoon.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\IcoMoon.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\index.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\license.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\icomoon97172\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\LICENSE.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-bold-webfont.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-bold-webfont.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-bold-webfont.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-bold-webfont.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-light-webfont.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-light-webfont.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-light-webfont.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-light-webfont.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-regular-webfont.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-regular-webfont.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-regular-webfont.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-regular-webfont.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-semibold-webfont.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-semibold-webfont.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-semibold-webfont.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\font\opensans-semibold-webfont.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\ico\apple-touch-icon-114-precomposed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\ico\apple-touch-icon-144-precomposed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\ico\apple-touch-icon-57-precomposed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\ico\apple-touch-icon-72-precomposed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\ico\favicon.ico">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\appbar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\avatar-movie-puzzles-2.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bootstrap-mdo-sfmoma-01.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bootstrap-mdo-sfmoma-02.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bootstrap-mdo-sfmoma-03.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bs-docs-masthead-pattern.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bs-docs-responsive-illustrations.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\bs-docs-twitter-github.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Coding app.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-appbar-1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-appbar-2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-charms.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-headermenu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-hub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-icons.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\detail-themes.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Devices.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-carousel.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-fluid.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-hero.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-marketing-narrow.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-signin.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-starter.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\bootstrap-example-sticky-footer.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\browser-icon-chrome.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\browser-icon-firefox.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\browser-icon-safari.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\slide-01.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\slide-02.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\examples\slide-03.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\github-icons.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\github.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\glyphicons-halflings-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\glyphicons-halflings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\grid-baseline-20px.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\h2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero-small.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero3-black.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\hero4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\less-css-logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\less-logo-large.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\metro-tiles-wide.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\metro-tiles-widepeek.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\metro-tiles.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\My Apps.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Octocat-96x96.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\octocat.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-dark.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-light.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-ring-dark-small.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-ring-dark.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-ring-light-small.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\progress-indeterminate-ring-light.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\RegEdit.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\sample1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\sample2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\sample3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\sample4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\sample5.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\slide1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\slider2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile-wide-collection-1.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile-wide-collection-2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile-wide-collection-3.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile-wide-collection-4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile-wide.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\tile.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Windows 8.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Windows alt.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Windows Store.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\windows-8-fish.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\Windows.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\content\img\windows_8_logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\carousel.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\fluid.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\hero.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\marketing-alternate.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\marketing-narrow.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\signin.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\starter-template.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\examples\sticky-footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\hub.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\icons.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\index.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\javascript.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\LICENSE">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\listviews.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scaffolding.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\bootmetro-charms.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\bootmetro.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\bootstrap-datepicker.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\bootstrap.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\demo.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\google-code-prettify\prettify.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\google-code-prettify\prettify.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\holder.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery-1.7.2.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery-1.7.2.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery-1.8.2.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery-1.8.2.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.blockUI.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.form.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.mousewheel.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.scrollTo.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.validate.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\jquery.validate.unobtrusive.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\modernizr-2.6.1.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\mustache.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\scripts\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\square-tiles-templates.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\table.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\layout.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\appbar-demo.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\base-css.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\components.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\hub.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\icons.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\index.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\javascript.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\listviews.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\scaffolding.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\square-tiles-templates.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\table.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\tiles-templates.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\wide-tiles-templates.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\widepeek-tiles-templates.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\pages\wizard.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\partials\charms.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\partials\header-menu.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\templates\partials\logged-user.mustache">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\tiles-templates.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\wide-tiles-templates.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\widepeek-tiles-templates.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootmetro-0.6.0\wizard.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\css\bootstrap-responsive.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\css\bootstrap.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\css\bootstrap.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\img\glyphicons-halflings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\js\bootstrap.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="bootstrap\js\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\actualizar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\add.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\adelante-total.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\adelante.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\atras-total.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\atras.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\blank.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\buscar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\calendarIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\cargando.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\catalogicon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\categorizacion.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\cerrarSesion.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\contactsIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\editar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\eliminar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\favorites.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\folder.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\folderIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\folderOpen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\help.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\historia-clinica.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\icon-right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\imprimir.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\LayoutTypes.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\loader.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\loadingAjax.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\mailIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\movie.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\nav3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\next.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\notesIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\observaciones.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\ok.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\pacman.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\pieicon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\play.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\previous.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\programar-fecha.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\recycle.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\refresh.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\servicios.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\settings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\shopping_cart.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\actualizar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\add.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\cancel.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\editar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\eliminar.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\small\save.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\stop.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\tasksIcon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\Thumbs.db">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\ver_grilla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\font\fontawesome-webfont.eot">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\font\fontawesome-webfont.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\font\fontawesome-webfont.ttf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\font\fontawesome-webfont.woff">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\font\FontAwesome.otf">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\ie8.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\images\bg.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\images\express.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\images\full.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\images\overlay.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\noscript.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\skel-noscript.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\style-desktop.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\style-mobile.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\stylelogin.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\1.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\10.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\11.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\12.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\13.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\14.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\15.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\2.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\3.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\4.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\5.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\6.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\7.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\8.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\9.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\approve-128.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\bg.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\gradient.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\group-128.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\icons-reflections.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\icons-shadow.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\icons.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\lateral.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\me.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\page-shadow.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\pass-icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\phone-128.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\user-128.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\images\user-icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\config.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\html5shiv.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery-1.10.2.min.map">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery-ui.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery.transit.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\script.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\skel.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\LICENSE.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\Login Form.psd">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\README.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.cs-CZ.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.de-DE.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.en-CA.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.en-US.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.fr-FR.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.he-IL.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.hr-HR.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.hu-HU.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.it-IT.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.ja-JP.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.lt.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.ru-RU.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.culture.sa-IN.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\globalize.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.cs-CZ.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.de-DE.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.en-CA.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.en-US.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.fr-FR.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.he-IL.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.hr.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.it-IT.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.ja-JP.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.ru-RU.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.glob.sa-IN.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\jquery.global.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\globalization\ReadMe.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqx-all.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxbuttongroup.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxbuttons.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxcalendar.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxchart.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxcheckbox.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxcolorpicker.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxcombobox.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxcore.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdata.export.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdata.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdatetimeinput.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdocking.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdockpanel.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdragdrop.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdropdownbutton.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxdropdownlist.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxexpander.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgauge.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.aggregates.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.columnsreorder.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.columnsresize.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.export.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.filter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.grouping.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.pager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.selection.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.sort.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxgrid.storage.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxinput.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxknockout.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxlistbox.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxlistmenu.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxmaskedinput.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxmenu.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxnavigationbar.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxnumberinput.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxpanel.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxprogressbar.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxradiobutton.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxrating.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxscrollbar.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxscrollview.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxslider.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxsplitter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxswitchbutton.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxtabs.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxtooltip.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxtouch.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxtree.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxvalidator.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\jqxwindow.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\drag.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\dragcancel.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\filter_dark.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\filter_large_.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\loader.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\loader2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\loader3.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\loader_2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\menubutton.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\red_arrow_down.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\red_arrow_up.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\sortasc.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\sortascbutton.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\sortdesc.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\sortdescbutton.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\resources\sortremove.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\arrow_bottom.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\arrow_left.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\arrow_right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\arrow_top.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\backgroundTop.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\backImage.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bar-hue.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bar-saturation.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_black.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_black2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_blackhover.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_blackhover_horizontal.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_blackpressed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_blackpressed_horizontal.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_black_horizontal.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_blueenergy.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_darkblue.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_darkbluehover.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\bg_darkbluepressed.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\blackbackground.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\black_gradient.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_black.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_disabled.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_indeterminate_black.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_indeterminate_disabled.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_indeterminate_white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\check_white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\close_white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\crosshair-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\crosshair.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_flat_30_cccccc_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_flat_50_5c5c5c_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_glass_20_555555_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_glass_40_0078a3_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_glass_40_ffc73d_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_gloss-wave_25_333333_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_highlight-soft_80_eeeeee_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_inset-soft_25_000000_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-bg_inset-soft_30_f58400_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-icons_222222_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-icons_4b8e0b_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-icons_a83300_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-icons_cccccc_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkness\ui-icons_ffffff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\darkred_gradient.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-down-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-down.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-left-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-left.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-right-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-up-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\icon-up.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_diagonals-small_0_aaaaaa_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_diagonals-thick_15_444444_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_diagonals-thick_95_ffdc2e_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_glass_55_fbf5d0_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_highlight-hard_30_285c00_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_highlight-soft_33_3a8104_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_highlight-soft_50_4eb305_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_highlight-soft_60_4ca20b_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-bg_inset-soft_10_285c00_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-icons_4eb305_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-icons_72b42d_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-icons_cd0a0a_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\le-frog\ui-icons_ffffff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_diagonals-thick_20_666666_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_flat_10_000000_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_glass_100_f6f6f6_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_glass_100_fdf5ce_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_glass_65_ffffff_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-icons_222222_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-icons_228ef1_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-icons_ef8c08_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-icons_ffd27a_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\lightness\ui-icons_ffffff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\map-hue.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\map-saturation-overlay.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\map-saturation.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-down-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-down.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-left-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-left.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-right-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-up-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\metro-icon-up.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\multi-arrow.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\nav-arrow-down.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\nav-arrow-left.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\nav-arrow-right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\nav-arrow-up.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\office-icon-down.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\office-icon-left.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\office-icon-right.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\office-icon-up.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_flat_0_aaaaaa_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_flat_0_eeeeee_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_flat_55_c0402a_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_flat_55_eeeeee_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_glass_100_f8f8f8_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_glass_35_dddddd_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_glass_60_eeeeee_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_inset-hard_75_999999_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-bg_inset-soft_50_c9c9c9_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-icons_3383bb_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-icons_454545_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-icons_70b2e1_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-icons_999999_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\overcast\ui-icons_fbc856_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\pointer.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\rangebar_classic.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\rangebar_darkblue.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\rangebar_shinyblack.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\rangebar_summer.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_flat_0_aaaaaa_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_flat_55_fbec88_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_glass_75_d0e5f5_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_glass_85_dfeffc_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_glass_95_fef1ec_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_gloss-wave_55_5c9ccc_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_inset-hard_100_f5f8f9_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_217bc0_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_2e83ff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_469bdd_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_6da8d5_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_cd0a0a_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_d8e7f3_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\redmond\ui-icons_f9bd01_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\red_gradient.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_check_black.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_check_disabled.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_check_indeterminate.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_check_white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_classic_hover.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_classic_normal.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\roundbg_disabled.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_flat_0_aaaaaa_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_flat_75_ffffff_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_glass_55_fbf9ee_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_glass_65_ffffff_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_glass_75_dadada_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_glass_75_e6e6e6_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_glass_95_fef1ec_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-icons_222222_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-icons_2e83ff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-icons_454545_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-icons_888888_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\smoothness\ui-icons_cd0a0a_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\star.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_flat_55_999999_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_flat_75_aaaaaa_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_glass_45_0078ae_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_glass_55_f8da4e_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_glass_75_79c9ec_1x400.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_gloss-wave_45_e14f1c_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_gloss-wave_50_6eac2c_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_gloss-wave_75_2191c0_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-bg_inset-hard_100_fcfdfd_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_0078ae_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_056b93_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_d8e7f3_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_e0fdff_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_f5e175_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_f7a50d_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\start\ui-icons_fcd113_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\star_disabled.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\star_hover.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_diagonals-medium_20_d34d17_40x40.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_flat_30_cccccc_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_flat_50_5c5c5c_40x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_gloss-wave_45_817865_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_gloss-wave_60_fece2f_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_gloss-wave_70_ffdd57_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_gloss-wave_90_fff9e5_500x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_highlight-soft_100_feeebd_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-bg_inset-soft_30_ffffff_1x100.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_3d3d3d_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_bd7b00_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_d19405_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_eb990f_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_ed9f26_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_fadc7a_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\sunny\ui-icons_ffe180_256x240.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\tick.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\track_classic.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\track_darkblue.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\track_shinyblack.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\images\track_summer.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.base.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.black.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.bootstrap.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.classic.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.darkblue.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.energyblue.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.fresh.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.highcontrast.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.metro.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.office.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.shinyblack.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.summer.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-darkness.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-le-frog.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-lightness.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-overcast.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-redmond.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-smoothness.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-start.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.ui-sunny.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="jqwidgets\styles\jqx.web.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\bootstrap-responsive.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\bootstrap.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-buttons.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-buttons.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-forms.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-forms.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-icons.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-icons.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-normalize.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-normalize.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\m-styles.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\css\styles.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\bootstrap.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\cross.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\glyphicons-halflings-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\glyphicons-halflings.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\need.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\share.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\starrynight.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\syncfusion-icons-white.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\img\syncfusion-icons.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\index.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\google-code-prettify\prettify.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\google-code-prettify\prettify.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\jquery-1.8.0.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\m-dropdown.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\m-dropdown.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\m-radio.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="metro\js\m-radio.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\bootstrap-notify.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\bootstrap-notify.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\styles\alert-bangtidy.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\styles\alert-bangtidy.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\styles\alert-blackgloss.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\css\styles\alert-notification-animations.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="notify\js\bootstrap-notify.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\bootstrap.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\context.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsBasesOperativas.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsClientes.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsEventosOperativa.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsOperativa.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsPlanesCobertura.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\fcsRubrosClientes.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\format.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\gettheme.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\global.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.7.2.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.8.2.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.9.0.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.9.1.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery.blockUI.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery.center.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery.msg.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery.timer.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\json2.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\knockout-2.1.0.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\knockout-mapping-2.0.0.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\maestroMoviles.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\maestroVehiculos.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\marcasModelos.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\prueba.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\qunit-git.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\spin.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\tipoMoviles.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\ajax_load.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\clientes.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\jquery.msg.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\jqx.apireference.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\jqxmenustyle.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\m-styles.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\panelOperativo.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\qunit-git.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\site.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\site6.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\ui-dark.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\ui-light.css">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\" />
+    <Folder Include=".git\hooks\" />
+    <Folder Include=".git\info\" />
+    <Folder Include=".git\logs\" />
+    <Folder Include=".git\logs\refs\" />
+    <Folder Include=".git\logs\refs\heads\" />
+    <Folder Include=".git\logs\refs\remotes\" />
+    <Folder Include=".git\logs\refs\remotes\origin\" />
+    <Folder Include=".git\objects\" />
+    <Folder Include=".git\objects\03\" />
+    <Folder Include=".git\objects\04\" />
+    <Folder Include=".git\objects\06\" />
+    <Folder Include=".git\objects\08\" />
+    <Folder Include=".git\objects\0a\" />
+    <Folder Include=".git\objects\0e\" />
+    <Folder Include=".git\objects\0f\" />
+    <Folder Include=".git\objects\10\" />
+    <Folder Include=".git\objects\13\" />
+    <Folder Include=".git\objects\14\" />
+    <Folder Include=".git\objects\16\" />
+    <Folder Include=".git\objects\1a\" />
+    <Folder Include=".git\objects\1c\" />
+    <Folder Include=".git\objects\1f\" />
+    <Folder Include=".git\objects\25\" />
+    <Folder Include=".git\objects\26\" />
+    <Folder Include=".git\objects\2b\" />
+    <Folder Include=".git\objects\2e\" />
+    <Folder Include=".git\objects\2f\" />
+    <Folder Include=".git\objects\37\" />
+    <Folder Include=".git\objects\39\" />
+    <Folder Include=".git\objects\3b\" />
+    <Folder Include=".git\objects\3c\" />
+    <Folder Include=".git\objects\3d\" />
+    <Folder Include=".git\objects\40\" />
+    <Folder Include=".git\objects\44\" />
+    <Folder Include=".git\objects\46\" />
+    <Folder Include=".git\objects\48\" />
+    <Folder Include=".git\objects\4b\" />
+    <Folder Include=".git\objects\4d\" />
+    <Folder Include=".git\objects\50\" />
+    <Folder Include=".git\objects\52\" />
+    <Folder Include=".git\objects\55\" />
+    <Folder Include=".git\objects\58\" />
+    <Folder Include=".git\objects\5c\" />
+    <Folder Include=".git\objects\5d\" />
+    <Folder Include=".git\objects\5e\" />
+    <Folder Include=".git\objects\61\" />
+    <Folder Include=".git\objects\63\" />
+    <Folder Include=".git\objects\64\" />
+    <Folder Include=".git\objects\67\" />
+    <Folder Include=".git\objects\6a\" />
+    <Folder Include=".git\objects\6e\" />
+    <Folder Include=".git\objects\70\" />
+    <Folder Include=".git\objects\71\" />
+    <Folder Include=".git\objects\72\" />
+    <Folder Include=".git\objects\73\" />
+    <Folder Include=".git\objects\74\" />
+    <Folder Include=".git\objects\76\" />
+    <Folder Include=".git\objects\77\" />
+    <Folder Include=".git\objects\7b\" />
+    <Folder Include=".git\objects\7d\" />
+    <Folder Include=".git\objects\80\" />
+    <Folder Include=".git\objects\82\" />
+    <Folder Include=".git\objects\85\" />
+    <Folder Include=".git\objects\86\" />
+    <Folder Include=".git\objects\87\" />
+    <Folder Include=".git\objects\8b\" />
+    <Folder Include=".git\objects\8e\" />
+    <Folder Include=".git\objects\8f\" />
+    <Folder Include=".git\objects\91\" />
+    <Folder Include=".git\objects\92\" />
+    <Folder Include=".git\objects\97\" />
+    <Folder Include=".git\objects\98\" />
+    <Folder Include=".git\objects\9d\" />
+    <Folder Include=".git\objects\9f\" />
+    <Folder Include=".git\objects\a3\" />
+    <Folder Include=".git\objects\a5\" />
+    <Folder Include=".git\objects\a6\" />
+    <Folder Include=".git\objects\ac\" />
+    <Folder Include=".git\objects\b2\" />
+    <Folder Include=".git\objects\b3\" />
+    <Folder Include=".git\objects\b7\" />
+    <Folder Include=".git\objects\b8\" />
+    <Folder Include=".git\objects\b9\" />
+    <Folder Include=".git\objects\bd\" />
+    <Folder Include=".git\objects\c1\" />
+    <Folder Include=".git\objects\c8\" />
+    <Folder Include=".git\objects\c9\" />
+    <Folder Include=".git\objects\ca\" />
+    <Folder Include=".git\objects\cc\" />
+    <Folder Include=".git\objects\cf\" />
+    <Folder Include=".git\objects\d0\" />
+    <Folder Include=".git\objects\d3\" />
+    <Folder Include=".git\objects\d5\" />
+    <Folder Include=".git\objects\d7\" />
+    <Folder Include=".git\objects\d9\" />
+    <Folder Include=".git\objects\da\" />
+    <Folder Include=".git\objects\db\" />
+    <Folder Include=".git\objects\dc\" />
+    <Folder Include=".git\objects\de\" />
+    <Folder Include=".git\objects\e0\" />
+    <Folder Include=".git\objects\e1\" />
+    <Folder Include=".git\objects\e3\" />
+    <Folder Include=".git\objects\e4\" />
+    <Folder Include=".git\objects\ef\" />
+    <Folder Include=".git\objects\f2\" />
+    <Folder Include=".git\objects\f3\" />
+    <Folder Include=".git\objects\f7\" />
+    <Folder Include=".git\objects\f9\" />
+    <Folder Include=".git\objects\fc\" />
+    <Folder Include=".git\objects\ff\" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\" />
+    <Folder Include=".git\refs\heads\" />
+    <Folder Include=".git\refs\remotes\" />
+    <Folder Include=".git\refs\remotes\origin\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="bootmetro-0.6.0\" />
+    <Folder Include="bootmetro-0.6.0\build\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\.bin\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\bin\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\lib\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\html\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\spec\specs\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\test\templates\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\tools\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\1.0.0\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.0\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.3\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\builds\1.0.5\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\images\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\web\stylesheets\" />
+    <Folder Include="bootmetro-0.6.0\build\node_modules\hogan.js\wrappers\" />
+    <Folder Include="bootmetro-0.6.0\content\" />
+    <Folder Include="bootmetro-0.6.0\content\css\" />
+    <Folder Include="bootmetro-0.6.0\content\font\" />
+    <Folder Include="bootmetro-0.6.0\content\font\icomoon97172\" />
+    <Folder Include="bootmetro-0.6.0\content\ico\" />
+    <Folder Include="bootmetro-0.6.0\content\img\" />
+    <Folder Include="bootmetro-0.6.0\content\img\examples\" />
+    <Folder Include="bootmetro-0.6.0\examples\" />
+    <Folder Include="bootmetro-0.6.0\scripts\" />
+    <Folder Include="bootmetro-0.6.0\scripts\google-code-prettify\" />
+    <Folder Include="bootmetro-0.6.0\templates\" />
+    <Folder Include="bootmetro-0.6.0\templates\pages\" />
+    <Folder Include="bootmetro-0.6.0\templates\partials\" />
+    <Folder Include="bootstrap\" />
+    <Folder Include="bootstrap\css\" />
+    <Folder Include="bootstrap\img\" />
+    <Folder Include="bootstrap\js\" />
+    <Folder Include="images\" />
+    <Folder Include="images\small\" />
+    <Folder Include="ingresar\" />
+    <Folder Include="ingresar\css\" />
+    <Folder Include="ingresar\css\font\" />
+    <Folder Include="ingresar\css\images\" />
+    <Folder Include="ingresar\images\" />
+    <Folder Include="ingresar\js\" />
+    <Folder Include="jqwidgets\" />
+    <Folder Include="jqwidgets\globalization\" />
+    <Folder Include="jqwidgets\resources\" />
+    <Folder Include="jqwidgets\styles\" />
+    <Folder Include="jqwidgets\styles\images\" />
+    <Folder Include="jqwidgets\styles\images\darkness\" />
+    <Folder Include="jqwidgets\styles\images\le-frog\" />
+    <Folder Include="jqwidgets\styles\images\lightness\" />
+    <Folder Include="jqwidgets\styles\images\overcast\" />
+    <Folder Include="jqwidgets\styles\images\redmond\" />
+    <Folder Include="jqwidgets\styles\images\smoothness\" />
+    <Folder Include="jqwidgets\styles\images\start\" />
+    <Folder Include="jqwidgets\styles\images\sunny\" />
+    <Folder Include="metro\" />
+    <Folder Include="metro\css\" />
+    <Folder Include="metro\img\" />
+    <Folder Include="metro\js\" />
+    <Folder Include="metro\js\google-code-prettify\" />
+    <Folder Include="notify\" />
+    <Folder Include="notify\css\" />
+    <Folder Include="notify\css\styles\" />
+    <Folder Include="notify\js\" />
+    <Folder Include="php\" />
+    <Folder Include="scripts\" />
+    <Folder Include="styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ingresar\login.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ingresar\version.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\basesOperativas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\cierrosesion.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\class.shaman.cache.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\class.shaman.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\clientes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\consultaMenu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\control.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\date.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\error.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\genericas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getBusquedaIncidentes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getDataGrillasRecepcion.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getDataIncidentes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getDiagnosticos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getGrados.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getHistoriaClinica.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInfoAfiliado.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInfoDespachar.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInfoIncidente.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInfoLocalidad.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInfoSintoma.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getInitialData.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getIVA.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getLogObservaciones.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getOpcionesCategorizacion.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getOperativaMoves.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getPlanes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getPlanesGradosOperativos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getReclamos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getRubrosClientes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSanatorios.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetBasesOperativas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetClientes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetClientesGradosOperativos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetClientesIntegrantes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetContactosCliente.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetMarcasModelos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetMoviles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetPlanesCobertura.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetRubrosClientes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetTipoMoviles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getSetVehiculos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getStructurePopups.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\getTipoDoc.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\header.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\indexViejo.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\loader.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\maestroMoviles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\maestroVehiculos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\marcasModelos.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\menu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\panelOperativo.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\planesDeCobertura.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\pruebas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\qryLogIncidentes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\qryMoviles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\rubrosClientes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\seguridad.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\setIncidente.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\setSalidas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\tipoMoviles.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\updateIncidentes.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\validateSesion.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\_footer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\_header.php">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

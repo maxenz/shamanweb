@@ -14,8 +14,8 @@
 
     	<div class="span4 titulosIndex">
       		<h2>Operativa</h2>
-      		<p>Aca deberia haber informacion, pero la verdad que no tengo idea que verga poner. Cuando javi me diga que seria conveniente poner aca,
-      			seguramente va a haber informacion mucho mas valiosa que esta cagada. </p>
+      		<p>A trav&eacute;s de la Operativa, usted puede controlar todos servicios y traslados de su empresa de emergencias
+      		 m&eacute;dicas.  </p>
 	  		<div style="text-align:center">
 				<button class="win-command">
 					<span class="win-commandimage win-commandring" id="btnGoToOperativa">&#xe189;</span>
@@ -25,8 +25,7 @@
 
         <div class="span4 titulosIndex">
           	<h2>Clientes</h2>
-          	<p>Aca deberia haber informacion, pero la verdad que no tengo idea que verga poner. Cuando javi me diga que seria conveniente poner aca,
-          		seguramente va a haber informacion mucho mas valiosa que esta cagada. </p>
+          	<p>Usted puede gestionar toda la informaci&oacute;n referida a sus clientes. </p>
            	<div style="text-align:center">
 				<button class="win-command" id="btnGoToClientes">
 					<span class="win-commandimage win-commandring">&#xe15f;</span>
@@ -36,8 +35,7 @@
 
         <div class="span4 titulosIndex">
           	<h2>M&oacute;viles</h2>
-          	<p>Aca deberia haber informacion, pero la verdad que no tengo idea que verga poner. Cuando javi me diga que seria conveniente poner aca,
-          		seguramente va a haber informacion mucho mas valiosa que esta cagada.</p>
+          	<p>Usted puede gestionar todo lo referido a sus móviles, los vehículos, sus bases operativas, etc.</p>
 			<div style="text-align:center">
 				<button class="win-command" id="btnGoToMoviles">
 					<span class="win-commandimage win-commandring">&#xe006;</span>

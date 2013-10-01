@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <StartAction>SpecificPage</StartAction>
+    <SpecificPageValue>shamanweb/ingresar/version.php</SpecificPageValue>
+    <StartUrlValue>
+    </StartUrlValue>
+    <PHPDebugging>True</PHPDebugging>
+    <JsDebugging>False</JsDebugging>
+  </PropertyGroup>
+</Project>

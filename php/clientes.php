@@ -519,6 +519,7 @@
 	initDropDown();
 	initCheckbox();
 	initButtons();
+    $('.nav li.dropdown').css("display","block");
 	
 </script>
 </body>

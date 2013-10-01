@@ -745,7 +745,7 @@ function pruebaJSON() {
 	        $('.nav li.dropdown').css("display","block");
 	    }
 
-	    setInitialData(version);
+	    //setInitialData(version);
 
 }
 	 
