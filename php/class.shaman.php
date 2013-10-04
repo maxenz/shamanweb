@@ -28,18 +28,32 @@ class cDB {
 	
 	function Connect() {
 		
-		// if ($odbc == 0) {
-
-		$this->link = odbc_connect('shamanexpress','dbaadmin','yeike'); //SHAMAN WEB EXPRESS
-
-		// } else {
-
-		//$this->link = odbc_connect('phpODBC','_SYSTEM','sys'); // SHAMAN WEB FULL
-
-		// }
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
+        $datasource = $_SESSION["datasource"];
+        $catalog = $_SESSION["catalog"];
+        $dbuser = $_SESSION["dbuser"];
+        $dbpass = $_SESSION["dbpass"];
+        $conexion = $_SESSION["conexion"];
+        $cnxString = $conexion . '\\' . $datasource;
+        
+        $this->link = odbc_connect("Driver={SQL Server Native Client 10.0};Server=$cnxString;Database=$catalog;", $dbuser, $dbpass);
 
 		if (!$this->link) {
 			return "Connection Failed: " . $this->link;}
+		
+		return '';
+    }
+    
+    function ConnectLOGIN($dbDSN,$dbuser,$dbpass) {
+		
+        $this->link = odbc_connect($dbDSN,$dbuser,$dbpass);
+
+		if (!$this->link) {
+			return "Connection Failed: " . $this->link;
+        }
 		
 		return '';
     }
@@ -79,7 +93,7 @@ class cDB {
 		return $this->result;
 	}
 	
-	function Update($tabla, $lista, $where = "") {
+	function Update($tabla, $lista, $where = ""){
 		$this->affectedrows = -1;
 		if (!is_array($lista)) {
 			$this->error = true;

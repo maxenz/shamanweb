@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <StartAction>SpecificPage</StartAction>
-    <SpecificPageValue>shamanweb/ingresar/version.php</SpecificPageValue>
+    <SpecificPageValue>ingresar/login.php?v=express</SpecificPageValue>
     <StartUrlValue>
     </StartUrlValue>
     <PHPDebugging>True</PHPDebugging>

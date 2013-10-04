@@ -86,8 +86,8 @@ include_once("consultaMenu.php");
 	<div id="top-info" class="pull-right">
     <a href="#" class="pull-left">
       <div id="usrTop" class="top-info-block">
-        <h3>Usuario</h3>
-        <h4>Maxo</h4>
+        <h3><?php echo $_SESSION["cliente"]; ?></h3>
+        <h4><?php echo $_SESSION["usuario"]; ?></h4>
       </div>
       <div class="top-info-block">
         <b class="icon-user-5"></b>

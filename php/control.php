@@ -1,70 +1,112 @@
 <?php
 
-	require("class.shaman.php");
-	session_start();
-	$_SESSION["dsnSistema"] = 'shamanexpress';
-	$_SESSION["usr"] = 'dbaadmin';
-	$_SESSION["password"] = 'yeike';
-	$version = $_POST["version"];
-	$_SESSION["v"] = $version;
-	$urlError = "Location: ../ingresar/login.php?error=1&v=".$version;
-	//$_SESSION["post"] = $_POST[""]
+require("class.shaman.php");
 
-	$db = new cDB();
-	$db->Connect();
+/* INICIALIZO DB Y VALIDO SI USUARIO ES CORRECTO, SINO MANDO ERROR A LOGIN */
 
-	if (($_POST['usuario']) == "") {
-		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
-		$db->Disconnect();
-		header($urlError);
-		exit();
+$db = new cDB();
+$db->ConnectLOGIN("mysql_shaman_express","maxenz","elmaxo");
 
-	}
+$usuario=$_POST['usuario'];
+$usuario = mysql_real_escape_string($usuario);
 
-	if (($_POST['password']) == "") {
-		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
-		$db->Disconnect();
-		header($urlError);
-		exit();
-	}
+$password=$_POST['password'];
+$password = mysql_real_escape_string($password);
 
-	$usuario=$_POST['usuario'];
-	$usuario = mysql_real_escape_string($usuario);
+$version=$_POST['version'];
+$version = mysql_real_escape_string($version);
 
-	$password=$_POST['password'];
-	$password = mysql_real_escape_string($password);
+if ( !($usuario == "") && !($password == "") ) {
 
-	$SQL = "SELECT identificacion,PwdCompare('" . $password . "',Password) as verifPass FROM usuarios WHERE identificacion = '" . $usuario . "'";
-	$db->Query($SQL);
-	if ($db->numrows > 0) {
-		if($data = $db->Next()) {		
-			if(odbc_result($data,'verifPass') == 0) {
-				$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
-				$db->Disconnect();
-				header($urlError);
-				exit();
-			}
-		}
-	} else {
-	
-		$_SESSION['error'] = "Usuario y/o Password incorrecto/s.";
-		$db->Disconnect();
-		header($urlError);
-		exit();
-				
-	}
-	
-	$db->Query("SELECT identificacion,ID FROM usuarios WHERE identificacion = '$usuario'");
-	if ($db->numrows > 0) {
-		if ($data = $db->Next()){
+    validateUsuario($db,$usuario,$password,$version);
 
-			$_SESSION["s_username"] = odbc_result($data,'identificacion');
-			$_SESSION["s_id"] = odbc_result($data,'ID');
-			$db->Disconnect();
-			header('Location: index.php');
-			exit();
-								
-		}
-	}
-		
+} else {
+
+    echo 0;
+
+}
+
+/* FUNCIONES GENERALES DEL CONTROL DE INGRESO */
+
+function validateUsuario($db,$usuario,$password,$version) {
+
+    $SQL = "SELECT id,descripcion,password FROM usuarios WHERE descripcion = '$usuario'";
+    $db->Query($SQL);
+    if($data = $db->Next()) {
+        $qPass = odbc_result($data,"password");
+        $qId = odbc_result($data,"id");
+        if($qPass <> $password) {
+
+            echo 0;
+
+        } else {
+
+            selectClienteAIngresar($usuario,$qId,$db,$version);
+
+        }
+
+    } else {
+
+        echo 0;
+
+    }
+}
+
+function selectClienteAIngresar($usuario,$qId,$db,$version) {
+
+    $v = getVersion($version);
+
+    $SQL = "SELECT cli.id AS ID,cli.razonSocial AS CLIENTE,clili.cnn_data_source AS DATASOURCE,";
+    $SQL .= "clili.cnn_catalog AS CATALOG,clili.cnn_user AS DBUSER,clili.cnn_pass AS DBPASS, clili.conexion_servidor as CONEX ";
+    $SQL .= "FROM usuarios_clientes uscli ";
+    $SQL .= "INNER JOIN clientes cli ON (uscli.cliente_id = cli.id) ";
+    $SQL .= "INNER JOIN clientes_licencias clili ON (clili.cliente_id = cli.id) ";
+    $SQL .= "INNER JOIN licencias_productos licpro ON (licpro.licencia_id = clili.licencia_id) ";
+    $SQL .= "WHERE uscli.usuario_id = $qId AND licpro.producto_id = $v ";
+
+    $db->Query($SQL);
+    $cant = $db->numrows;
+
+    if ($cant == 0) {
+
+        echo 1;
+
+    } else {
+
+        $vClientes = array();
+        while ($data = $db->Next()) {
+
+            $vClientes[] = array(
+                $cliente = odbc_result($data,"CLIENTE"),
+                $datasource = odbc_result($data,"DATASOURCE"),
+                $catalog = odbc_result($data,"CATALOG"),
+                $dbuser = odbc_result($data,"DBUSER"),
+                $dbpass = odbc_result($data,"DBPASS"),
+                $conex = odbc_result($data,"CONEX")
+             );
+        }
+
+        echo json_encode($vClientes);
+
+    }
+
+
+}
+
+function getVersion($v) {
+
+    switch ($v)
+    {
+        case 'express':
+            return 1;
+            break;
+
+        case 'full':
+            return 4;
+            break;
+    }
+
+
+}
+
 ?>

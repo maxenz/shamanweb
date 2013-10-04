@@ -11,7 +11,7 @@
     <AssemblyName>shamanweb</AssemblyName>
     <IISProjectUrl>http://localhost:42174/</IISProjectUrl>
     <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-    <Server>Custom</Server>
+    <Server>IISExpress</Server>
     <CustomServerUrl>http://localhost:4545/</CustomServerUrl>
     <PublishEvent>None</PublishEvent>
     <PHPDevAutoPort>True</PHPDevAutoPort>
@@ -1503,6 +1503,9 @@
     <Content Include="ingresar\css\ie8.css">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ingresar\css\images\ajax-loader.gif">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ingresar\css\images\bg.jpg">
       <SubType>Content</SubType>
     </Content>
@@ -1513,6 +1516,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ingresar\css\images\overlay.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\css\jquery-impromptu.css">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ingresar\css\noscript.css">
@@ -1627,6 +1633,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ingresar\js\jquery-1.10.2.min.map">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery-impromptu.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ingresar\js\jquery-impromptu.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ingresar\js\jquery-ui.js">
@@ -2796,6 +2808,9 @@
     <Content Include="scripts\tipoMoviles.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="scripts\toastr.min.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="styles\ajax_load.gif">
       <SubType>Content</SubType>
     </Content>
@@ -2827,6 +2842,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="styles\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\toastr.min.css">
       <SubType>Content</SubType>
     </Content>
     <Content Include="styles\ui-dark.css">
@@ -3216,6 +3234,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="php\setSalidas.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="php\setSesionEmpresa.php">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="php\tipoMoviles.php">
