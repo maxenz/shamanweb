@@ -2,7 +2,7 @@
 
 
 include_once('validateSesion.php');
-include_once("consultaMenu.php");
+//include_once("consultaMenu.php");
 
  ?>
 
