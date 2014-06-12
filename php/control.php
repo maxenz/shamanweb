@@ -85,6 +85,7 @@ function selectClienteAIngresar($usuario,$qId,$db,$version) {
              );
         }
 
+
         echo json_encode($vClientes);
 
     }

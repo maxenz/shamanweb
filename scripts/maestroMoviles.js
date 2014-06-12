@@ -499,8 +499,11 @@
 	
 	function getFiltro() {
 		
-		var itm = $('#dpDownMoviles').jqxDropDownList('getSelectedItem');
+		//No se de donde sale esto, pero si le paso -1 me trae todos, dejarlo asi por el momento
+
+/*		var itm = $('#dpDownMoviles').jqxDropDownList('getSelectedItem');
 		var val = itm.value;
-		return val;	
+		return val;	*/
 				
+		return -1;
 	}

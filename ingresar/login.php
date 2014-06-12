@@ -216,26 +216,27 @@
                 
                 } else {
                 
-                  if (vClientes.length > 1) {
+                  // if (vClientes.length > 1) {
                     
-                        var strEmpresas = "";
-                        for (var i = 0; i < vClientes.length; i++) {
+                  //       var strEmpresas = "";
+                  //       for (var i = 0; i < vClientes.length; i++) {
                     
-                            strEmpresas += "<div class=\"field\"><input type=\"radio\" name=\"rdEmpresas\" id=\""+vClientes[i][0]+"\"";
-                            strEmpresas += " value=\""+vClientes[i][0]+"\" class=\"radioinput\" /><label for=\""+vClientes[i][0]+"\">";
-                            strEmpresas +=  vClientes[i][0]+"</label></div>";
+                  //           strEmpresas += "<div class=\"field\"><input type=\"radio\" name=\"rdEmpresas\" id=\""+vClientes[i][0]+"\"";
+                  //           strEmpresas += " value=\""+vClientes[i][0]+"\" class=\"radioinput\" /><label for=\""+vClientes[i][0]+"\">";
+                  //           strEmpresas +=  vClientes[i][0]+"</label></div>";
                         
-                        }
+                  //       }
                                         
-                        openPopupEmpresas();
-                        $('#selEmpresas').append(strEmpresas);
+                  //       openPopupEmpresas();
+                  //       $('#selEmpresas').append(strEmpresas);
 
                   
-                      } else {
+                  //     } else {
                         
                        var vSesionUsuario = getDatosSesionEmpresa(vClientes[0][0]);
+                       //console.log(vClientes[0]);
                        iniciarSesionCliente(vSesionUsuario);
-                  }
+                  //}
                   
                 }
             }

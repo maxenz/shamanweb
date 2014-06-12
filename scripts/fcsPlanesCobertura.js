@@ -45,8 +45,9 @@
 	function deletePlan() {
 		
 		var rowData = getRowData('grdPlanesCobertura');
+		console.log(rowData);
 		var id = rowData.ID;
-		
+		console.log(id);
 		$.ajax({
 			type : 'GET',
 			url : 'getSetPlanesCobertura.php?opt=3&id='+id,

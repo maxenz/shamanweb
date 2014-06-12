@@ -38,9 +38,15 @@ class cDB {
             $dbpass = $_SESSION["dbpass"];
             $conexion = $_SESSION["conexion"];
 
+            $conexion = 'paramedicapps.com.ar\SQLEXPRESS';
+            $catalog = 'pruebasVIEJA';
+            $dbuser = 'dbaadmin';
+            $dbpass = 'yeike';
+
             $cnnString = "Driver={SQL Server};Server=$conexion;Database=$catalog";
 
             $this->link = odbc_connect($cnnString, $dbuser, $dbpass);
+
             if (!$this->link) {
 
                 return "Connection Failed: " . $this->link;   
@@ -52,7 +58,7 @@ class cDB {
     
     function ConnectLOGIN() {
 	         
-        $this->link = odbc_connect("Driver={SQL Server};Server=localhost\SQLEXPRESS;Database=Gestion;", "dbaadmin", "yeike");
+        $this->link = odbc_connect("Driver={SQL Server};Server=paramedicapps.com.ar\SQLEXPRESS;Database=Gestion;", "dbaadmin", "yeike");
 	if (!$this->link) {
             return "Connection Failed: " . $this->link;
         }
