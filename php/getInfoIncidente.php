@@ -150,7 +150,7 @@
 	
 	function getNroIncidenteNuevo() {
 	
-		$hoy = date("Y-d-m");
+		$hoy = date("Y-m-d");
 		$strHoy = "" . $hoy;
 		$db = new cDB();
 		$db->Connect();

@@ -5,15 +5,14 @@
 		
 	$db = new cDB();
 	$db->Connect();
-	
-	$fecha = formatDateSQL(filter_input(INPUT_GET,'fecha',FILTER_SANITIZE_STRING));
+     
+	$fecha = filter_input(INPUT_GET,'fecha',FILTER_SANITIZE_STRING);
 	$inc = filter_input(INPUT_GET,'inc',FILTER_SANITIZE_STRING);
 	$opt = $_GET["opt"];
 	
 	$idUser = getUserId();
 	
 	$SQL = "SELECT ID FROM Incidentes WHERE NroIncidente = '$inc' AND FecIncidente = '$fecha'";
-
 	$idInc = getID($SQL,$db);
 
 	

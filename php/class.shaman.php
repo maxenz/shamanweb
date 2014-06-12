@@ -27,45 +27,46 @@ class cDB {
 	}
 	
 	function Connect() {
-		
-        if(!isset($_SESSION)){
-            session_start();
-        }
-        
-        $datasource = $_SESSION["datasource"];
-        $catalog = $_SESSION["catalog"];
-        $dbuser = $_SESSION["dbuser"];
-        $dbpass = $_SESSION["dbpass"];
-        $conexion = $_SESSION["conexion"];
-        $cnxString = $conexion . '\\' . $datasource;
-        
-        $this->link = odbc_connect("Driver={SQL Server Native Client 10.0};Server=$cnxString;Database=$catalog;", $dbuser, $dbpass);
 
-		if (!$this->link) {
-			return "Connection Failed: " . $this->link;}
-		
-		return '';
+            if(!isset($_SESSION)){
+                session_start();
+            }
+
+          	$datasource = $_SESSION["datasource"];
+            $catalog = $_SESSION["catalog"];
+            $dbuser = $_SESSION["dbuser"];
+            $dbpass = $_SESSION["dbpass"];
+            $conexion = $_SESSION["conexion"];
+
+            $cnnString = "Driver={SQL Server};Server=$conexion;Database=$catalog";
+
+            $this->link = odbc_connect($cnnString, $dbuser, $dbpass);
+            if (!$this->link) {
+
+                return "Connection Failed: " . $this->link;   
+            }
+
+            return '';
+        
     }
     
-    function ConnectLOGIN($dbDSN,$dbuser,$dbpass) {
-		
-        $this->link = odbc_connect($dbDSN,$dbuser,$dbpass);
-
-		if (!$this->link) {
-			return "Connection Failed: " . $this->link;
+    function ConnectLOGIN() {
+	         
+        $this->link = odbc_connect("Driver={SQL Server};Server=localhost\SQLEXPRESS;Database=Gestion;", "dbaadmin", "yeike");
+	if (!$this->link) {
+            return "Connection Failed: " . $this->link;
         }
 		
-		return '';
+	return '';
     }
 	
-	function Disconnect() {
-		
-		if ($this->link !== NULL) {
-			odbc_close($this->link);
-			$this->link = NULL;
-		}
-
+    function Disconnect() {
+        
+        if ($this->link !== NULL) {
+            odbc_close($this->link);
+            $this->link = NULL;
 	}
+    }
 	
 	function IsConnected() {
 		if (!is_bool($this->link) and !($this->link == NULL)) {
@@ -153,16 +154,6 @@ class cDB {
 		}
 	}
 
-	function First($res = NULL) {
-		if ($res == NULL) {
-			$res = $this->result;
-		}
-		if (mysql_num_rows($res) > 0) {
-			mysql_data_seek($res,0);
-			return mysql_fetch_assoc($res);
-		}
-		else { return false; }
-	}
 
 	function Next($res = NULL) {
 		if ($res == NULL) {
@@ -257,12 +248,5 @@ class cDB {
 	}
 	
 }
-
-
-
-
-
-
-
 
 ?>

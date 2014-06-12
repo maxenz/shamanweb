@@ -133,7 +133,7 @@
 
 					<button class="win-command" id="btnVerGrilla" style="display:none" onClick="verGrilla();" >
 						<span class="win-commandimage win-commandring">&#x0061;</span>
-						<span class="win-label">Ver Clientes</span>
+						<span class="win-label">Ver M&oacute;viles</span>
 					</button>
 				</div>
 					

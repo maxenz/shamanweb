@@ -1,6 +1,7 @@
 <?php
 
  include_once("_header.php");
+ $_SESSION["s_id"] = 1;
 
 ?>
 <div class="ctIndex">
@@ -14,6 +15,7 @@
 
     	<div class="span4 titulosIndex">
       		<h2>Operativa</h2>
+      		<p><?php echo $_SESSION["catalog"] ?></p>
       		<p>A trav&eacute;s de la Operativa, usted puede controlar todos servicios y traslados de su empresa de emergencias
       		 m&eacute;dicas.  </p>
 	  		<div style="text-align:center">

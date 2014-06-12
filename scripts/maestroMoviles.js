@@ -464,7 +464,7 @@
 			url: "getSetMoviles.php?opt=5&optInsModif="+optInsModif,
 			data: { pArray : vecNuevoMov },
 			success: function(datos){	
-			
+                                console.log(datos);
 				var mensaje = "";
 				if (datos == 0) {
 						mensaje = "El m&oacute;vil fue ingresado correctamente.";

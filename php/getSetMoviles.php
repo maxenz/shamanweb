@@ -278,11 +278,12 @@
 			$idMov = $pArray[4];
 			$SQL = "UPDATE Moviles SET Movil = '$movil', TipoMovilId = '$tipMovId', BaseOperativaId = '$bOp', VehiculoId = $vehId, regUsuarioId = $userId";
 			$SQL = $SQL . " WHERE ID = $idMov";	
+                        echo json_encode($pArray);
 			$db->Query($SQL);
 			$SQL = "DELETE FROM MovilesLocalidades WHERE MovilId = $idMov";
 			$db->Query($SQL);
 			setGrados($idMov,$vLoc,$db,$userId);	
-			echo 1;
+			//echo 1;
 			
 		}
 		$db->Disconnect();
@@ -311,7 +312,6 @@
 		$SQL = "SELECT mm.Marca as Marca, mm.Modelo as Modelo,veh.ID as ID, veh.flgPropio as flgPropio FROM Vehiculos veh";
 		$SQL = $SQL . " INNER JOIN MarcasModelos mm ON (mm.ID = veh.MarcaModeloId)";
 		$SQL = $SQL . " WHERE veh.Dominio = '$dom' ";
-		
 		$db->Query($SQL);
 		
 		if ($fila = $db->Next()) {

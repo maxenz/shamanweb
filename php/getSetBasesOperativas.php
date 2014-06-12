@@ -39,7 +39,6 @@
 		
 		$db->Query($SQL);
 		
-		if ($db->numrows > 0) {
 			while($fila = $db->Next()) {
 				
 			$datos[] = array(
@@ -52,8 +51,7 @@
 			}
 				
 				echo json_encode($datos);
-				$db->Disconnect();	
-		}			
+				$db->Disconnect();				
 	}
 	
 	function deleteBase($id) {

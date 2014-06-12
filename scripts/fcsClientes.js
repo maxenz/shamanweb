@@ -50,6 +50,7 @@
 		 	url: 'getSetClientes.php?opt=1'
    		 };	
 		 	
+
 		columnasMaestroClientes = [
 			{ text: 'ID', datafield: 'ID', hidden: true },
 			{ text: 'PlanId', datafield: 'PlanId', hidden: true },

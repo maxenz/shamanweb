@@ -1608,44 +1608,46 @@ function pruebaJSON() {
 	
 	}
 	
-	function guardarIncidente() {
-	
-				var datosIncidente = getVecDatosIncidente();
-				
-				var msgError = validoGuardarIncidente();
-				
-				var opt = 0;
-			
-				 if (msgError === "") {
-				 
-					if (flgAccionF10 == 2) opt = 1;					
-				 
-					 $.ajax({
-						type: "POST",
-						url: "setIncidente.php?opt="+opt,
-						data: { pArray : datosIncidente },
-						success: function(datos){		
-							
-						if (datos === "") {
-							var mensaje = 'El servicio fue guardado correctamente';
-							setMessage('success',1500,mensaje,'',200);
-							refreshDataInc(flgIncTras);	
-							flgAccionF10 = 0;
-							$('#jqxTabsOperativa').jqxTabs({ selectedItem : 0 });
-							limpiarIncidente();
-							focusGrdIncidentes();
-						} else { 
-							console.log(datos) 
-						}
-					  }
-				    });	
-						
-				 } else {
-					 	
-					setMessage('error',2000,msgError,txtTelefono,'');
-				
-				}
-	}
+    function guardarIncidente() {
+
+        var datosIncidente = getVecDatosIncidente();
+        
+        console.log(datosIncidente);
+
+        var msgError = validoGuardarIncidente();
+
+        var opt = 0;
+
+            if (msgError === "") {
+
+                if (flgAccionF10 == 2) opt = 1;					
+
+                    $.ajax({
+                        type: "POST",
+                        url: "setIncidente.php?opt="+opt,
+                        data: { pArray : datosIncidente },
+                        success: function(datos){		
+                                
+                        if (datos === "") {
+                                var mensaje = 'El servicio fue guardado correctamente';
+                                setMessage('success',1500,mensaje,'',200);
+                                refreshDataInc(flgIncTras);	
+                                flgAccionF10 = 0;
+                                $('#jqxTabsOperativa').jqxTabs({ selectedItem : 0 });
+                                limpiarIncidente();
+                                focusGrdIncidentes();
+                        } else { 
+                                console.log(datos) 
+                        }
+                    }
+            });	
+
+            } else {
+
+                setMessage('error',2000,msgError,txtTelefono,'');
+
+        }
+    }
 	
 	function getVecDatosIncidente() {
 	
@@ -2404,7 +2406,7 @@ function pruebaJSON() {
 				type: "GET",
 				url: "updateIncidentes.php?opt=0&fecha="+fecha+"&inc="+inc+"&aviso="+aviso,
 				success: function(datos){
-										
+                                        console.log(datos);
 					refreshDataInc(flgIncTras);
 					$('#popupAvisos').jqxWindow('close');
 					$('#txtTipAviso').val('');

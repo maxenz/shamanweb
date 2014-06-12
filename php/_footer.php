@@ -126,7 +126,7 @@
 	
 	function showLogin() {
 		
-		window.location = '../ingresar/version.php';
+		window.location = 'http://paramedicapps.com.ar:57771';
 	
 	}
 	  

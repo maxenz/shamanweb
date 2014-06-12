@@ -203,7 +203,7 @@
 
 		$.ajax({
 			type: 'GET',
-			url : 'getSetMarcasModelos.php?opt=3&campo='+column+'&value='+value+'&id='+id,
+			url : 'getSetMarcasModelos.php?opt=3&campo='+column+'&value='+value+'&id='+id
 		});
 	}
 	
@@ -213,12 +213,12 @@
 			type : 'GET',
 			url : 'getSetMarcasModelos.php?opt=2&marca='+marca+'&modelo='+modelo,
 			success : function(datos) {
-				
+				console.log(datos);
 				setGrdMarcasModelos();
 				$('#dialogoAgregar').modal('hide');
 
 				
-			},	
+			}	
 		});
 			
 	}

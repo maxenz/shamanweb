@@ -182,32 +182,28 @@
     //VOY A CONTROL.PHP Y VALIDO EL USUARIO / PASSWORD
     
     $('#btnSubmit').on('click',function(){
-		$.ajax({
-			type: 'POST',
-            dataType: 'json',
-			url: '../php/control.php',
-            beforeSend:function(){
     
-                spinner.spin(target)
-              
-            },
-            complete:function(){
-
-                spinner.stop();
-              
-            },
+        $.ajax({
+            type: 'GET',
+            url: '../php/control.php',
             data: {
-                usuario: $("#txtUser").val(),
-                password: $("#txtPassword").val(),
-                version: $('#txtVersion').val()
+                'usuario': $('#txtUser').val(),
+                'password': $('#txtPassword').val(),
+                'version': $('#txtVersion').val()
             },
-			error: function (request, status, error) {
-            
-        		console.log('error' + request.responseText);
-
-    		},
-			success: function(vClientes){
-            
+            dataType: 'json',
+            beforeSend: function(){
+                spinner.spin(target);  
+            },
+            complete: function(){
+                spinner.stop();
+            },
+            error: function(request){
+                console.log('error:  ' + request);
+            },
+            success: function(vClientes){
+                
+                console.log(vClientes);
                 vDataClientes = vClientes;
                             
                 if (vClientes === 0) {
@@ -242,8 +238,11 @@
                   }
                   
                 }
-            } 
-         }); 
+            }
+        });
+        
+        return false;
+   
      });
     
 </script>

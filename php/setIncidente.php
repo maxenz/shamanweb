@@ -55,8 +55,8 @@
 		//$user = filter_var($vecInc[25],FILTER_SANITIZE_STRING);
 		
 		$dom = $calle . " " . $altura . " " . $piso . " " . $depto;
-		$fechaInc = date("Y-d-m");
-		$fechaInc = "" . $fechaInc ;
+		//$fechaInc = date("Y-d-m");
+		//$fechaInc = "" . $fechaInc ;
 		
 		$SQL = "SELECT ID FROM GradosOperativos WHERE AbreviaturaId = '$gdo' ";
 		$idGdo = getId($SQL,$db);
@@ -89,6 +89,7 @@
 			$SQL = $SQL . "TelefonoFix = '$tel', ClienteId = $idCliente, ClienteIntegranteId = $idClienteInt, NroAfiliado = '$nroAf', Paciente = '$paciente',";
 			$SQL = $SQL . "Sexo = '$sexo', Edad = $edad, PlanId = '$plan', Sintomas = '$sint', CoPago = $coPago, flgIvaGravado = $idIVA,";
 			$SQL = $SQL . "Aviso = '$aviso', Observaciones = '$observ' WHERE FecIncidente = cast('$fechaInc' as datetime) AND NroIncidente = '$nroInc'";
+                        
 		}
 	   
 		$db->Query($SQL);
