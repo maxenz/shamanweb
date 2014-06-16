@@ -244,18 +244,18 @@
     
 			if (e.which == 46) {
 	
-				setPopupEliminar();	
+				//setPopupEliminar();	
 		
 			}
 	
 			if (e.which == 45) {
 		
-				agregarPlan();	
+				//agregarPlan();	
 			}
 			
 			if (e.which == 13) {
 			
-				editPlan();
+				//editPlan();
 			
 			}
 	
@@ -263,7 +263,7 @@
 
 		$('#grdPlanesCobertura').on('rowdoubleclick',function(ev){
 	
-			editPlan();
+			//editPlan();
 	
 		});
 

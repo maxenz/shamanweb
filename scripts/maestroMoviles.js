@@ -1,5 +1,13 @@
 
 	function bindEventos() {
+
+
+		$('#dialogoEliminar').on('hide',function(ev){
+		
+			$('#grdMaestroMoviles').jqxGrid('focus');
+		
+		});
+
 	
 			$('#txtDomMov').keydown(function(e) {
 		
@@ -45,24 +53,24 @@
 			
 			if (e.which == 13) {
 				
-				editMovil();	
+				//editMovil();	
 			}
 			
 			if (e.which == 45) {
 				
-				agregarMovil()();	
+				//agregarMovil()();	
 			}
 			
 			if (e.which == 46) {
 					
-				setPopupEliminar();
+				//setPopupEliminar();
 			}
 				
 		});
 		
 		$('#grdMaestroMoviles').on('rowdoubleclick',function(e){
 		
-			editMovil();
+			//editMovil();
 		});
 
 		$('#chkActivo').on('checked',function(e){
@@ -236,7 +244,7 @@
 			{ text: 'Tipo de M&oacute;vil', datafield: 'TipoMovil', width: '40%', align: 'center' },
 			{ text: 'Dominio', datafield: 'Dominio', width:'19%', align: 'center'}
 		];
-			
+		
 		$('#grdHistorialMovil').jqxGrid({ source: sourceHistorialMovil, columns: columnasHistorialMovil});
 		$('#grdHistorialMovil').jqxGrid('selectrow',0);
 		$('#grdHistorialMovil').jqxGrid('focus');	
@@ -258,9 +266,7 @@
 	function setDataMovil(id) {
 		
 		$('#ctGrillaMaestroMoviles').toggle('slow',function(e){
-		
-		
-			
+				
 		$.ajax({
 			type: 'GET',
 			dataType: 'json',
@@ -302,28 +308,19 @@
 		});
 	}
 	
+	function deleteMovil() {
+
+		var rowData = getRowData('grdMaestroMoviles');
+		var id = rowData.ID;
+		console.log(id);
+		procesoEliminarMovil(id);	
+
+	}
+
 	function setPopupEliminar() {
-		
-		 $("#dialogoEliminar").dialog({
-				resizable: false,
-				hide: 'slide',
-				show: 'slide',
-				height:160,
-				modal: true,
-				buttons: {
-					"Eliminar": function() {
-						var rowData = getRowData('grdMaestroMoviles');
-						var id = rowData.ID;
-						procesoEliminarMovil(id);		
-					$( this ).dialog( "close" );
-				},
-					"Cancelar": function() {
-					$( this ).dialog( "close" );
-				}
-			}
-		});			
-		
-		
+
+		$('#dialogoEliminar').modal('show');
+	
 	}
 	
 	function procesoEliminarMovil(id) {
@@ -334,18 +331,9 @@
 			url: 'getSetMoviles.php?opt=1&id='+id,
 			success: function(datos) {
 				
-				actualizarGrd();	
-	
-				var mensaje = 'El m&oacute;vil se ha eliminado correctamente.';	
-				 $('#msgDialogo').html(mensaje);
-						 $("#dialogo").dialog({
-							modal: true,
-							show: 'slide',
-							hide: 'slide',
-							open: function(event, ui){
-								setTimeout("$('#dialogo').dialog('close')",1500);
-							}
-					});		
+				actualizarGrd();
+				$('#dialogoEliminar').modal('hide');	
+		
 				}
 			});	
 	

@@ -29,7 +29,7 @@
 	
 		$('#grdTipoMoviles').on('rowdoubleclick',function(e){
 	
-			editTipoMovil();
+			//editTipoMovil();
 	
 		});
 		
@@ -50,17 +50,17 @@
     
 			if (e.which == 13) {
 		
-				editTipoMovil();	
+				//editTipoMovil();	
 			}
 	
 			if (e.which == 45) {
 		
-				agregarTipoMovil();	
+				//agregarTipoMovil();	
 			}
 	
 			if (e.which == 46) {
 			
-				setPopupEliminar();
+				//setPopupEliminar();
 			}
 		
 		});

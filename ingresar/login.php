@@ -50,6 +50,12 @@
 <script>
 
     var version = '<?php echo $_GET["v"] ?>';
+    var usrFromGestion = '<?php echo $_GET["usr"] ?>';
+
+    $('#txtUser').val(usrFromGestion);
+
+
+
     var vDataClientes;
     
     var opts = {
@@ -84,6 +90,8 @@
     }
 
     $('body').removeClass("invisible");
+
+    $('#txtPassword').focus();
     
     //POPUP QUE SE GENERA CUANDO EL USUARIO TIENE MAS DE UNA EMPRESA DISPONIBLE.
     

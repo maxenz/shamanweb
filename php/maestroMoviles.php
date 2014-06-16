@@ -92,12 +92,19 @@
 		</div>
 	</div>
      
-       <div id="dialogoEliminar" title="Atencion!" class="popup">
-		<p>
-			<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
-			<p id="msgDialogoEliminar">¿Está seguro que desea eliminar el móvil?</p>
-		</p>
-	</div>
+   	 <div id="dialogoEliminar" class="modal message hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                   <h3>Aviso Importante!</h3>
+                </div>
+                <div class="modal-body">
+                   <p>Seguro que quiere eliminar el m&oacute;vil?</p>
+                </div>
+                <div class="modal-footer">
+                   <button class="btn btn-info" onclick="deleteMovil()">Aceptar</button>
+			<button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </div>
+       </div>
                 
 	<div class='notifications center' id='notif'></div>
 			

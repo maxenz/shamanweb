@@ -93,7 +93,7 @@
 	function initGrdMaestroClientes() {
 
 		$("#grdMaestroClientes").jqxGrid({
-			width:940,
+			width:960,
 			height:390,
 			columnsresize: false,
 			autoshowfiltericon: true,
@@ -485,8 +485,8 @@
 		$('#grdMaestroClientes').keydown(function(e){
 			
 			if (e.which == 46) {
-				
-				abroDecisionEliminarCliente();	
+			
+				//abroDecisionEliminarCliente();	
 			}
 			
 		});
@@ -678,8 +678,9 @@
 	function bindGrillaClientes() {
 		
 		$('#grdMaestroClientes').on('rowdoubleclick', function(event) {
-		
-			editShowCliente();
+			
+			//readonly
+			//editShowCliente();
 			
 		});	
 		
@@ -687,14 +688,16 @@
 		$('#grdMaestroClientes').on('keydown',function(event) {
 			
 			if (event.which == 13) {
-					
-				editShowCliente();
+				//readonly	
+				//editShowCliente();
 			
 			}
 			
 		});
 		
 	}
+
+// 
 	
 	function editShowCliente() {
 		

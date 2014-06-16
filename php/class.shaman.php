@@ -39,7 +39,7 @@ class cDB {
             $conexion = $_SESSION["conexion"];
 
             $conexion = 'paramedicapps.com.ar\SQLEXPRESS';
-            $catalog = 'pruebasVIEJA';
+            $catalog = 'Shaman';
             $dbuser = 'dbaadmin';
             $dbpass = 'yeike';
 

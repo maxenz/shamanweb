@@ -14,24 +14,24 @@
     
 			if (e.which == 13) {
 				
-				editVehiculo();	
+				//editVehiculo();	
 			}
 			
 			if (e.which == 45) {
 				
-				agregarVehiculo();	
+				//agregarVehiculo();	
 			}
 			
 			if (e.which == 46) {
 					
-				setPopupEliminar();
+				//setPopupEliminar();
 			}
 		
 		});
 		
 		$('#grdMaestroVehiculos').on('rowdoubleclick',function(ev){
 		
-			editVehiculo();
+			//editVehiculo();
 		
 		});
 	
@@ -184,7 +184,8 @@
 		}	
 		
 	}
-		function editVehiculo() {
+
+	function editVehiculo() {
 		
 		var rowData = getRowData('grdMaestroVehiculos');
 		var id = rowData.ID;
@@ -200,8 +201,9 @@
 			dataType: 'json',
 			url:  'getSetVehiculos.php?opt=0&id='+id,
 			success: function(datos){
+				
+				console.log(datos);
 
-					
 					$('#hidIdVeh').val(id);
 					$('#txtDomVeh').val(datos[0].Dominio);
 					$('#txtAnioVeh').val(datos[0].Anio);
@@ -265,6 +267,7 @@
 		
 		if ($('#txtDomVeh').val() == "") msgError = msgError +  "- Debe determinar el dominio del veh&iacute;culo. <br />";
 		if($('#dpDownMM').jqxDropDownList('getSelectedIndex') == -1)  msgError = msgError +  "- Debe determinar la Marca / Modelo del veh&iacute;culo <br />";
+		if($('#dpDownComb').jqxDropDownList('getSelectedIndex') == -1)  msgError = msgError +  "- Debe determinar el tipo de combustible <br />";
 
 		if (msgError != "") {
 		

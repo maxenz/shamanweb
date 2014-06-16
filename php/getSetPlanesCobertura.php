@@ -150,17 +150,18 @@
 	
 	$db->Disconnect();
 }
-	
-		
+			
 	function deletePlan($id) {
 		
 		$db = new cDB();
 		$db->Connect();
 		
-		$SQL = "DELETE FROM Planes WHERE ID = $id";
+		$SQL = "DELETE FROM Planes WHERE ID = " . $id;
 		$db->Query($SQL);
 		$db->Disconnect();
+
 	}
+
 	
 	function getPlanes($idPlan) {
 		

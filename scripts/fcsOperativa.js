@@ -174,7 +174,10 @@ function pruebaJSON() {
 	function initMenuRecepcionComponentes() {
 		
 		$("#jqxMenuRecepcion,#jqxMenuTraslados").jqxMenu({ width: '950px', height: '40px', mode: 'horizontal', theme: 'metro' });
-		$("#menuBusqServ").jqxMenu({ width: '788px', height: '35px', mode: 'horizontal', theme: 'metro' });		
+		$("#menuBusqServ").jqxMenu({ width: '788px', height: '35px', mode: 'horizontal', theme: 'metro' });
+
+		// por el momento lo dejo en hidden porque hacemos la app readonly..
+		$('#jqxMenuRecepcion').css("display","none"); 
 		
 	}
 	
@@ -189,7 +192,11 @@ function pruebaJSON() {
 		
 	function initTabs() {
 		
-		$('#jqxTabsOperativa').jqxTabs({ width: '962px', height: '480px', position: 'top', theme: 'metro' });	
+		$('#jqxTabsOperativa').jqxTabs({ width: '962px', height: '480px', position: 'top', theme: 'metro' });
+
+		//esto lo hago porque por el momento la app es readonly, y porque basicamente la parte de traslados 
+		//no esta hecha
+		$('#jqxTabsOperativa').jqxTabs('disableAt', 2);	
 		
 	}
 	
@@ -674,6 +681,8 @@ function pruebaJSON() {
         		console.log(request.responseText);
     		},
 			success: function(datos){
+
+				console.log(datos);
 
 				$(document).ready(function() {
 			
@@ -2620,6 +2629,8 @@ function pruebaJSON() {
 		$('#itmHistoriaClinica,#itmHistoriaClinicaTraslado').tooltip({title: 'Mostrar la historia clínica del paciente', placement: 'bottom'});
 		$('#itmObservaciones,#itmObservacionesTraslado').tooltip({title: 'Ver Log de Observaciones', placement: 'bottom'});
 		$('#itmBuscar,#itmBuscarTraslado').tooltip({title: 'Ver Buscador de Servicios', placement: 'bottom'});
+
+
 	
 	}
 	
@@ -3881,5 +3892,8 @@ $.fn.focusNextDropDown = function() {
    };   
 			 	 							
 }
+
+
+
 	
 

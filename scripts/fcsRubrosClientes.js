@@ -33,12 +33,12 @@
 			height:400,
 			columnsresize: false,
 			autoshowfiltericon: true,
-			editable: true,
-			editmode: 'dblclick',
+/*			editable: true,
+			editmode: 'dblclick',*/
 			source: [],
 			theme: 'metro',
 			columns: columnas,
-			handlekeyboardnavigation: function (event) {
+/*			handlekeyboardnavigation: function (event) {
 				var rowData = getRowData('grdRubrosClientes');
 				var id = rowData.ID;
 
@@ -61,7 +61,7 @@
 					
 				}
 			
-			},
+			},*/
 			altrows:true,
 			filterable: true,
 			sortable: true,

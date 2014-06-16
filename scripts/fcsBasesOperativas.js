@@ -22,7 +22,7 @@ $('#dialogoEliminar').on('hide',function(ev){
 
 $('#grdBases').on('rowdoubleclick',function(e){
 	
-	editBase();
+	//editBase();
 	
 });
 
@@ -30,17 +30,17 @@ $('#grdBases').keydown(function(e) {
     
 	if (e.which == 13) {
 		
-		editBase();	
+		//editBase();	
 	}
 	
 	if (e.which == 46) {
 		
-		setPopupEliminar();	
+		//setPopupEliminar();	
 	}
 	
 	if (e.which == 45) {
 	
-		agregarBase();
+		//agregarBase();
 		
 	}
 	

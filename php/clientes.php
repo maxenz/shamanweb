@@ -433,7 +433,7 @@
          <div class="row">
             <div class="span6 align-left">
    
-               <button class="win-command" onClick="agregarCliente();">
+               <button class="win-command" onClick="agregarCliente();" >
                   <span class="win-commandimage win-commandring">&#xe03e;</span>
                   <span class="win-label">Agregar</span>
                </button>
@@ -486,6 +486,12 @@
                </button>
 			   
             </div>
+
+
+
+
+
+
          </div>
       </div>
    </footer>	

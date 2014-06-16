@@ -129,6 +129,11 @@
 		window.location = 'http://paramedicapps.com.ar:57771';
 	
 	}
-	  
+
+	       
+	//Disableo todo porque por el momento es readonly
+    $('button.win-command').prop('disabled',true);
+
+  
    </script>
    

@@ -27,12 +27,12 @@
 			height:400,
 			columnsresize: false,
 			autoshowfiltericon: true,
-			editable: true,
-			editmode: 'dblclick',
+/*			editable: true,
+			editmode: 'dblclick',*/
 			source: [],
 			theme: 'metro',
 			columns: columnas,
-			handlekeyboardnavigation: function (event) {
+/*			handlekeyboardnavigation: function (event) {
 				var rowData = getRowData('grdMarcasModelos');
 				var id = rowData.ID;
 				var key = event.charCode ? event.charCode : event.keyCode ? event.keyCode : 0;
@@ -52,7 +52,7 @@
 					break;	
 						
 				}
-			},
+			},*/
 			altrows:true,
 			filterable: true,
 			sortable: true,
@@ -159,7 +159,7 @@
 	
 		if (ev.which == 46) {
 		
-			elimMarcaModelo();
+			//elimMarcaModelo();
 			
 		}
 	

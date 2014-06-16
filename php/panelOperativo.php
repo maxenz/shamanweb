@@ -524,7 +524,8 @@
 		<td><div id="grdMoviles" data-toggle="context" data-target="#contextMoviles"></div></td>
 	</tr>
 </table>
-		<div id="contextIncidentes">
+<!-- DESHABILITADO PARA READ ONLY MIENTRAS SE CORRIGE LA APP -->
+<!-- 		<div id="contextIncidentes">
 			<ul class="dropdown-menu" role="menu">
 			<li><a  tabindex="-1" id="itmCtxLlegada" href="#">Llegada</a></li>
 			<li><a  tabindex="-1" id="itmCtxPreasignar" href="#">Preasignar</a></li>
@@ -535,7 +536,7 @@
 					<li><a  tabindex="-1" id="itmCtxTips" href="#">Tips - Avisos</a></li>    
 
 			</ul>
-		</div>
+		</div> 
 		
 		<div id="contextMoviles">
 			<ul class="dropdown-menu" role="menu">
@@ -551,6 +552,8 @@
 				<li><a  tabindex="-1" id="itmCtxBajaOperativa" href="#">Baja Operativa de M&oacute;viles</a></li> 
 			</ul>
 		</div>
+
+        -->
 		  	  
 <div id="logs" style="margin-top:5px;margin-left:3px;margin-bottom:1px;line-height:20px">
 <table style="margin-left:auto;margin-right:auto">
