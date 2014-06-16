@@ -38,11 +38,6 @@ class cDB {
             $dbpass = $_SESSION["dbpass"];
             $conexion = $_SESSION["conexion"];
 
-            $conexion = 'paramedicapps.com.ar\SQLEXPRESS';
-            $catalog = 'Shaman';
-            $dbuser = 'dbaadmin';
-            $dbpass = 'yeike';
-
             $cnnString = "Driver={SQL Server};Server=$conexion;Database=$catalog";
 
             $this->link = odbc_connect($cnnString, $dbuser, $dbpass);
