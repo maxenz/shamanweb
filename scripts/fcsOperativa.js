@@ -635,8 +635,10 @@ function pruebaJSON() {
 	
 	function initGrdIncidentes(datos) {
 
-		
-	
+		if (datos.localdata == 'null') {
+			datos = [];
+		}
+
 		 $("#grdIncidentes").jqxGrid({
 			width: 800,
 			height:255,

@@ -64,6 +64,8 @@
 			$SQLINC .= "WHERE vij.flgStatus = 0 AND gdo.flgIntDomiciliaria = 0 ";
 			$SQLINC .= "ORDER BY gdo.Orden, vij.ViajeId ";
             
+
+
 			$db->Query($SQLINC);
 
 			return $db;

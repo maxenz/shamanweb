@@ -211,7 +211,7 @@
             },
             success: function(vClientes){
                 
-                console.log(vClientes);
+                //console.log(vClientes);
                 vDataClientes = vClientes;
                             
                 if (vClientes === 0) {
