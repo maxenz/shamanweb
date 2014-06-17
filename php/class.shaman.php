@@ -52,8 +52,10 @@ class cDB {
     }
     
     function ConnectLOGIN() {
-	         
-        $this->link = odbc_connect("Driver={SQL Server};Server=paramedicapps.com.ar\SQLEXPRESS;Database=Gestion;", "dbaadmin", "yeike");
+	     
+    	//$this->link = odbc_connect("Driver={SQL Server};Server=paramedicapps.com.ar;Database=Shaman;","sa","#shaman2004");
+
+        $this->link = odbc_connect("Driver={SQL Server};Server=paramedicapps.com.ar\SQLEXPRESS;Database=Shaman;", "dbaadmin", "yeike");
 	if (!$this->link) {
             return "Connection Failed: " . $this->link;
         }

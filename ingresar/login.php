@@ -207,7 +207,7 @@
                 spinner.stop();
             },
             error: function(request){
-                console.log('error:  ' + request);
+                console.log(request);
             },
             success: function(vClientes){
                 

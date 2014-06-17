@@ -24,25 +24,14 @@ if ( !($usuario == "") && !($password == "") ) {
 /* FUNCIONES GENERALES DEL CONTROL DE INGRESO */
 
 function validateUsuario($db,$usuario,$password,$version) {
-       
-    $SQL = "SELECT UserID FROM UserProfile WHERE UserName = '$usuario'";
+    
+    $SQL = "Select * From Usuarios Where Identificacion = '".$usuario."' and PwdCompare('".$password."',Password) = 1";
+
     $db->Query($SQL);
     if ($data = $db->Next()) {
-        $qId = odbc_result($data,"UserID");
-
-       // $SQL = "SELECT PWDCOMPARE('$password',Password) as hola FROM webpages_Membership WHERE UserId = $qID ";
-        //$db-> Query($SQL);
-        
-        //if ($data = $db->Next()) {
-            
-            $passOK = 1;         
-            if ($passOK == 1) {
-                selectClienteAIngresar($usuario,$qId,$db,$version);
-            } else {
-                echo 0;
-            }
-        //}
-        
+         
+        selectClienteAIngresar($usuario,$qId,$db,$version);
+               
     } else {
         
         echo 0;
