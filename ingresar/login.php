@@ -1,3 +1,18 @@
+<?php
+
+    session_start();
+    
+    $_SESSION["usuario"] = $_POST["usr"];
+    //$_SESSION["datasource"] = $_POST["datasource"];
+    $_SESSION["catalog"] = $_POST["dbName"];
+    $_SESSION["dbuser"] = $_POST["dbUser"];
+    $_SESSION["dbpass"] = $_POST["dbPass"];
+    $_SESSION["cliente"] = $_POST["Cliente"];
+    $_SESSION["conexion"] = $_POST["dbConexion"];
+    $_SESSION["v"] = $_POST["v"];
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -22,6 +37,8 @@
 <div id="loader"></div>
 
 <div id="wrapper">
+
+
 
     <div class="user-icon"></div>
     <div class="pass-icon"></div>
@@ -49,8 +66,9 @@
 
 <script>
 
-    var version = '<?php echo $_GET["v"] ?>';
-    var usrFromGestion = '<?php echo $_GET["usr"] ?>';
+    var version = '<?php echo $_POST["v"] ?>';
+    var usrFromGestion = '<?php echo $_POST["usr"] ?>';
+    usrFromGestion = usrFromGestion.toLowerCase();
 
     $('#txtUser').val(usrFromGestion);
 
@@ -240,10 +258,13 @@
 
                   
                   //     } else {
-                        
-                       var vSesionUsuario = getDatosSesionEmpresa(vClientes[0][0]);
+
+
+                      window.location = '../php/index.php'; 
+                       //var vSesionUsuario = getDatosSesionEmpresa(vClientes[0][0]);
                        //console.log(vClientes[0]);
-                       iniciarSesionCliente(vSesionUsuario);
+                       //iniciarSesionCliente(vSesionUsuario);
+
                   //}
                   
                 }

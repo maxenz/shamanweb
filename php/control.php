@@ -25,12 +25,13 @@ if ( !($usuario == "") && !($password == "") ) {
 
 function validateUsuario($db,$usuario,$password,$version) {
     
-    $SQL = "Select * From Usuarios Where Identificacion = '".$usuario."' and PwdCompare('".$password."',Password) = 1";
+    $SQL = "SELECT * FROM Usuarios WHERE Identificacion = '".$usuario."' AND PwdCompare('".$password."',Password) = 1";
 
     $db->Query($SQL);
     if ($data = $db->Next()) {
          
-        selectClienteAIngresar($usuario,$qId,$db,$version);
+        //selectClienteAIngresar($usuario,$qId,$db,$version);
+        echo 2;
                
     } else {
         

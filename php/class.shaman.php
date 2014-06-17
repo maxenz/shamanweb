@@ -32,7 +32,7 @@ class cDB {
                 session_start();
             }
 
-          	$datasource = $_SESSION["datasource"];
+          	//$datasource = $_SESSION["datasource"];
             $catalog = $_SESSION["catalog"];
             $dbuser = $_SESSION["dbuser"];
             $dbpass = $_SESSION["dbpass"];
